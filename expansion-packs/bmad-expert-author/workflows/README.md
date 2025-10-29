@@ -17,12 +17,16 @@ Steps:
 1. **Activate Book Strategist**: `/book-strategist`
 2. **Run Analysis**: `*create-blueprint`
    - The blueprint creation process includes comprehensive elicitation
-   - **New: Step 6.5 gathers existing materials** (documents, URLs, notes)
-3. **Process Existing Materials** (if provided):
-   - Book Strategist will activate Document Processor automatically
-   - Or manually: `/BMad:agents:ea-document-processor` → `*process-documents`
-   - Converts Word, PDF, HTML to Markdown
-   - Stored in `processed-materials/` for reference
+   - **Step 6.5: Gathers existing materials** (documents, URLs, notes)
+   - **Automatically converts documents** - just place files in `source-materials/`
+   - Book Strategist detects files and runs conversion automatically
+   - No manual agent switching needed!
+3. **Automatic Document Processing** (if files provided):
+   - Book Strategist detects files in `source-materials/`
+   - Converts Word, PDF, HTML → Markdown automatically
+   - Reads converted content from `processed-materials/`
+   - Incorporates insights into Book Blueprint
+   - ℹ️ Manual processing: `/BMad:agents:ea-document-processor` (if needed)
 4. **Deep Dive Research**:
    - `*analyze-audience` - Understand target readers deeply
    - `*research-market` - Competitive landscape analysis
@@ -273,11 +277,11 @@ docs/
 1. Book Strategist → Book Blueprint Document (BBD) ✓
    └─ Defines target audience, transformation, value, strategy
    └─ Step 6.5: Elicits existing materials (Word, PDF, URLs)
+   └─ AUTOMATICALLY converts files in source-materials/
+   └─ Reads converted content from processed-materials/
+   └─ Incorporates insights into BBD
 
-1.5. Document Processor → Converted Materials (if needed) 📄
-     └─ Converts DOCX, PDF, HTML → Markdown
-     └─ Output: processed-materials/ directory
-     └─ Makes existing knowledge immediately usable
+   (Optional: Document Processor agent 📄 for manual processing)
 
 2. Learning Architect → Learning Framework ✓
    └─ Designs instructional approach and outcomes

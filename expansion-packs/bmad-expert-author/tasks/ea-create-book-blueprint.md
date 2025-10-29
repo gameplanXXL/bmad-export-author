@@ -202,19 +202,39 @@ Let's gather any existing materials or knowledge sources you have.
 - URLs to online resources
 - Or type "skip" if starting from scratch
 
-*Note: I'll use the document-processor agent to convert files into a usable format before we proceed.*
+*Note: If you provide files, I'll automatically convert them before we proceed.*
 ```
 
 **After receiving materials:**
 
-If user provides files or URLs:
+If user provides files in `source-materials/`:
 
-1. **Activate document-processor**: Switch to `/BMad:agents:ea-document-processor`
-2. **Process materials**: Use `*process-documents` command to convert all materials
-3. **Return to book-strategist**: Switch back to continue with blueprint creation
+1. **Automatically check for files**:
+   ```bash
+   ls -la source-materials/ 2>/dev/null
+   ```
+
+2. **If files exist, process them automatically**:
+   - Inform user: "I found {count} files in source-materials/. Converting them now..."
+   - Run conversion utility directly:
+   ```bash
+   node .bmad-expert-author/utils/document-converter.js batch source-materials/
+   ```
+   - Display conversion results to user
+   - Confirm: "✅ Converted {success} files. Results in processed-materials/"
+
+3. **Read converted materials**:
+   - Read files from `processed-materials/` directory
+   - Scan content for key insights
+   - Note relevant information for BBD
+
 4. **Reference processed materials**: Incorporate insights from processed materials into BBD
 
-If user skips:
+If user provides URLs:
+- Note URLs in BBD for later reference
+- Optionally use WebFetch to retrieve content if needed
+
+If user skips or no files found:
 - Continue directly to Step 7
 
 ### Step 7: Synthesis & Document Creation

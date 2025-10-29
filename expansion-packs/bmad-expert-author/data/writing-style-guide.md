@@ -278,6 +278,86 @@ Ein Text folgt diesem Style Guide, wenn:
 
 ---
 
+## 📐 Markdown-Formatierungsregeln
+
+### KRITISCH: Listen-Formatierung
+
+**Problem:** Aufzählungen ohne korrekte Markdown-Syntax werden inline dargestellt (alles in einer Zeile) statt untereinander.
+
+#### ✅ RICHTIG: Markdown-Listen mit Leerzeilen
+
+**Checkmark-Listen:**
+```markdown
+**Was Sie erreicht haben:**
+
+- ✅ 20-25 Namen merken (statt 3-5)
+- ✅ Freie Präsentationen halten (statt Notizen ablesen)
+- ✅ 10+ Palaces gebaut und aktiv genutzt
+- ✅ Real-Time Encoding in Meetings
+```
+
+**Nummerierte Listen:**
+```markdown
+**Ihre nächsten Schritte:**
+
+1. Schritt 1: Beschreibung
+2. Schritt 2: Beschreibung
+3. Schritt 3: Beschreibung
+```
+
+**Nested Listen:**
+```markdown
+**Maintenance-Strategie:**
+
+- **Wöchentlich:**
+  - Nutzen Sie Palaces für Arbeit
+  - Review wichtiger Palaces (5 Min)
+- **Monatlich:**
+  - Bauen Sie neue Palaces
+  - Lernen Sie etwas Neues
+```
+
+#### ❌ FALSCH: Inline-Checkmarks
+
+```markdown
+✅ 20-25 Namen merken ✅ Freie Präsentationen ✅ 10+ Palaces ✅ Real-Time Encoding
+```
+
+**Problem:** Ohne Markdown-Listenformat (`-` oder `1.`) werden Checkmarks inline dargestellt.
+
+#### 🎯 Formatierungs-Regeln (IMMER befolgen)
+
+1. **Leerzeile VOR jeder Liste:** IMMER eine leere Zeile vor `- ` oder `1. `
+2. **Leerzeile NACH jeder Liste:** IMMER eine leere Zeile nach der letzten Listenelement
+3. **Checkmarks als Listenpunkte:** `- ✅ Text` NIEMALS `✅ Text ✅ Text`
+4. **Konsistente Syntax:** Entweder `-` ODER `*` für Bulletpoints (bevorzugt: `-`)
+5. **Einrückung bei Nested Listen:** 2 Leerzeichen pro Ebene
+
+#### 📋 Formatierungs-Checkliste
+
+**Vor dem Schreiben jeder Liste:**
+- [ ] Habe ich eine Leerzeile VOR der Liste eingefügt?
+- [ ] Nutze ich Markdown-Syntax (`- ` oder `1. `)?
+- [ ] Sind alle Checkmarks als Listenpunkte formatiert (`- ✅`)?
+- [ ] Habe ich eine Leerzeile NACH der Liste eingefügt?
+- [ ] Sind Nested Listen korrekt eingerückt (2 Leerzeichen)?
+
+#### 💡 Warum ist das wichtig?
+
+**Ohne korrekte Formatierung:**
+- Listen werden in einer Zeile dargestellt (unleserlich)
+- Markdown-Renderer ignorieren Formatierung
+- Lesbarkeit drastisch reduziert
+- Professioneller Eindruck geht verloren
+
+**Mit korrekter Formatierung:**
+- Übersichtliche, vertikale Darstellung
+- Klare Struktur erkennbar
+- Einfaches Scannen möglich
+- Professionelles Layout
+
+---
+
 ## 🔗 Verwandte Ressourcen
 
 - **readability-standards.md** - Detaillierte Readability-Metriken
