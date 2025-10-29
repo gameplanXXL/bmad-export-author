@@ -85,6 +85,7 @@ After installation, activate agents using slash commands with the configured pre
 
 ```bash
 /BMad:agents:book-strategist       # Create book strategy and planning
+/BMad:agents:researcher            # Gather and organize source materials
 /BMad:agents:learning-architect    # Design your book's learning framework
 /BMad:agents:book-author           # Write book content following specifications
 /BMad:agents:lector                # Review and provide quality feedback
@@ -119,21 +120,25 @@ The BMAD Expert Author workflow follows a structured process similar to software
 1. Book Strategist → Book Blueprint Document (BBD)
    Define target reader, transformation, unique approach, market positioning
 
-2. Learning Architect → Learning Framework
+2. Researcher → Source Materials Inventory
+   Gather and organize all author materials, references, stories, and resources
+
+3. Learning Architect → Learning Framework
    Design progressive skill building, learning outcomes, exercise strategy
 
-3. Content Structurer → Chapter Outlines
+4. Content Structurer → Chapter Outlines
    Create detailed structure and chapter specifications
 
-4. Book Author → Content Writing
+5. Book Author → Content Writing
    Write chapters based on specifications
 
-5. Lector → Quality Review
+6. Lector → Quality Review
    Comprehensive review and feedback cycle
 ```
 
 ### Supporting Agents
 
+- **Researcher** - Gather and organize all source materials (NEW - runs after Book Strategist)
 - **Exercise Designer** - Create practical exercises and worksheets
 - **Case Study Curator** - Develop compelling examples and success stories
 - **Skill Analyzer** - Break down complex skills into teachable components

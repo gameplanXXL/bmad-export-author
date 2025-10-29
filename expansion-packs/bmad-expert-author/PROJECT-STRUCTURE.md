@@ -9,8 +9,32 @@ Wenn Sie mit den Agenten arbeiten, wird folgende Struktur in Ihrem Projekt-Root 
 ```
 your-book-project/
 ├── book-blueprint.yaml              # Strategisches Fundament (book-strategist)
+├── source-materials-inventory.yaml  # Quellen-Katalog (researcher)
 ├── learning-framework.yaml          # Instruktionsdesign (learning-architect)
 ├── book-structure.yaml              # Gesamtstruktur (content-structurer)
+│
+├── source-materials/                # Gesammelte Quellen & Ressourcen
+│   ├── author-content/
+│   │   ├── blog-posts/
+│   │   ├── presentations/
+│   │   ├── courses/
+│   │   └── videos/
+│   ├── references/
+│   │   ├── books/
+│   │   ├── studies/
+│   │   └── articles/
+│   ├── stories/
+│   │   ├── personal-journey/
+│   │   ├── client-cases/
+│   │   └── examples/
+│   ├── existing-exercises/
+│   │   ├── worksheets/
+│   │   ├── templates/
+│   │   └── tools/
+│   └── media/
+│       ├── images/
+│       ├── diagrams/
+│       └── videos/
 │
 ├── outlines/                        # Kapitel-Spezifikationen
 │   ├── chapter-01-outline.yaml
@@ -78,7 +102,22 @@ your-book-project/
 **Wann erstellt:** Zu Beginn des Projekts (erster Schritt)
 **Format:** YAML
 
-#### 2. `learning-framework.yaml`
+#### 2. `source-materials-inventory.yaml`
+**Erstellt von:** researcher (Dr. Lena Kowalski)
+**Zweck:** Umfassender Katalog aller Quellen und Ressourcen
+**Inhalt:**
+- Autor's existierende Inhalte (Blogposts, Präsentationen, Kurse)
+- Persönliche Geschichten und Fallbeispiele
+- Referenzmaterialien (Studien, Bücher, Daten)
+- Existierende Übungen und Templates
+- Domain Knowledge (Konzepte, FAQs, Misconceptions)
+- Gap-Analyse (was fehlt und benötigt wird)
+- Mapping zu Kapiteln
+
+**Wann erstellt:** Nach dem Book Blueprint (zweiter Schritt)
+**Format:** YAML
+
+#### 3. `learning-framework.yaml`
 **Erstellt von:** learning-architect
 **Zweck:** Instruktionsdesign-Blueprint für das Buch
 **Inhalt:**
@@ -103,6 +142,61 @@ your-book-project/
 
 **Wann erstellt:** Nach dem Learning Framework
 **Format:** YAML
+
+### `/source-materials/` - Gesammelte Quellen & Ressourcen
+
+**Erstellt von:** researcher
+**Dateien:** Organisierte Sammlung aller Autor-Materialien
+
+**Struktur:**
+```
+source-materials/
+├── author-content/          # Vom Autor bereits erstellte Inhalte
+│   ├── blog-posts/         # Artikel, Blogbeiträge
+│   ├── presentations/      # Präsentationen, Slide Decks
+│   ├── courses/            # Kursmaterialien, Curricula
+│   └── videos/             # Video/Audio Content, Transcripts
+├── references/              # Referenzmaterialien
+│   ├── books/              # Bücher, Publikationen
+│   ├── studies/            # Studien, Research Papers
+│   └── articles/           # Artikel, Fachbeiträge
+├── stories/                 # Geschichten und Beispiele
+│   ├── personal-journey/   # Persönliche Geschichte des Autors
+│   ├── client-cases/       # Kunden-Erfolgsgeschichten
+│   └── examples/           # Beispiele und Szenarien
+├── existing-exercises/      # Bereits vorhandene Übungen
+│   ├── worksheets/         # Arbeitsblätter
+│   ├── templates/          # Vorlagen, Frameworks
+│   └── tools/              # Tools, Calculators
+└── media/                   # Medien-Assets
+    ├── images/             # Bilder, Photos
+    ├── diagrams/           # Diagramme, Illustrationen
+    └── videos/             # Video-Materialien
+```
+
+**Zweck:**
+- Zentrale Sammlung aller Quellmaterialien
+- Vermeidung von Duplikation bestehender Inhalte
+- Schneller Zugriff für alle Content-Creator Agents
+- Basis für Content-Erstellung
+
+**Beispiel:**
+```
+source-materials/
+├── author-content/
+│   ├── blog-posts/
+│   │   ├── 2023-05-budgeting-basics.md
+│   │   └── 2023-08-investment-strategy.md
+│   └── presentations/
+│       └── financial-freedom-workshop-2023.pdf
+├── references/
+│   └── studies/
+│       └── behavioral-finance-research.pdf
+└── stories/
+    └── client-cases/
+        ├── maria-debt-freedom-story.md
+        └── tom-investment-journey.md
+```
 
 ### `/outlines/` - Kapitel-Spezifikationen
 
@@ -283,6 +377,7 @@ resources/case-studies/
 ### Phase 1: Strategie & Planung
 ```
 book-strategist → book-blueprint.yaml
+researcher → source-materials-inventory.yaml + source-materials/*
 learning-architect → learning-framework.yaml
 content-structurer → book-structure.yaml
 content-structurer → outlines/chapter-*.yaml

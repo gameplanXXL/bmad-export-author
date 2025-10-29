@@ -1,10 +1,14 @@
-version: 4.44.1
+version: 1.0.0
 installed_at: '2025-10-28T23:32:32.195Z'
 install_type: full
 agent: null
 ides_setup:
   - claude-code
-expansion_packs: []
+expansion_packs:
+  - id: bmad-expert-author
+    name: BMAD Expert Author
+    version: 1.0.0
+    installed_at: '2025-10-29T07:47:41.000Z'
 files:
   - path: .bmad-core/working-in-the-brownfield.md
     hash: 07cc8eb6fc664bb8

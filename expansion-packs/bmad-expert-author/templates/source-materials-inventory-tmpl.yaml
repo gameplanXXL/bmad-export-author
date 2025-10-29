@@ -1,0 +1,570 @@
+# Source Materials Inventory
+# Comprehensive catalog of all source materials for book development
+# Created by: Researcher agent
+# Purpose: Organize and make discoverable all resources that inform book content
+
+project_info:
+  book_title: "[From BBD]"
+  created_by: "Researcher - Dr. Lena Kowalski"
+  created_date: "[Date]"
+  version: "1.0"
+  last_updated: "[Date]"
+  based_on_bbd_version: "[BBD version number]"
+
+# EXECUTIVE SUMMARY
+inventory_summary:
+  total_resources_collected: "[Number]"
+  resources_by_type:
+    blog_posts: "[Count]"
+    presentations: "[Count]"
+    courses: "[Count]"
+    videos: "[Count]"
+    books_articles: "[Count]"
+    studies_research: "[Count]"
+    stories_cases: "[Count]"
+    exercises_tools: "[Count]"
+    media_assets: "[Count]"
+
+  coverage_assessment:
+    well_covered_topics:
+      - "[Topic with abundant resources]"
+      - "[Topic with abundant resources]"
+
+    moderately_covered_topics:
+      - "[Topic with some resources]"
+      - "[Topic with some resources]"
+
+    gaps_critical:
+      - "[Topic lacking resources - needs attention]"
+      - "[Topic lacking resources - needs attention]"
+
+  key_strengths:
+    - "[e.g., Rich collection of real client case studies]"
+    - "[e.g., Well-documented research supporting methodology]"
+
+  key_gaps:
+    - "[e.g., Need more beginner-friendly examples]"
+    - "[e.g., Missing exercises for advanced concepts]"
+
+# SECTION 1: AUTHOR'S EXISTING CONTENT
+
+author_content:
+  blog_posts_articles:
+    - resource_id: "blog-001"
+      title: "[Blog post title]"
+      url: "[URL or file path]"
+      published_date: "[Date]"
+      word_count: "[Approximate]"
+      topics_covered:
+        - "[Topic 1]"
+        - "[Topic 2]"
+      relevance_rating: "[High/Medium/Low]"
+      quality_assessment: "[Ready to use/Needs update/Needs adaptation]"
+      maps_to_chapters:
+        - chapter: "[Chapter number]"
+          usage: "[How it will be used]"
+      usage_notes: "[How this can be adapted or used]"
+      permissions: "[Published/Unpublished/Needs permission]"
+
+    - resource_id: "blog-002"
+      title: "[Another blog post]"
+      # ... (repeat structure)
+
+  presentations_talks:
+    - resource_id: "pres-001"
+      title: "[Presentation title]"
+      format: "[PowerPoint/Keynote/PDF/Video]"
+      location: "[File path or URL]"
+      presented_date: "[Date]"
+      audience: "[Who it was presented to]"
+      duration: "[Minutes]"
+      key_concepts:
+        - "[Key point 1]"
+        - "[Key point 2]"
+      relevance_rating: "[High/Medium/Low]"
+      quality_assessment: "[Assessment]"
+      maps_to_chapters:
+        - chapter: "[Chapter number]"
+          usage: "[Slides adaptable for examples/diagrams]"
+      reusable_elements:
+        - "[e.g., Excellent diagram on slide 12]"
+        - "[e.g., Framework explanation slides 5-8]"
+      usage_notes: "[Notes]"
+
+    - resource_id: "pres-002"
+      # ... (repeat structure)
+
+  course_materials:
+    - resource_id: "course-001"
+      title: "[Course name]"
+      format: "[Online/In-person/Hybrid]"
+      location: "[File paths or platform]"
+      taught_dates: "[When taught]"
+      duration: "[Total hours]"
+      materials_included:
+        - "[e.g., Course outline]"
+        - "[e.g., Student workbook]"
+        - "[e.g., Exercise sheets]"
+        - "[e.g., Assessment rubrics]"
+      topics_covered:
+        - "[Topic 1]"
+        - "[Topic 2]"
+      relevance_rating: "[High/Medium/Low]"
+      quality_assessment: "[Assessment]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Usage notes]"
+      student_outcomes: "[What results did students achieve?]"
+      feedback_received: "[Key learnings from teaching this]"
+      usage_notes: "[Notes]"
+
+  previous_publications:
+    - resource_id: "pub-001"
+      title: "[Book/Paper/Report title]"
+      type: "[Book/Academic paper/White paper/Case study]"
+      published_date: "[Date]"
+      publisher: "[Publisher if applicable]"
+      url_or_location: "[URL or file path]"
+      length: "[Pages/Words]"
+      abstract_summary: "[Brief summary of content]"
+      relevance_rating: "[High/Medium/Low]"
+      reusable_sections:
+        - section: "[Which section]"
+          usage: "[How to reuse]"
+      copyright_status: "[Own full rights/Need permission/Public domain]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Usage notes]"
+      usage_notes: "[Notes]"
+
+  social_media_content:
+    - resource_id: "social-001"
+      platform: "[Twitter/LinkedIn/Facebook/Instagram]"
+      content_type: "[Thread/Post/Article]"
+      url: "[URL]"
+      posted_date: "[Date]"
+      engagement: "[Likes/Shares if notable]"
+      topic: "[What it's about]"
+      key_insight: "[Main point or insight]"
+      relevance_rating: "[High/Medium/Low]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Can be expanded into section]"
+      usage_notes: "[Notes]"
+
+  video_audio_content:
+    - resource_id: "video-001"
+      title: "[Video/Podcast title]"
+      platform: "[YouTube/Podcast/Webinar platform]"
+      url: "[URL]"
+      published_date: "[Date]"
+      duration: "[Minutes]"
+      format: "[Video/Audio/Screen recording]"
+      transcript_available: "[Yes/No/Partial]"
+      transcript_location: "[Path if available]"
+      topics_covered:
+        - "[Topic 1]"
+        - "[Topic 2]"
+      relevance_rating: "[High/Medium/Low]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Key quotes, explanations to adapt]"
+      reusable_elements:
+        - timestamp: "[XX:XX]"
+          content: "[What's valuable here]"
+      usage_notes: "[Notes]"
+
+  unpublished_internal:
+    - resource_id: "internal-001"
+      title: "[Document title]"
+      type: "[Notes/Journal/Internal doc/Client worksheet]"
+      location: "[File path]"
+      created_date: "[Date if known]"
+      content_description: "[What it contains]"
+      relevance_rating: "[High/Medium/Low]"
+      quality_assessment: "[Rough notes/Polished/Needs work]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Usage notes]"
+      usage_notes: "[Notes]"
+
+# SECTION 2: PERSONAL STORIES & CASE EXAMPLES
+
+stories_and_cases:
+  author_personal_journey:
+    - story_id: "story-author-001"
+      title: "[Short title for the story]"
+      theme: "[What lesson or principle it illustrates]"
+      summary: |
+        [Brief summary of the story - key events, challenge, resolution]
+
+      story_elements:
+        context: "[Setting, situation]"
+        challenge: "[Problem faced]"
+        approach: "[What was done]"
+        outcome: "[Result]"
+        lesson: "[Key takeaway]"
+
+      emotional_arc: "[How author felt - makes story relatable]"
+      relevance_rating: "[High/Medium/Low]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Opening story/Example/Inspiration]"
+      development_needed: "[Fully developed/Needs detail/Needs writing]"
+      usage_notes: "[Notes]"
+
+  client_success_stories:
+    - story_id: "story-client-001"
+      anonymized_name: "[Changed name for privacy]"
+      real_or_composite: "[Single real person/Composite of multiple]"
+      theme: "[What this story demonstrates]"
+      summary: |
+        [Brief summary]
+
+      transformation_journey:
+        before_state: "[Where they started]"
+        challenges_faced: "[Obstacles encountered]"
+        strategies_applied: "[What they did - linked to book methods]"
+        after_state: "[Where they ended up]"
+        results_achieved: "[Specific outcomes]"
+
+      relevance_rating: "[High/Medium/Low]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Case study/Example/Motivation]"
+      permission_status: "[Permission obtained/Needs permission/Fully anonymized]"
+      development_needed: "[Fully developed/Needs detail/Needs writing]"
+      usage_notes: "[Notes]"
+
+  common_scenarios:
+    - scenario_id: "scenario-001"
+      title: "[Scenario name]"
+      frequency: "[How often this situation occurs]"
+      situation_description: |
+        [Description of the common situation]
+
+      typical_challenges: "[What goes wrong]"
+      recommended_approach: "[How to handle it - your method]"
+      common_mistakes: "[What people usually do wrong]"
+      relevance_rating: "[High/Medium/Low]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Example/Warning/Illustration]"
+      usage_notes: "[Notes]"
+
+  memorable_examples:
+    - example_id: "example-001"
+      title: "[Example name]"
+      concept_illustrated: "[What this example demonstrates]"
+      description: |
+        [The example itself]
+
+      why_effective: "[Why this example works so well]"
+      relevance_rating: "[High/Medium/Low]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Usage notes]"
+      usage_notes: "[Notes]"
+
+# SECTION 3: REFERENCE MATERIALS
+
+reference_materials:
+  academic_studies:
+    - reference_id: "study-001"
+      title: "[Study title]"
+      authors: "[Author names]"
+      publication: "[Journal/Conference]"
+      year: "[Year]"
+      url_or_doi: "[URL or DOI]"
+      key_findings: |
+        [Relevant findings from the study]
+
+      relevance_to_book: "[How this supports your approach]"
+      credibility_rating: "[High/Medium/Low - based on source, methodology]"
+      citation_ready: "[Yes/No - do you have full citation info?]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Supporting evidence/Citation/Background]"
+      usage_notes: "[Notes]"
+
+  books_referenced:
+    - reference_id: "book-001"
+      title: "[Book title]"
+      author: "[Author name]"
+      year: "[Publication year]"
+      publisher: "[Publisher]"
+      isbn: "[ISBN if available]"
+      relationship_to_your_book: "[Builds on/Differs from/Complements/Competes with]"
+      key_concepts_referenced: |
+        [What ideas you reference from this book]
+
+      relevance_rating: "[High/Medium/Low]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Reference/Build upon/Contrast with]"
+      usage_notes: "[Notes]"
+
+  expert_perspectives:
+    - reference_id: "expert-001"
+      expert_name: "[Name]"
+      credentials: "[Title, affiliation]"
+      perspective_or_quote: |
+        [Their view or quote]
+
+      source: "[Where this comes from - interview/publication/conversation]"
+      agreement_level: "[Align with/Build upon/Respectfully disagree]"
+      relevance_rating: "[High/Medium/Low]"
+      permission_needed: "[Yes/No - for direct quotes]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Expert validation/Alternative view/Quote]"
+      usage_notes: "[Notes]"
+
+  data_and_statistics:
+    - reference_id: "data-001"
+      title: "[Data source name]"
+      source: "[Organization/Study that produced it]"
+      year: "[Year]"
+      url: "[URL if available]"
+      data_points: |
+        [Specific statistics or data relevant to book]
+
+      credibility_rating: "[High/Medium/Low]"
+      recency: "[Current/Dated - may need update]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Supporting stat/Context/Evidence]"
+      usage_notes: "[Notes]"
+
+  tools_and_resources:
+    - reference_id: "tool-001"
+      name: "[Tool/Resource name]"
+      type: "[Software/App/Framework/Template/Organization]"
+      url: "[URL if applicable]"
+      description: "[What it is]"
+      relevance_to_book: "[How readers might use it]"
+      affiliation: "[Any relationship - partner/competitor/neutral]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Recommended tool/Example/Resource]"
+      usage_notes: "[Notes]"
+
+# SECTION 4: EXISTING EXERCISES & PRACTICAL MATERIALS
+
+existing_exercises:
+  worksheets_exercises:
+    - resource_id: "exercise-001"
+      title: "[Exercise name]"
+      format: "[PDF/Doc/Spreadsheet]"
+      location: "[File path]"
+      original_context: "[Where this was used - course/workshop/client]"
+      description: |
+        [What the exercise involves]
+
+      time_required: "[Minutes to complete]"
+      difficulty: "[Beginner/Intermediate/Advanced]"
+      materials_needed: "[What user needs to complete it]"
+      learning_outcome: "[What this exercise teaches]"
+      quality_assessment: "[Ready to use/Needs update/Needs redesign]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Direct use/Adapt/Inspiration]"
+      usage_notes: "[Notes]"
+
+  templates_frameworks:
+    - resource_id: "template-001"
+      title: "[Template name]"
+      format: "[Format]"
+      location: "[File path]"
+      purpose: "[What it's used for]"
+      description: |
+        [What the template contains]
+
+      quality_assessment: "[Ready to use/Needs update/Needs redesign]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Usage notes]"
+      usage_notes: "[Notes]"
+
+  visual_resources:
+    - resource_id: "visual-001"
+      title: "[Diagram/Image name]"
+      type: "[Diagram/Chart/Infographic/Photo/Illustration]"
+      format: "[Format]"
+      location: "[File path]"
+      depicts: "[What it shows]"
+      quality_assessment: "[Professional/Usable/Needs redesign]"
+      copyright_status: "[Own/Licensed/Need permission/Public domain]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Usage notes]"
+      usage_notes: "[Notes]"
+
+  tools_calculators:
+    - resource_id: "tool-001"
+      title: "[Tool name]"
+      type: "[Spreadsheet/Calculator/Assessment/Questionnaire]"
+      format: "[Format]"
+      location: "[File path]"
+      purpose: "[What it calculates or assesses]"
+      quality_assessment: "[Ready to use/Needs update/Needs redesign]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Usage notes]"
+      usage_notes: "[Notes]"
+
+# SECTION 5: DOMAIN KNOWLEDGE FOUNDATION
+
+domain_knowledge:
+  core_concepts:
+    - concept_id: "concept-001"
+      concept_name: "[Concept name/term]"
+      definition: "[Clear definition]"
+      why_important: "[Why readers must understand this]"
+      common_confusion: "[What people get wrong about this]"
+      analogies_metaphors: "[Helpful ways to explain this]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Introduction/Detailed explanation]"
+      source_materials: "[References to where you've explained this before]"
+
+  common_misconceptions:
+    - misconception_id: "myth-001"
+      misconception: "[What people wrongly believe]"
+      why_common: "[Why this misconception exists]"
+      truth: "[What's actually true]"
+      correction_approach: "[How to correct this belief]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Myth-busting section]"
+
+  frequently_asked_questions:
+    - faq_id: "faq-001"
+      question: "[The question people ask]"
+      frequency: "[How often asked]"
+      underlying_concern: "[What they're really worried about]"
+      answer: "[Your answer]"
+      maps_to_chapters:
+        - chapter: "[Chapter]"
+          usage: "[Address directly/Sidebar/FAQ section]"
+
+# SECTION 6: GAP ANALYSIS
+
+gap_analysis:
+  content_gaps:
+    - gap_id: "gap-001"
+      topic: "[What's missing]"
+      gap_type: "[Source material/Story/Example/Exercise/Research]"
+      severity: "[Critical/Important/Nice-to-have]"
+      impact_if_not_addressed: "[What happens if we don't fill this gap]"
+      recommendation: "[How to address this gap]"
+      assigned_to: "[Which agent should create this]"
+      priority: "[1-5 with 1 being highest]"
+
+  research_needed:
+    - research_id: "research-001"
+      topic: "[What needs to be researched]"
+      reason: "[Why this research is needed]"
+      depth_required: "[Deep/Moderate/Light research]"
+      potential_sources: "[Where to look]"
+      priority: "[1-5]"
+
+  stories_needed:
+    - story_need_id: "story-need-001"
+      topic_or_concept: "[What needs illustration]"
+      story_type_needed: "[Personal/Client/Scenario/Example]"
+      why_needed: "[What this story would accomplish]"
+      potential_sources: "[Where to find or develop this]"
+      priority: "[1-5]"
+
+  exercises_needed:
+    - exercise_need_id: "exercise-need-001"
+      skill_or_concept: "[What needs practice exercise]"
+      exercise_type_needed: "[Worksheet/Activity/Reflection/Assessment]"
+      why_needed: "[Learning gap this addresses]"
+      priority: "[1-5]"
+
+# SECTION 7: QUICK REFERENCE GUIDES
+
+quick_reference:
+  resources_by_chapter:
+    chapter_1:
+      title: "[Chapter 1 title]"
+      available_resources:
+        - resource_id: "[ID]"
+          type: "[Type]"
+          title: "[Title]"
+          relevance: "[High/Med/Low]"
+
+      gaps:
+        - "[Gap description]"
+
+    chapter_2:
+      # ... repeat for each chapter
+
+  resources_by_type:
+    blog_posts:
+      - resource_id: "[ID]"
+        title: "[Title]"
+        topics: "[Topics]"
+
+    presentations:
+      # ... organize all resources by type
+
+  high_priority_gaps:
+    - gap_id: "[ID]"
+      description: "[What's missing]"
+      why_critical: "[Why this must be addressed]"
+      recommendation: "[Action to take]"
+
+# SECTION 8: USAGE GUIDANCE
+
+usage_guidelines:
+  for_learning_architect: |
+    [Guidance on how Learning Architect should use this inventory]
+    - What materials inform instructional design
+    - What exercises exist vs. need to be created
+    - What gaps impact learning progression
+
+  for_content_structurer: |
+    [Guidance on how Content Structurer should use this inventory]
+    - Which chapters have rich source materials
+    - Which need more development
+    - How to organize content based on available resources
+
+  for_book_author: |
+    [Guidance on how Book Author should use this inventory]
+    - How to find resources for each chapter
+    - What can be adapted vs. written from scratch
+    - Where to find stories and examples
+
+  for_exercise_designer: |
+    [Guidance on how Exercise Designer should use this inventory]
+    - Existing exercises that can be adapted
+    - Gaps where new exercises needed
+    - Materials to draw from
+
+  for_case_study_curator: |
+    [Guidance on how Case Study Curator should use this inventory]
+    - Available stories and case examples
+    - Which need development
+    - Themes and patterns to explore
+
+# METADATA & MAINTENANCE
+
+inventory_metadata:
+  last_updated: "[Date]"
+  updated_by: "[Name]"
+  version_history:
+    - version: "1.0"
+      date: "[Date]"
+      changes: "Initial inventory creation"
+
+  maintenance_notes: |
+    This inventory should be updated when:
+    - New source materials are discovered
+    - Resources are used and assessed
+    - Gaps are filled
+    - Quality assessments change
+
+  contact_for_updates: "[Who maintains this document]"

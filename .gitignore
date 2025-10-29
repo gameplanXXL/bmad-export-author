@@ -12,3 +12,6 @@ node_modules/
 
 # Claude Code temporäre Dateien (falls vorhanden)
 .claude/
+
+# BMAD Expert Author expansion pack installation
+.bmad-expert-author/
