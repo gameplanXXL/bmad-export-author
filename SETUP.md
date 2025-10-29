@@ -302,6 +302,68 @@ You should now have access to all BMAD Expert Author agents via slash commands l
 
 ---
 
+## Recommended: Install a Markdown Reader
+
+This project extensively uses **Markdown files (.md)** for:
+- Documentation (README.md, CLAUDE.md, SETUP.md)
+- Agent definitions (all agent files)
+- Templates and workflows
+- Project guides and references
+
+While you can read Markdown files in any text editor, a dedicated Markdown reader provides:
+- **Live preview** with proper formatting
+- **Table of contents** navigation
+- **Syntax highlighting** for code blocks
+- **Better readability** of complex documentation
+
+### Recommended Free Markdown Readers
+
+#### macOS
+- **[Marked 2](https://marked2app.com/)** - Professional Markdown preview (paid, but has free trial)
+- **[MacDown](https://macdown.uranusjr.com/)** - Free, open-source editor with live preview
+- **[Typora](https://typora.io/)** - Clean WYSIWYG editor (free for beta versions)
+- **[Visual Studio Code](https://code.visualstudio.com/)** - Free code editor with built-in Markdown preview (Cmd+Shift+V)
+
+#### Windows
+- **[Typora](https://typora.io/)** - Clean WYSIWYG editor (free for beta versions)
+- **[MarkText](https://www.marktext.cc/)** - Free, open-source, simple and elegant
+- **[Visual Studio Code](https://code.visualstudio.com/)** - Free code editor with built-in Markdown preview (Ctrl+Shift+V)
+- **[Obsidian](https://obsidian.md/)** - Free for personal use, great for linked documents
+
+#### Linux
+- **[Typora](https://typora.io/)** - Available for Linux (free for beta versions)
+- **[MarkText](https://www.marktext.cc/)** - Free, open-source, works great on Linux
+- **[Visual Studio Code](https://code.visualstudio.com/)** - Free, cross-platform with Markdown preview
+- **[ReText](https://github.com/retext-project/retext)** - Lightweight, native Linux Markdown editor
+  ```bash
+  # Install on Debian/Ubuntu
+  sudo apt install retext
+  ```
+- **[Ghostwriter](https://ghostwriter.kde.org/)** - Distraction-free Markdown editor
+  ```bash
+  # Install on Debian/Ubuntu
+  sudo apt install ghostwriter
+  ```
+
+### Quick Tip: VS Code Setup
+
+If you're already using Visual Studio Code (recommended for development), you can:
+
+1. **View Markdown Preview:** Open any .md file and press:
+   - **macOS:** `Cmd + Shift + V`
+   - **Windows/Linux:** `Ctrl + Shift + V`
+
+2. **Side-by-Side View:** Press:
+   - **macOS:** `Cmd + K` then `V`
+   - **Windows/Linux:** `Ctrl + K` then `V`
+
+3. **Install Markdown Extensions (Optional):**
+   - "Markdown All in One" - Enhanced Markdown features
+   - "Markdown Preview Enhanced" - Advanced preview with diagrams
+   - "markdownlint" - Linting for consistent formatting
+
+---
+
 ## Troubleshooting
 
 ### Claude Code Command Not Found
