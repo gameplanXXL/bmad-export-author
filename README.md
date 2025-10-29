@@ -60,9 +60,9 @@ Once an agent is activated, use their internal commands (prefixed with `*`):
 
 ```bash
 *help                    # Show all available commands for the active agent
-*create-book-blueprint   # Create a comprehensive book plan (book-strategist)
-*write-chapter 1         # Write chapter 1 (book-author)
-*review-chapter          # Review chapter content (lector)
+*ea-create-book-blueprint   # Create a comprehensive book plan (book-strategist)
+*ea-write-chapter 1         # Write chapter 1 (book-author)
+*ea-review-chapter          # Review chapter content (lector)
 *exit                    # Exit agent mode
 ```
 
