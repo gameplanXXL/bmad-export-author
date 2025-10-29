@@ -103,7 +103,7 @@ your-book-project/
 **Format:** YAML
 
 #### 2. `source-materials-inventory.yaml`
-**Erstellt von:** researcher (Dr. Lena Kowalski)
+**Erstellt von:** researcher (Regina)
 **Zweck:** Umfassender Katalog aller Quellen und Ressourcen
 **Inhalt:**
 - Autor's existierende Inhalte (Blogposts, Präsentationen, Kurse)
