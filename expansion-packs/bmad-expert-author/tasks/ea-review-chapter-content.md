@@ -3,7 +3,8 @@
 **Agent**: Lector
 **Input**: Completed chapter draft from Book Author
 **Output**: Review Report with detailed feedback
-**Template**: review-report-tmpl.yaml
+**Template**: review-report-tmpl.md
+**Output Path**: `reviews/chapter-{NN}-review.md`
 **Elicit**: false (systematic review process)
 
 ## Purpose
@@ -251,7 +252,7 @@ Based on review, determine:
 5. Approval decision
 6. Next steps
 
-Save as: `review-report-chapter-[number]-[date].yaml`
+Save as: `reviews/chapter-{NN}-review.md` (where NN is the zero-padded chapter number)
 
 ## Success Criteria for Review
 

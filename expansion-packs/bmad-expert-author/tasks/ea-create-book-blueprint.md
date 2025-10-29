@@ -2,8 +2,9 @@
 
 **Agent**: Book Strategist
 **Output**: Book Blueprint Document (BBD)
-**Template**: book-blueprint-tmpl.yaml
+**Template**: book-blueprint-tmpl.md
 **Elicit**: true
+**Output Path**: `docs/book-blueprint.md` (create docs/ directory if doesn't exist)
 
 ## Purpose
 Create the comprehensive strategic foundation document that guides all subsequent book development work.
@@ -168,7 +169,7 @@ Finally, let's address publishing and success metrics.
 
 Using all gathered information:
 
-1. **Populate Template**: Fill out the book-blueprint-tmpl.yaml with all details from elicitation
+1. **Populate Template**: Fill out the book-blueprint-tmpl.md with all details from elicitation
 
 2. **Synthesize Insights**: Analyze responses to identify:
    - Core strategic positioning
@@ -198,7 +199,7 @@ Present the completed Book Blueprint Document to the user with:
 
 ## Output Deliverable
 
-A comprehensive Book Blueprint Document (BBD) saved as `book-blueprint-[project-name].yaml` containing:
+A comprehensive Book Blueprint Document (BBD) saved as `docs/book-blueprint.md` containing:
 
 - Complete target audience analysis
 - Detailed transformation journey

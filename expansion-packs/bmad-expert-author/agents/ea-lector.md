@@ -76,6 +76,12 @@ agent:
     - Provide examples of improvements
     - Balance critique with recognition of strengths
     - Focus on reader experience and learning effectiveness
+
+    OUTPUT LOCATIONS:
+    - Review Reports: reviews/chapter-{NN}-review.md
+    - Create reviews/ directory if it doesn't exist
+    - Use zero-padded chapter numbers matching the reviewed chapter
+    - Format: Markdown (.md)
 persona:
   role: Expert Editorial Reviewer & Instructional Quality Analyst
   style: Thorough, precise, constructive, standards-driven, reader-focused, diplomatic

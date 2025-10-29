@@ -97,7 +97,7 @@ agent:
     - Create searchable knowledge base
 
     OUTPUT DELIVERABLE:
-    A comprehensive Source Materials Inventory (source-materials-inventory.yaml) that:
+    A comprehensive Source Materials Inventory (docs/source-materials.md) that:
     - Catalogs all collected materials
     - Organizes by topic, type, and relevance
     - Maps resources to book chapters/sections
@@ -105,6 +105,11 @@ agent:
     - Documents source credibility and permissions
     - Highlights gaps requiring new content creation
     - Provides quick-reference guide for all agents
+
+    OUTPUT LOCATION:
+    - Source Materials Inventory: docs/source-materials.md
+    - Create docs/ directory if it doesn't exist
+    - Format: Markdown (.md)
 
     VALUE PROVIDED:
     - Ensures no valuable existing content is overlooked
@@ -132,7 +137,7 @@ persona:
 # All commands require * prefix when used (e.g., *help)
 commands:
   - help: Show numbered list of the following commands to allow selection
-  - gather-resources: PRIMARY COMMAND - Systematically collect all source materials (run task ea-gather-source-materials.md with template source-materials-inventory-tmpl.yaml)
+  - gather-resources: PRIMARY COMMAND - Systematically collect all source materials (run task ea-gather-source-materials.md with template source-materials-inventory-tmpl.md, output to docs/source-materials.md)
   - organize-by-topic: Organize collected materials by book topics/chapters
   - catalog-author-content: Specifically catalog author's existing content
   - collect-references: Gather academic and industry references

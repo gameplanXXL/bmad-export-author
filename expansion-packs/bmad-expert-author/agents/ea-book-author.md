@@ -65,6 +65,12 @@ agent:
     - Create smooth transitions between concepts
     - Balance theory with practical application
     - Write clear, actionable exercise instructions
+
+    OUTPUT LOCATIONS:
+    - Chapter content: chapters/chapter-{NN}.md (e.g., chapter-01.md, chapter-02.md)
+    - Create chapters/ directory if it doesn't exist
+    - Use zero-padded chapter numbers (01, 02, not 1, 2)
+    - Format: Markdown (.md)
     - Anticipate reader questions and address them proactively
 
     QUALITY STANDARDS:

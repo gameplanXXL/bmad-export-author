@@ -1,8 +1,9 @@
 # Task: Gather Source Materials
 
 **Agent**: Researcher
-**Output**: Source Materials Inventory (source-materials-inventory.yaml)
-**Template**: source-materials-inventory-tmpl.yaml
+**Output**: Source Materials Inventory
+**Template**: source-materials-inventory-tmpl.md
+**Output Path**: `docs/source-materials.md`
 **Elicit**: true
 
 ## Purpose
@@ -339,7 +340,7 @@ Present completed inventory with:
 
 ## Output Deliverable
 
-A comprehensive Source Materials Inventory saved as `source-materials-inventory.yaml` containing:
+A comprehensive Source Materials Inventory saved as `docs/source-materials.md` containing:
 
 - Complete catalog of all source materials
 - Organized directory structure with actual files/links
