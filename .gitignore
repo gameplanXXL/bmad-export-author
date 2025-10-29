@@ -1,0 +1,14 @@
+# Generierte PDF-Dateien
+output/
+
+# Node.js / npm
+node_modules/
+
+# macOS spezifisch
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Claude Code temporäre Dateien (falls vorhanden)
+.claude/
