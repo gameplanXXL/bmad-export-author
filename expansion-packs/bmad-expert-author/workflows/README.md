@@ -161,6 +161,70 @@ Before writing begins, prepare the exercises and examples that will be integrate
 
 ---
 
+### Phase 5.5: Document Organization (Optional)
+**Agent: EA Document Sharder** 🔪
+
+**When to use:** When documents exceed 500 lines and become unwieldy for agents or manual editing
+
+**Purpose:** Split large documents into semantically coherent, modular files organized in subdirectories
+
+**Typical candidates:**
+- `docs/learning-framework.md` (>1000 lines)
+- `docs/content-structure.md` (>1000 lines)
+- `docs/book-blueprint.md` (>500 lines)
+- Any other large planning documents
+
+**Usage:**
+
+1. **Activate**: `/ea-shard`
+2. **Analyze first** (preview only):
+   - `*analyze docs/learning-framework.md` - See proposed structure without changes
+3. **Shard individual document**:
+   - `*shard docs/learning-framework.md` - Split with intelligent naming and navigation
+4. **Batch process all large files**:
+   - `*shard-all` - Process all docs/ files >500 lines
+
+**What happens:**
+- Agent analyzes document structure (headings, logical sections)
+- Proposes splitting strategy with meaningful filenames
+- Creates subdirectory (e.g., `docs/learning-framework/`)
+- Splits content into semantic modules (~150-250 lines each)
+- Generates master `README.md` with navigation and loading instructions
+- Adds module headers with cross-references
+- Deletes original file (Git preserves history)
+
+**Result structure:**
+```
+docs/
+├── learning-framework/
+│   ├── README.md                    # Master index & navigation
+│   ├── instructional-approach.md    # ~180 lines
+│   ├── learning-progression.md      # ~220 lines
+│   ├── outcomes-by-chapter.md       # ~420 lines
+│   ├── exercise-design.md           # ~180 lines
+│   └── assessments.md               # ~150 lines
+```
+
+**Benefits:**
+- ⚡ Faster loading for Claude Code agents
+- 🧭 Better navigation with master indexes
+- 📝 Easier maintenance of focused modules
+- 🎯 Agents load only needed sections
+
+**Important:**
+- Original files are deleted after sharding (Git history preserves them)
+- Recovery: `git checkout HEAD~1 -- docs/filename.md`
+- Semantic naming: Files have meaningful names (not `module-01.md`)
+- All content preserved during splitting
+
+**When to shard:**
+- After Phase 2 (Learning Architecture) if documents are large
+- After Phase 4 (Content Writing) if drafts are extensive
+- During Phase 5 (QA) if review documents become unwieldy
+- Anytime documents exceed 500 lines and impact workflow efficiency
+
+---
+
 ### Phase 6: Enhancement (Optional)
 **Agents: Clarity Editor + Workbook Developer**
 
@@ -225,13 +289,18 @@ Before writing begins, prepare the exercises and examples that will be integrate
 
 9. [Loop 7-8 until all chapters complete and approved]
 
-10. Clarity Editor → Enhanced Clarity (optional) ✓
+10. EA Document Sharder → Modular Document Structure (optional) 🔪
+    └─ Splits large documents (>500 lines) into semantic modules
+    └─ Use when: docs become unwieldy, performance issues, better organization needed
+    └─ Commands: *analyze, *shard {file}, *shard-all
+
+11. Clarity Editor → Enhanced Clarity (optional) ✓
     └─ Optimizes accessibility
 
-11. Workbook Developer → Companion Workbook (optional) ✓
+12. Workbook Developer → Companion Workbook (optional) ✓
     └─ Creates practice materials
 
-12. Publishing Strategist → Launch Plan ✓
+13. Publishing Strategist → Launch Plan ✓
     └─ Prepares for publication and marketing
 ```
 
