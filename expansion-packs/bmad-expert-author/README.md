@@ -84,18 +84,18 @@ The `.bmad-expert-author/` directory is the working installation, while `expansi
 After installation, activate agents using slash commands with the configured prefix:
 
 ```bash
-/BMad:agents:book-strategist       # Create book strategy and planning
-/BMad:agents:researcher            # Gather and organize source materials
-/BMad:agents:learning-architect    # Design your book's learning framework
-/BMad:agents:book-author           # Write book content following specifications
-/BMad:agents:lector                # Review and provide quality feedback
-/BMad:agents:skill-analyzer        # Break down skills into teachable steps
-/BMad:agents:exercise-designer     # Create practical exercises
-/BMad:agents:case-study-curator    # Develop examples and stories
-/BMad:agents:content-structurer    # Organize your material
-/BMad:agents:clarity-editor        # Ensure beginner-friendly explanations
-/BMad:agents:workbook-developer    # Create companion materials
-/BMad:agents:publishing-strategist # Plan your launch
+/BMad:agents:ea-book-strategist       # Create book strategy and planning
+/BMad:agents:ea-researcher            # Gather and organize source materials
+/BMad:agents:ea-learning-architect    # Design your book's learning framework
+/BMad:agents:ea-book-author           # Write book content following specifications
+/BMad:agents:ea-lector                # Review and provide quality feedback
+/BMad:agents:ea-skill-analyzer        # Break down skills into teachable steps
+/BMad:agents:ea-exercise-designer     # Create practical exercises
+/BMad:agents:ea-case-study-curator    # Develop examples and stories
+/BMad:agents:ea-content-structurer    # Organize your material
+/BMad:agents:ea-clarity-editor        # Ensure beginner-friendly explanations
+/BMad:agents:ea-workbook-developer    # Create companion materials
+/BMad:agents:ea-publishing-strategist # Plan your launch
 ```
 
 **Note**: The command prefix (e.g., `BMad:agents:`) is determined by your BMAD installation configuration. Check your `.claude/commands/` directory structure for the exact commands available in your environment.
