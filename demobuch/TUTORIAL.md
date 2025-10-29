@@ -1,86 +1,83 @@
-# Writing a Book with BMAD Expert Author - Complete Tutorial
+# Ein Buch schreiben mit BMAD Expert Author - Vollständiges Tutorial
 
-**Example Book:** "Memory Palace - In 4 Wochen zum Gedächtniskünstler"
-**Date:** October 2025
-**Tool:** Claude Code with BMAD Expert Author Expansion Pack
-
----
-
-## Table of Contents
-
-1. [Introduction](#introduction)
-2. [Prerequisites](#prerequisites)
-3. [Phase 1: Strategic Planning](#phase-1-strategic-planning)
-4. [Phase 2: Instructional Design](#phase-2-instructional-design)
-5. [Phase 3: Content Structure](#phase-3-content-structure)
-6. [Phase 4: Writing](#phase-4-writing)
-7. [Phase 5: Quality Assurance](#phase-5-quality-assurance)
-8. [Phase 6: Publication](#phase-6-publication)
-9. [Tips & Best Practices](#tips--best-practices)
+**Beispielbuch:** "Memory Palace - In 4 Wochen zum Gedächtniskünstler"
+**Datum:** Oktober 2025
+**Tool:** Claude Code mit BMAD Expert Author Expansion Pack
 
 ---
 
-## Introduction
+## Inhaltsverzeichnis
 
-This tutorial documents the complete process of writing an educational book using the **BMAD Expert Author Expansion Pack**. Follow these steps to create a transformational educational book that teaches practical skills to your readers.
-
-### What We'll Create
-
-By following this tutorial, you'll create a book similar to our example:
-- **Title:** "Memory Palace - In 4 Wochen zum Gedächtniskünstler"
-- **Target Audience:** Professionals who struggle with information overload
-- **Goal:** Teach readers to build and use a memory palace in 4 weeks
-- **Format:** 7 chapters with exercises, examples, and practical guidance
+1. [Einführung](#einführung)
+2. [Voraussetzungen](#voraussetzungen)
+3. [Phase 1: Strategische Planung](#phase-1-strategische-planung)
+4. [Phase 2: Instruktionsdesign](#phase-2-instruktionsdesign)
+5. [Phase 3: Content-Struktur](#phase-3-content-struktur)
+6. [Phase 4: Schreiben](#phase-4-schreiben)
+7. [Phase 5: Qualitätssicherung](#phase-5-qualitätssicherung)
+8. [Phase 6: Publikation](#phase-6-publikation)
+9. [Tipps & Best Practices](#tipps--best-practices)
 
 ---
 
-## Prerequisites
+## Einführung
 
-### 1. Installation
+Dieses Tutorial dokumentiert den kompletten Prozess, ein Bildungsbuch mit dem **BMAD Expert Author Expansion Pack** zu schreiben. Folge diesen Schritten, um ein transformatives Bildungsbuch zu erstellen, das deinen Lesern praktische Fähigkeiten vermittelt.
 
-Ensure the BMAD Expert Author Expansion Pack is installed:
+### Was wir erstellen werden
+
+Wenn du diesem Tutorial folgst, erstellst du ein Buch ähnlich unserem Beispiel:
+
+- **Titel:** "Memory Palace - In 4 Wochen zum Gedächtniskünstler"
+- **Zielgruppe:** Berufstätige, die unter Informationsüberflutung leiden
+- **Ziel:** Lesern beibringen, einen Memory Palace in 4 Wochen aufzubauen und zu nutzen
+- **Format:** 7 Kapitel mit Übungen, Beispielen und praktischer Anleitung
+
+---
+
+## Voraussetzungen
+
+### 1. ki-agent.zip entpacken
 
 ```bash
-cd ~/Project/ki-agent
+unzip ki-agent
+cd ki-agent
+```
+
+---
+
+### 2. Installation
+
+Richte alles gemäß SETUP.md ein.
+
+Dann:
+
+```bash
 make install
 ```
 
-Verify installation:
+Installation überprüfen:
+
 ```bash
 ls -la .bmad-expert-author/
 ls -la .claude/commands/BMad/agents/
 ```
 
-### 2. Required Tools
-
-- **Claude Code** (v2.0.28 or higher)
-- **Git** (for version control)
-- **Pandoc** (for PDF generation - optional)
-
-### 3. Project Setup
-
-Create your book project directory:
-
-```bash
-mkdir my-book
-cd my-book
-```
-
 ---
 
-## Phase 1: Strategic Planning
+## Phase 1: Strategische Planung
 
-### Step 1.1: Start the Book Strategist
+### Schritt 1.1: Starte den Book Strategist
 
-Open Claude Code and start the Book Strategist agent:
+Öffne Claude Code und starte den Book Strategist Agent:
 
 ```
 /BMad:agents:book-strategist
 ```
 
-### Step 1.2: Provide Your Book Idea
+### Schritt 1.2: Gib deine Buchidee an
 
-**Example Prompt:**
+**Beispiel-Prompt:**
 
 ```
 Ich möchte ein Buch schreiben über die Memory Palace Methode.
@@ -95,11 +92,12 @@ Format: Praktisches Arbeitsbuch mit wöchentlichen Übungen, das die Leser durch
 den Aufbau ihrer eigenen Memory Palace führt.
 ```
 
-### Step 1.3: Answer Strategy Questions
+### Schritt 1.3: Beantworte Strategie-Fragen
 
-The Book Strategist will ask clarifying questions. Answer them thoroughly:
+Der Book Strategist wird klärende Fragen stellen. Beantworte sie ausführlich:
 
 **Q: "Was ist das Hauptproblem, das deine Leser lösen wollen?"**
+
 ```
 Leser vergessen wichtige Informationen in beruflichen Situationen:
 - Namen von neuen Kontakten auf Networking-Events
@@ -111,6 +109,7 @@ Kostet sie Professionalität, Vertrauen und Karrierechancen.
 ```
 
 **Q: "Welche Transformation sollen deine Leser durchmachen?"**
+
 ```
 VON: Abhängig von Notizen, vergesslich, unsicher
 ZU: Selbstbewusst, können wichtige Infos spontan abrufen, beeindrucken andere
@@ -123,6 +122,7 @@ Konkrete Veränderung:
 ```
 
 **Q: "Welche falschen Überzeugungen haben deine Leser?"**
+
 ```
 - "Ich bin einfach schlecht im Merken" (Realität: Sie kennen die Techniken nicht)
 - "Man braucht ein photografisches Gedächtnis" (Realität: Jeder kann es lernen)
@@ -130,11 +130,12 @@ Konkrete Veränderung:
 - "Digitale Tools sind besser" (Realität: Für spontane Situationen unbrauchbar)
 ```
 
-### Step 1.4: Review Book Blueprint Document (BBD)
+### Schritt 1.4: Überprüfe das Book Blueprint Document (BBD)
 
-The Book Strategist will create a comprehensive **Book Blueprint Document**. Review it carefully:
+Der Book Strategist erstellt ein umfassendes **Book Blueprint Document**. Überprüfe es sorgfältig:
 
-**Key Sections to Check:**
+**Wichtige Abschnitte zum Überprüfen:**
+
 - ✅ Target audience clearly defined
 - ✅ Reader transformation journey mapped
 - ✅ Learning objectives specific and measurable
@@ -142,18 +143,19 @@ The Book Strategist will create a comprehensive **Book Blueprint Document**. Rev
 - ✅ Market positioning unique
 - ✅ Author credibility established
 
-**Expected Output:** `docs/book-blueprint.md` or similar
+**Erwartete Ausgabe:** `docs/book-blueprint.md` or similar
 
-**Save it:**
+**Speichern:**
+
 ```bash
 # The agent will save it automatically to docs/
 ```
 
 ---
 
-## Phase 2: Instructional Design
+## Phase 2: Instruktionsdesign
 
-### Step 2.1: Start the Learning Architect
+### Schritt 2.1: Starte den Learning Architect
 
 ```
 /BMad:agents:learning-architect
@@ -173,11 +175,12 @@ Berücksichtige:
 - Feedback-Mechanismen (Selbsttests)
 ```
 
-### Step 2.2: Review Learning Framework
+### Schritt 2.2: Überprüfe das Learning Framework
 
-The Learning Architect creates:
+Der Learning Architect erstellt:
 
-**1. Learning Progression Map:**
+**1. Lernfortschritts-Karte:**
+
 ```
 Week 1: Foundation (Understand memory principles)
   → Build first room in memory palace
@@ -196,23 +199,25 @@ Week 4: Mastery (Create personal system)
   → Integrate into daily workflow
 ```
 
-**2. Learning Outcomes per Chapter:**
+**2. Lernziele pro Kapitel:**
+
 - Specific, measurable outcomes
 - Builds on previous learning
 - Aligned with overall transformation
 
-**3. Assessment Strategy:**
+**3. Assessment-Strategie:**
+
 - Self-tests after each chapter
 - Progressive challenges
 - Final mastery project
 
-**Expected Output:** `docs/learning-framework/`
+**Erwartete Ausgabe:** `docs/learning-framework/`
 
 ---
 
-## Phase 3: Content Structure
+## Phase 3: Content-Struktur
 
-### Step 3.1: Start the Content Structurer
+### Schritt 3.1: Starte den Content Structurer
 
 ```
 /BMad:agents:content-structurer
@@ -232,11 +237,12 @@ Ich möchte:
 - Praktische Anwendungen aus dem Berufsleben
 ```
 
-### Step 3.2: Review Chapter Outlines
+### Schritt 3.2: Überprüfe die Kapitel-Outlines
 
-The Content Structurer creates detailed outlines:
+Der Content Structurer erstellt detaillierte Outlines:
 
-**Example: Chapter 1 - Introduction**
+**Beispiel: Kapitel 1 - Einführung**
+
 ```markdown
 # Kapitel 1: Warum Memory Palace & Wie dieses Buch funktioniert
 
@@ -258,13 +264,13 @@ The Content Structurer creates detailed outlines:
 - Memory Baseline Test: 10 Begriffe merken
 ```
 
-**Expected Output:** `docs/content-structure/chapter-*.md`
+**Erwartete Ausgabe:** `docs/content-structure/chapter-*.md`
 
 ---
 
-## Phase 4: Writing
+## Phase 4: Schreiben
 
-### Step 4.1: Start the Book Author
+### Schritt 4.1: Starte den Book Author
 
 ```
 /BMad:agents:book-author
@@ -288,25 +294,27 @@ Stil:
 Länge: ca. 3000-4000 Wörter
 ```
 
-### Step 4.2: Review and Iterate
+### Schritt 4.2: Überprüfen und Iterieren
 
-The Book Author will:
-1. Write the complete chapter
-2. Include all sections from outline
-3. Add storytelling elements
-4. Create exercises
-5. **Automatically generate a full book PDF** after completion!
+Der Book Author wird:
 
-**Check the generated PDF:**
+1. Das komplette Kapitel schreiben
+2. Alle Abschnitte aus dem Outline einbeziehen
+3. Storytelling-Elemente hinzufügen
+4. Übungen erstellen
+5. **Automatisch ein vollständiges Buch-PDF generieren** nach Fertigstellung!
+
+**Überprüfe das generierte PDF:**
+
 ```bash
 ls -la output/book.pdf
 ```
 
-Open and review to see how the chapter fits in the overall book structure.
+Öffnen und überprüfen, um zu sehen, wie das Kapitel in die Gesamtstruktur passt.
 
-### Step 4.3: Provide Feedback (if needed)
+### Schritt 4.3: Gib Feedback (falls nötig)
 
-If revisions are needed:
+Falls Überarbeitungen nötig sind:
 
 ```
 Das Kapitel ist gut, aber:
@@ -323,9 +331,9 @@ Das Kapitel ist gut, aber:
 Überarbeite diese drei Punkte bitte.
 ```
 
-### Step 4.4: Repeat for All Chapters
+### Schritt 4.4: Wiederhole für alle Kapitel
 
-For each subsequent chapter:
+Für jedes folgende Kapitel:
 
 ```
 Schreibe Kapitel 2: "Woche 1: Dein erster Memory Palace"
@@ -338,15 +346,15 @@ Basierend auf:
 Baue auf Kapitel 1 auf und führe die erste praktische Übung ein.
 ```
 
-**Pro Tip:** After each chapter, the system generates an updated PDF of the **complete book** so you can see the overall flow and consistency.
+**Pro-Tipp:** Nach jedem Kapitel generiert das System ein aktualisiertes PDF des **kompletten Buchs**, damit du den Gesamtfluss und die Konsistenz sehen kannst.
 
 ---
 
-## Phase 5: Quality Assurance
+## Phase 5: Qualitätssicherung
 
-### Step 5.1: Start the Lector
+### Schritt 5.1: Starte den Lector
 
-After completing your first draft:
+Nach Fertigstellung deines ersten Entwurfs:
 
 ```
 /BMad:agents:lector
@@ -368,11 +376,12 @@ Prüfe besonders:
 Erstelle einen Feedback-Report mit konkreten Verbesserungsvorschlägen.
 ```
 
-### Step 5.2: Review Lector Feedback
+### Schritt 5.2: Überprüfe Lector-Feedback
 
-The Lector provides:
+Der Lector liefert:
 
-**Example Feedback:**
+**Beispiel-Feedback:**
+
 ```markdown
 ## Feedback Report: Memory Palace Buch
 
@@ -400,9 +409,9 @@ The Lector provides:
 - FIX: Füge Maintenance-Plan und weiterführende Ressourcen hinzu
 ```
 
-### Step 5.3: Implement Changes
+### Schritt 5.3: Setze Änderungen um
 
-Use Book Author to make corrections:
+Nutze den Book Author für Korrekturen:
 
 ```
 /BMad:agents:book-author
@@ -423,9 +432,9 @@ Basierend auf Lector Feedback, überarbeite:
    - Community/Forum Hinweise
 ```
 
-### Step 5.4: Final Review
+### Schritt 5.4: Finale Überprüfung
 
-Generate final PDF and review:
+Generiere das finale PDF und überprüfe:
 
 ```bash
 # Book Author automatically generates book.pdf after changes
@@ -434,9 +443,9 @@ ls -la output/book.pdf
 
 ---
 
-## Phase 6: Publication
+## Phase 6: Publikation
 
-### Step 6.1: Publishing Strategy (Optional)
+### Schritt 6.1: Publishing-Strategie (Optional)
 
 ```
 /BMad:agents:publishing-strategist
@@ -458,9 +467,9 @@ Ich brauche:
 4. Launch-Checkliste
 ```
 
-### Step 6.2: Final Preparations
+### Schritt 6.2: Finale Vorbereitungen
 
-**Before Publishing:**
+**Vor der Publikation:**
 
 1. ✅ Lektorat abgeschlossen
 2. ✅ PDF generiert und geprüft
@@ -468,7 +477,8 @@ Ich brauche:
 4. ✅ ISBN erworben (für Print)
 5. ✅ Marketing-Materialien vorbereitet
 
-**Final File Checklist:**
+**Finale Datei-Checkliste:**
+
 ```bash
 tree output/
 output/
@@ -483,11 +493,11 @@ output/
 
 ---
 
-## Tips & Best Practices
+## Tipps & Best Practices
 
-### 1. Work Iteratively
+### 1. Arbeite iterativ
 
-Don't try to write the entire book in one session. Follow this rhythm:
+Versuche nicht, das gesamte Buch in einer Session zu schreiben. Folge diesem Rhythmus:
 
 ```
 Day 1-2:   Book Blueprint + Learning Framework
@@ -498,9 +508,9 @@ Day 16-17: Lector Review + Revisions
 Day 18-20: Final polish + Publication prep
 ```
 
-### 2. Save Frequently
+### 2. Speichere häufig
 
-Each agent automatically saves outputs to `docs/`. But also:
+Jeder Agent speichert Ausgaben automatisch in `docs/`. Aber auch:
 
 ```bash
 # Commit after each major milestone
@@ -509,33 +519,36 @@ git commit -m "Complete Chapter 3: Week 1 Foundations"
 git push
 ```
 
-### 3. Use the Generated PDFs
+### 3. Nutze die generierten PDFs
 
-After **every chapter** the Book Author generates a full book PDF. Use it to:
-- ✅ Check overall flow and consistency
-- ✅ See how chapters connect
-- ✅ Spot formatting issues early
-- ✅ Share with beta readers
+Nach **jedem Kapitel** generiert der Book Author ein vollständiges Buch-PDF. Nutze es um:
 
-### 4. Trust the Process
+- ✅ Gesamtfluss und Konsistenz zu überprüfen
+- ✅ Zu sehen, wie Kapitel zusammenhängen
+- ✅ Formatierungsprobleme früh zu erkennen
+- ✅ Mit Beta-Lesern zu teilen
 
-The BMAD Expert Author agents are designed to work together. Follow the workflow:
+### 4. Vertraue dem Prozess
+
+Die BMAD Expert Author Agenten sind dafür designed, zusammenzuarbeiten. Folge dem Workflow:
 
 ```
 Strategy → Instruction → Structure → Writing → Quality → Publishing
 ```
 
-Skipping steps (e.g., jumping straight to writing without strategy) leads to:
-- ❌ Unclear target audience
-- ❌ Unfocused content
-- ❌ Inconsistent learning progression
-- ❌ Major revisions later
+Schritte überspringen (z.B. direkt zum Schreiben ohne Strategie) führt zu:
 
-### 5. Customize Prompts
+- ❌ Unklarer Zielgruppe
+- ❌ Unfokussiertem Inhalt
+- ❌ Inkonsistenter Lernprogression
+- ❌ Großen Überarbeitungen später
 
-The prompts in this tutorial are examples. Customize them for your book:
+### 5. Passe Prompts an
 
-**Your Book Topic:**
+Die Prompts in diesem Tutorial sind Beispiele. Passe sie für dein Buch an:
+
+**Dein Buchthema:**
+
 ```
 Ich möchte ein Buch schreiben über [DEIN THEMA].
 
@@ -546,18 +559,19 @@ Ziel: Leser sollen [SPEZIFISCHE TRANSFORMATION]
 Format: [GEWÜNSCHTES FORMAT]
 ```
 
-### 6. Review Agent Outputs
+### 6. Überprüfe Agent-Ausgaben
 
-Agents are powerful but not perfect. Always:
-- ✅ Read generated content carefully
-- ✅ Check if learning objectives are met
-- ✅ Verify examples are relevant
-- ✅ Test exercises yourself
-- ✅ Ensure consistency
+Agenten sind mächtig, aber nicht perfekt. Immer:
 
-### 7. Maintain Your Voice
+- ✅ Generierten Inhalt sorgfältig lesen
+- ✅ Prüfen, ob Lernziele erreicht sind
+- ✅ Überprüfen, ob Beispiele relevant sind
+- ✅ Übungen selbst testen
+- ✅ Konsistenz sicherstellen
 
-The agents adapt to your style, but guide them:
+### 7. Behalte deine Stimme bei
+
+Die Agenten passen sich deinem Stil an, aber leite sie:
 
 ```
 Mein Schreibstil:
@@ -569,9 +583,9 @@ Mein Schreibstil:
 Bitte behalte diesen Stil bei.
 ```
 
-### 8. Beta Readers
+### 8. Beta-Leser
 
-Before publishing, get feedback:
+Vor der Publikation, hole Feedback ein:
 
 ```bash
 # Share the PDF with 3-5 beta readers from your target audience
@@ -581,9 +595,9 @@ Before publishing, get feedback:
 # - Where did you get stuck?
 ```
 
-### 9. Iterate Based on Feedback
+### 9. Iteriere basierend auf Feedback
 
-Use the Book Author to implement beta reader suggestions:
+Nutze den Book Author, um Beta-Leser-Vorschläge umzusetzen:
 
 ```
 Beta Reader Feedback zeigt:
@@ -596,9 +610,9 @@ Bitte überarbeite diese Stellen basierend auf dem Feedback.
 
 ---
 
-## Example Commands Reference
+## Beispiel-Befehls-Referenz
 
-### Quick Reference: All Agents
+### Schnellreferenz: Alle Agenten
 
 ```bash
 # Strategic Planning
@@ -612,7 +626,7 @@ Bitte überarbeite diese Stellen basierend auf dem Feedback.
 
 # Content Creation
 /BMad:agents:book-author              # Write chapters
-/BMad:agents:exercise-designer        # Create exercises
+/BMad:agents:exercise-designer        # Übungen erstellen
 /BMad:agents:case-study-curator       # Develop examples
 
 # Quality & Enhancement
@@ -621,9 +635,10 @@ Bitte überarbeite diese Stellen basierend auf dem Feedback.
 /BMad:agents:workbook-developer       # Create workbooks
 ```
 
-### Common Workflows
+### Häufige Workflows
 
-**Full Book Workflow:**
+**Vollständiger Buch-Workflow:**
+
 ```
 1. /BMad:agents:book-strategist
 2. /BMad:agents:learning-architect
@@ -633,7 +648,8 @@ Bitte überarbeite diese Stellen basierend auf dem Feedback.
 6. /BMad:agents:publishing-strategist
 ```
 
-**Chapter Writing Workflow:**
+**Kapitel-Schreib-Workflow:**
+
 ```
 1. Review chapter outline in docs/content-structure/
 2. /BMad:agents:book-author
@@ -643,7 +659,8 @@ Bitte überarbeite diese Stellen basierend auf dem Feedback.
 6. Check generated book.pdf
 ```
 
-**Quality Improvement Workflow:**
+**Qualitätsverbesserungs-Workflow:**
+
 ```
 1. /BMad:agents:lector (full book review)
 2. Review feedback report
@@ -654,13 +671,14 @@ Bitte überarbeite diese Stellen basierend auf dem Feedback.
 
 ---
 
-## Troubleshooting
+## Fehlerbehebung
 
-### Issue: Agent Outputs Too Generic
+### Problem: Agent-Ausgaben zu generisch
 
-**Solution:**
+**Lösung:**
+
 ```
-Provide more specific context in your prompts:
+Gib spezifischeren Kontext in deinen Prompts:
 
 ❌ "Schreibe Kapitel 1"
 
@@ -669,11 +687,12 @@ Beginne mit einer emotionalen Story über vergessene Namen auf einem Networking-
 Verwende Du-Form, kurze Sätze, und praktische Beispiele aus dem Berufsalltag."
 ```
 
-### Issue: Chapters Don't Flow Together
+### Problem: Kapitel fließen nicht zusammen
 
-**Solution:**
+**Lösung:**
+
 ```
-Use the Lector for consistency check:
+Nutze den Lector für Konsistenz-Check:
 
 /BMad:agents:lector
 
@@ -684,11 +703,12 @@ Prüfe speziell:
 - Progressive Schwierigkeit
 ```
 
-### Issue: Exercises Are Unclear
+### Problem: Übungen sind unklar
 
-**Solution:**
+**Lösung:**
+
 ```
-Use Exercise Designer:
+Nutze den Exercise Designer:
 
 /BMad:agents:exercise-designer
 
@@ -700,11 +720,12 @@ Mache sie spezifischer mit:
 - Häufige Fehler
 ```
 
-### Issue: Missing Context in Later Chapters
+### Problem: Fehlender Kontext in späteren Kapiteln
 
-**Solution:**
+**Lösung:**
+
 ```
-Ensure all relevant docs are in place:
+Stelle sicher, dass alle relevanten Docs vorhanden sind:
 
 /BMad:agents:book-author
 
@@ -718,30 +739,30 @@ Stelle sicher dass du auf vorherige Übungen referenzierst.
 
 ---
 
-## Conclusion
+## Fazit
 
-You now have a complete roadmap for writing an educational book with the BMAD Expert Author Expansion Pack.
+Du hast jetzt eine vollständige Roadmap zum Schreiben eines Bildungsbuchs mit dem BMAD Expert Author Expansion Pack.
 
-### Key Takeaways:
+### Wichtigste Erkenntnisse:
 
-1. **Follow the workflow** - Strategy → Design → Structure → Write → Quality
-2. **Use all agents** - Each has a specific purpose
-3. **Iterate** - Writing is rewriting
-4. **Review generated PDFs** - Check consistency after each chapter
-5. **Trust the process** - The agents work together as a system
+1. **Folge dem Workflow** - Strategy → Design → Structure → Write → Quality
+2. **Nutze alle Agenten** - Jeder hat einen spezifischen Zweck
+3. **Iteriere** - Schreiben ist Umschreiben
+4. **Überprüfe generierte PDFs** - Überprüfe Konsistenz nach jedem Kapitel
+5. **Vertraue dem Prozess** - Die Agenten arbeiten als System zusammen
 
-### Next Steps:
+### Nächste Schritte:
 
-1. ✅ Complete this tutorial
-2. ✅ Apply it to your own book idea
-3. ✅ Share your experience
-4. ✅ Iterate based on reader feedback
+1. ✅ Schließe dieses Tutorial ab
+2. ✅ Wende es auf deine eigene Buchidee an
+3. ✅ Teile deine Erfahrung
+4. ✅ Iteriere basierend auf Leser-Feedback
 
-**Happy Writing! 📚**
+**Viel Erfolg beim Schreiben! 📚**
 
 ---
 
-## Additional Resources
+## Zusätzliche Ressourcen
 
 - **BMAD Expert Author README:** `.bmad-expert-author/README.md`
 - **Workflows Guide:** `.bmad-expert-author/workflows/README.md`
@@ -750,6 +771,6 @@ You now have a complete roadmap for writing an educational book with the BMAD Ex
 
 ---
 
-**Generated with:** BMAD Expert Author Expansion Pack v1.1
+**Erstellt mit:** BMAD Expert Author Expansion Pack v1.1
 **Framework:** BMAD-METHOD™
-**Date:** 2025-10-29
+**Datum:** 2025-10-29
