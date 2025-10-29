@@ -1,5 +1,23 @@
 {
+  "name": "bmad-expert-author",
+  "version": "1.0.0",
+  "description": "BMAD Expert Author - Educational Non-Fiction Book Creation Toolkit",
+  "private": true,
   "dependencies": {
-    "mdpdf": "^3.1.0"
-  }
+    "mdpdf": "^3.1.0",
+    "mammoth": "^1.6.0",
+    "pdf-parse": "^1.1.1",
+    "turndown": "^7.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "bmad",
+    "book-writing",
+    "document-conversion"
+  ],
+  "author": "",
+  "license": "ISC"
 }

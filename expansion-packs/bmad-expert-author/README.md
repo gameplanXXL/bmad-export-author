@@ -49,6 +49,10 @@ ls -la .claude/commands/BMad/agents/
 
 ```
 1. Book Strategist → Book Blueprint Document (BBD)
+   └─ Includes Step 6.5: Elicit existing materials
+   ↓
+1.5. (If materials provided) Document Processor → Converted Materials
+   └─ Converts Word/PDF/HTML to Markdown
    ↓
 2. Learning Architect → Learning Framework
    ↓
@@ -174,6 +178,30 @@ ls -la .claude/commands/BMad/agents/
 - Diverse examples library
 
 **When to use**: Before or during content writing (Phase 3/4)
+
+---
+
+### Utility Agents
+
+#### 📄 Document Processor (`/BMad:agents:document-processor`)
+**Purpose**: Converts user's existing materials into usable formats
+
+**Key capabilities**:
+- Converts Word (.docx) → Markdown
+- Extracts text from PDF → Markdown
+- Converts HTML → Markdown
+- Batch processes entire directories
+- Generates conversion reports
+
+**Input**: Files in `source-materials/` directory
+**Output**: Converted files in `processed-materials/` directory
+
+**When to use**:
+- During Book Strategist Step 6.5 (automatically invoked)
+- Anytime you have existing materials to import
+- Before starting content development
+
+**Supported formats**: DOCX, PDF, HTML, TXT
 
 ---
 

@@ -40,8 +40,15 @@ install: install-tools install-expansion-pack
 # Tools lokal installieren
 install-tools:
 	@echo "📦 Installiere benötigte Tools..."
-	@npm install mdpdf
-	@echo "✅ mdpdf wurde lokal installiert!"
+	@echo ""
+	@echo "Installiere Document Processing Tools..."
+	@npm install
+	@echo ""
+	@echo "✅ Alle Tools installiert:"
+	@echo "   - mdpdf (Markdown → PDF)"
+	@echo "   - mammoth (Word/DOCX → Markdown)"
+	@echo "   - pdf-parse (PDF Text-Extraktion)"
+	@echo "   - turndown (HTML → Markdown)"
 	@echo ""
 
 # Expansion Pack installieren

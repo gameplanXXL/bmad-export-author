@@ -165,6 +165,58 @@ Finally, let's address publishing and success metrics.
 4. **Timeline**: When ideally would you like to publish this book?
 ```
 
+### Step 6.5: Existing Knowledge & Source Materials
+**Elicit from user:**
+
+```
+Let's gather any existing materials or knowledge sources you have.
+
+**Existing Materials:**
+
+1. **Do you have existing documents** about this topic?
+   - Research papers, articles you've written
+   - Presentations, slides, training materials
+   - Notes, outlines, drafts
+   - Acceptable formats: Word (.docx), PDF, Google Docs, Markdown, Plain Text
+
+2. **External Resources**: Are there online resources I should reference?
+   - Blog posts, articles (provide URLs)
+   - Videos, podcasts (provide URLs with timestamps if specific sections)
+   - Research studies, white papers (provide URLs or DOIs)
+   - Books or chapters (provide titles and relevant page ranges)
+
+3. **How to provide your materials**:
+   - **Files**: Place them in a `source-materials/` folder in your project
+   - **Links**: Provide URLs directly here
+   - **Text**: Paste directly if short (< 500 words)
+   - Type "none" or "skip" if starting completely from scratch
+
+4. **Document Processing**: I can automatically convert:
+   - Word/DOCX files → Markdown
+   - PDF files → Extracted text
+   - HTML pages → Markdown
+   - This makes your existing knowledge immediately usable for book development
+
+**Please share:**
+- Paths to any files in `source-materials/` folder (e.g., `source-materials/my-research.docx`)
+- URLs to online resources
+- Or type "skip" if starting from scratch
+
+*Note: I'll use the document-processor agent to convert files into a usable format before we proceed.*
+```
+
+**After receiving materials:**
+
+If user provides files or URLs:
+
+1. **Activate document-processor**: Switch to `/BMad:agents:ea-document-processor`
+2. **Process materials**: Use `*process-documents` command to convert all materials
+3. **Return to book-strategist**: Switch back to continue with blueprint creation
+4. **Reference processed materials**: Incorporate insights from processed materials into BBD
+
+If user skips:
+- Continue directly to Step 7
+
 ### Step 7: Synthesis & Document Creation
 
 Using all gathered information:

@@ -15,3 +15,7 @@ node_modules/
 
 # BMAD Expert Author expansion pack installation
 .bmad-expert-author/
+
+# Document processing directories (user-specific materials)
+source-materials/
+processed-materials/

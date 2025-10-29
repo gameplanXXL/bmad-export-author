@@ -16,7 +16,14 @@ Similar to how the Analyst creates a PRD in BMAD core, the Book Strategist creat
 Steps:
 1. **Activate Book Strategist**: `/book-strategist`
 2. **Run Analysis**: `*create-blueprint`
-3. **Deep Dive Research**:
+   - The blueprint creation process includes comprehensive elicitation
+   - **New: Step 6.5 gathers existing materials** (documents, URLs, notes)
+3. **Process Existing Materials** (if provided):
+   - Book Strategist will activate Document Processor automatically
+   - Or manually: `/BMad:agents:ea-document-processor` → `*process-documents`
+   - Converts Word, PDF, HTML to Markdown
+   - Stored in `processed-materials/` for reference
+4. **Deep Dive Research**:
    - `*analyze-audience` - Understand target readers deeply
    - `*research-market` - Competitive landscape analysis
    - `*define-transformation` - Articulate reader's before/after journey
@@ -265,6 +272,12 @@ docs/
 ```
 1. Book Strategist → Book Blueprint Document (BBD) ✓
    └─ Defines target audience, transformation, value, strategy
+   └─ Step 6.5: Elicits existing materials (Word, PDF, URLs)
+
+1.5. Document Processor → Converted Materials (if needed) 📄
+     └─ Converts DOCX, PDF, HTML → Markdown
+     └─ Output: processed-materials/ directory
+     └─ Makes existing knowledge immediately usable
 
 2. Learning Architect → Learning Framework ✓
    └─ Designs instructional approach and outcomes
