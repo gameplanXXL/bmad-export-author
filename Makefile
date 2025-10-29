@@ -10,7 +10,11 @@ CHAPTERS = $(sort $(wildcard $(SRC_DIR)/chapter-*.md $(SRC_DIR)/kapitel-*.md))
 # Kombinierte Markdown-Datei
 COMBINED_MD = $(OUTPUT_DIR)/$(BOOK_NAME).md
 
-.PHONY: help install install-tools install-expansion-pack clean md pdf pdf-chapter
+# Projekt-Name für Zip-Archiv
+PROJECT_NAME = $(shell basename $(CURDIR))
+ZIP_FILE = $(PROJECT_NAME).zip
+
+.PHONY: help install install-tools install-expansion-pack clean md pdf pdf-chapter zip
 
 # Default target: Zeige Hilfe
 help:
@@ -24,11 +28,13 @@ help:
 	@echo "  make pdf                - Erstellt das gesamte Buch als PDF"
 	@echo "  make pdf-chapter CH=N   - Erstellt PDF für Kapitel N (z.B. make pdf-chapter CH=1)"
 	@echo "  make pdf-latest         - Erstellt PDF für das neueste Kapitel"
+	@echo "  make zip                - Erstellt Zip-Archiv des Projekts (ohne .git, .claude, etc.)"
 	@echo "  make clean              - Aufräumen (falls benötigt)"
 	@echo ""
 	@echo "Beispiele:"
 	@echo "  make pdf-chapter CH=3   - Erstellt chapters/chapter-03.pdf"
 	@echo "  make pdf-latest         - Erstellt PDF für das zuletzt geänderte Kapitel"
+	@echo "  make zip                - Erstellt $(PROJECT_NAME).zip"
 	@echo ""
 	@echo "=========================================="
 
@@ -144,9 +150,37 @@ pdf-latest: | $(OUTPUT_DIR)
 		exit 1; \
 	fi
 
+# Zip-Archiv erstellen (ohne .git, .claude, node_modules, .bmad-*)
+zip:
+	@echo "📦 Erstelle Zip-Archiv: $(ZIP_FILE)..."
+	@echo ""
+	@# Lösche altes Zip falls vorhanden
+	@rm -f $(ZIP_FILE)
+	@# Erstelle Zip mit Ausschlüssen
+	@cd .. && zip -r $(PROJECT_NAME)/$(ZIP_FILE) $(PROJECT_NAME) \
+		-x "$(PROJECT_NAME)/.git/*" \
+		-x "$(PROJECT_NAME)/.claude/*" \
+		-x "$(PROJECT_NAME)/node_modules/*" \
+		-x "$(PROJECT_NAME)/.bmad-core/*" \
+		-x "$(PROJECT_NAME)/.bmad-expert-author/*" \
+		-x "$(PROJECT_NAME)/$(ZIP_FILE)" \
+		-x "$(PROJECT_NAME)/*.zip"
+	@echo ""
+	@echo "✅ Zip-Archiv erstellt: $(ZIP_FILE)"
+	@echo "📊 Dateigröße: $$(du -h $(ZIP_FILE) | cut -f1)"
+	@echo ""
+	@echo "Ausgeschlossene Verzeichnisse:"
+	@echo "  - .git/"
+	@echo "  - .claude/"
+	@echo "  - node_modules/"
+	@echo "  - .bmad-core/"
+	@echo "  - .bmad-expert-author/"
+	@echo ""
+
 # Aufräumen
 clean:
 	@echo "🧹 Lösche generierte Dateien..."
 	@rm -f $(PDF_FILE) $(COMBINED_MD)
 	@rm -f $(OUTPUT_DIR)/chapter-*.pdf $(OUTPUT_DIR)/kapitel-*.pdf
+	@rm -f $(ZIP_FILE)
 	@echo "✅ Aufgeräumt!"
