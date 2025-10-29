@@ -10,7 +10,7 @@ CHAPTERS = $(sort $(wildcard $(SRC_DIR)/chapter-*.md $(SRC_DIR)/kapitel-*.md))
 # Kombinierte Markdown-Datei
 COMBINED_MD = $(OUTPUT_DIR)/$(BOOK_NAME).md
 
-.PHONY: help install install-tools install-expansion-pack clean md pdf
+.PHONY: help install install-tools install-expansion-pack clean md pdf pdf-chapter
 
 # Default target: Zeige Hilfe
 help:
@@ -18,11 +18,17 @@ help:
 	@echo "  KI-Agent Makefile - Verfügbare Befehle"
 	@echo "=========================================="
 	@echo ""
-	@echo "  make          - Zeigt diese Hilfe"
-	@echo "  make install  - Installiert Tools und Expansion Pack"
-	@echo "  make md       - Erstellt gesamtes Buch als Markdown-Datei"
-	@echo "  make pdf      - Erstellt das gesamte Buch als PDF"
-	@echo "  make clean    - Aufräumen (falls benötigt)"
+	@echo "  make                    - Zeigt diese Hilfe"
+	@echo "  make install            - Installiert Tools und Expansion Pack"
+	@echo "  make md                 - Erstellt gesamtes Buch als Markdown-Datei"
+	@echo "  make pdf                - Erstellt das gesamte Buch als PDF"
+	@echo "  make pdf-chapter CH=N   - Erstellt PDF für Kapitel N (z.B. make pdf-chapter CH=1)"
+	@echo "  make pdf-latest         - Erstellt PDF für das neueste Kapitel"
+	@echo "  make clean              - Aufräumen (falls benötigt)"
+	@echo ""
+	@echo "Beispiele:"
+	@echo "  make pdf-chapter CH=3   - Erstellt chapters/chapter-03.pdf"
+	@echo "  make pdf-latest         - Erstellt PDF für das zuletzt geänderte Kapitel"
 	@echo ""
 	@echo "=========================================="
 
@@ -79,8 +85,68 @@ pdf: md
 	@echo "✅ PDF erstellt: $(PDF_FILE)"
 	@echo "📊 Dateigröße: $$(du -h $(PDF_FILE) | cut -f1)"
 
+# Einzelnes Kapitel als PDF generieren
+# Usage: make pdf-chapter CH=3
+pdf-chapter: | $(OUTPUT_DIR)
+	@if [ -z "$(CH)" ]; then \
+		echo "❌ Fehler: Kapitelnummer fehlt!"; \
+		echo "   Verwendung: make pdf-chapter CH=3"; \
+		exit 1; \
+	fi
+	@CHAPTER_NUM=$$(printf "%02d" $(CH)); \
+	CHAPTER_FILE="$(SRC_DIR)/chapter-$$CHAPTER_NUM.md"; \
+	if [ ! -f "$$CHAPTER_FILE" ]; then \
+		CHAPTER_FILE="$(SRC_DIR)/kapitel-$$CHAPTER_NUM.md"; \
+	fi; \
+	if [ ! -f "$$CHAPTER_FILE" ]; then \
+		echo "❌ Fehler: Kapitel $$CHAPTER_NUM nicht gefunden!"; \
+		echo "   Gesucht: $(SRC_DIR)/chapter-$$CHAPTER_NUM.md"; \
+		echo "   oder:    $(SRC_DIR)/kapitel-$$CHAPTER_NUM.md"; \
+		exit 1; \
+	fi; \
+	PDF_TEMP="$(SRC_DIR)/chapter-$$CHAPTER_NUM.pdf"; \
+	PDF_OUTPUT="$(OUTPUT_DIR)/chapter-$$CHAPTER_NUM.pdf"; \
+	echo "📚 Generiere PDF für Kapitel $(CH)..."; \
+	echo "   Quelle: $$CHAPTER_FILE"; \
+	./node_modules/.bin/mdpdf "$$CHAPTER_FILE"; \
+	if [ -f "$$PDF_TEMP" ]; then \
+		mv "$$PDF_TEMP" "$$PDF_OUTPUT"; \
+		echo "✅ PDF erstellt: $$PDF_OUTPUT"; \
+		echo "📊 Dateigröße: $$(du -h $$PDF_OUTPUT | cut -f1)"; \
+	else \
+		echo "❌ Fehler: PDF wurde nicht erstellt"; \
+		exit 1; \
+	fi
+
+# PDF für das neueste (zuletzt geänderte) Kapitel generieren
+pdf-latest: | $(OUTPUT_DIR)
+	@if [ -z "$(CHAPTERS)" ]; then \
+		echo "❌ Keine Kapitel gefunden in $(SRC_DIR)/"; \
+		exit 1; \
+	fi
+	@LATEST=$$(ls -t $(SRC_DIR)/chapter-*.md $(SRC_DIR)/kapitel-*.md 2>/dev/null | head -1); \
+	if [ -z "$$LATEST" ]; then \
+		echo "❌ Keine Kapitel gefunden!"; \
+		exit 1; \
+	fi; \
+	BASENAME=$$(basename "$$LATEST" .md); \
+	PDF_TEMP="$(SRC_DIR)/$$BASENAME.pdf"; \
+	PDF_OUTPUT="$(OUTPUT_DIR)/$$BASENAME.pdf"; \
+	echo "📚 Generiere PDF für neuestes Kapitel..."; \
+	echo "   Quelle: $$LATEST"; \
+	./node_modules/.bin/mdpdf "$$LATEST"; \
+	if [ -f "$$PDF_TEMP" ]; then \
+		mv "$$PDF_TEMP" "$$PDF_OUTPUT"; \
+		echo "✅ PDF erstellt: $$PDF_OUTPUT"; \
+		echo "📊 Dateigröße: $$(du -h $$PDF_OUTPUT | cut -f1)"; \
+	else \
+		echo "❌ Fehler: PDF wurde nicht erstellt"; \
+		exit 1; \
+	fi
+
 # Aufräumen
 clean:
 	@echo "🧹 Lösche generierte Dateien..."
 	@rm -f $(PDF_FILE) $(COMBINED_MD)
+	@rm -f $(OUTPUT_DIR)/chapter-*.pdf $(OUTPUT_DIR)/kapitel-*.pdf
 	@echo "✅ Aufgeräumt!"
