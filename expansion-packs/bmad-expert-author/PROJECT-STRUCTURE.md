@@ -540,14 +540,12 @@ docs/
 │   ├── assessments.md
 │   └── resources.md
 │
-├── content-structure/           # Modular aufgeteilt
-│   ├── README.md
-│   ├── architecture-overview.md
-│   ├── chapter-01-introduction.md
-│   ├── chapter-02-history.md
-│   └── ...
-│
-└── learning-framework-backup.md # Original gesichert
+└── content-structure/           # Modular aufgeteilt
+    ├── README.md
+    ├── architecture-overview.md
+    ├── chapter-01-introduction.md
+    ├── chapter-02-history.md
+    └── ...
 ```
 
 ### Vorteile
@@ -561,8 +559,9 @@ docs/
 
 - **Semantische Namen:** Dateien haben sprechende Namen (nicht `module-01.md`)
 - **Erhalt:** Alle Inhalte bleiben erhalten (nichts geht verloren)
-- **Original-Backup:** Original wird als `*-backup.md` gesichert
+- **Original gelöscht:** Original-Dateien werden gelöscht (Git bewahrt History)
 - **Master Index:** Jedes Verzeichnis hat `README.md` mit Navigation
+- **Git Recovery:** Original jederzeit wiederherstellbar via `git checkout HEAD~1 -- docs/datei.md`
 
 ---
 

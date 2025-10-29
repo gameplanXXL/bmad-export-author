@@ -27,8 +27,10 @@ agent: ea-shard
 
 **Optional:**
 - `threshold_lines`: Minimum lines to trigger sharding (default: 500)
-- `exclude_patterns`: Patterns to exclude (default: `*-backup.md`, `README.md`)
+- `exclude_patterns`: Patterns to exclude (default: `README.md`)
 - `dry_run`: Preview only, no changes (default: false)
+
+**Note:** Original files will be deleted after successful sharding (Git preserves history).
 
 ---
 
@@ -40,7 +42,7 @@ agent: ea-shard
 
 ```bash
 # Find all MD files in docs/
-find docs/ -maxdepth 1 -name "*.md" -not -name "*backup*" -not -name "README.md"
+find docs/ -maxdepth 1 -name "*.md" -not -name "README.md"
 ```
 
 **For each file:**
@@ -97,15 +99,13 @@ Skipped (files < 500 lines):
 **Questions:**
 1. Process all files? (yes/no/selective)
 2. If selective, which files to process? (list numbers)
-3. Preserve original files as backups? (yes/no)
-4. Dry run first (preview only)? (yes/no)
+3. Dry run first (preview only)? (yes/no)
 ```
 
 **Elicitation:**
 ```
 USER_RESPONSE: {approval_status}
 FILES_TO_PROCESS: {file_list if selective}
-PRESERVE_ORIGINALS: {yes/no}
 DRY_RUN: {yes/no}
 ```
 
@@ -216,7 +216,7 @@ Glob: docs/**/*.md
 **Sharding Info:**
 - Sharded by: EA Document Sharder Agent
 - Sharding date: {date}
-- Original files: Backed up as `*-backup.md`
+- Original files: Deleted (recoverable via Git history)
 
 **Re-shard document:**
 ```bash
@@ -253,24 +253,21 @@ cat docs/{subdir}/*.md > docs/{filename}-merged.md
 ### Successfully Processed: 3/3 files
 
 #### 1. learning-framework.md → learning-framework/
-- **Original:** 1242 lines
+- **Original:** 1242 lines (deleted)
 - **Modules:** 7 files (README + 6 content modules)
 - **New total:** 1302 lines (includes headers)
-- **Backup:** docs/learning-framework-backup.md
 - **Status:** ✅ Complete
 
 #### 2. content-structure.md → content-structure/
-- **Original:** 1045 lines
+- **Original:** 1045 lines (deleted)
 - **Modules:** 9 files (README + 8 content modules)
 - **New total:** 1120 lines (includes headers)
-- **Backup:** docs/content-structure-backup.md
 - **Status:** ✅ Complete
 
 #### 3. book-blueprint.md → book-blueprint/
-- **Original:** 638 lines
+- **Original:** 638 lines (deleted)
 - **Modules:** 5 files (README + 4 content modules)
 - **New total:** 698 lines (includes headers)
-- **Backup:** docs/book-blueprint-backup.md
 - **Status:** ✅ Complete
 
 ---
@@ -290,8 +287,7 @@ docs/
 ├── learning-framework/      (7 files)
 ├── content-structure/       (9 files)
 ├── book-blueprint/          (5 files)
-├── README.md                (root index)
-└── *-backup.md              (3 backups)
+└── README.md                (root index)
 ```
 
 ---
@@ -308,10 +304,10 @@ docs/
    - Test agent loading of modules
    - Verify agents can find required content
 
-3. **Clean up:**
-   - Review backup files
-   - Delete backups if satisfied with sharding
-   - Commit changes to git
+3. **Commit changes:**
+   - Review sharded structure
+   - Commit deletion of original files and new modules
+   - Push to remote repository
 
 4. **Update templates:**
    - Update expansion pack templates if needed
@@ -341,7 +337,7 @@ docs/
 - [ ] Each file processed successfully (or errors handled)
 - [ ] All subdirectories created with modules
 - [ ] Root docs/README.md created/updated
-- [ ] All original files backed up (if requested)
+- [ ] All original files deleted (Git preserves history)
 - [ ] Summary report generated
 - [ ] All content verified (no loss)
 - [ ] Directory structure clean and organized
@@ -382,7 +378,7 @@ Continue with next files? (yes/no)
 ## Notes
 
 - **Interactive approval:** Each file's splitting strategy requires user approval (unless auto-approve mode)
-- **Preserve originals:** Default is to backup original files (safe default)
+- **Original deletion:** Original files are deleted after successful sharding (Git preserves history)
 - **Dry run recommended:** For first-time users, run with dry_run=true to preview
 - **Git commits:** Consider committing after each file for safe incremental progress
 - **Agent updates:** After sharding, update agent prompts to reference new structure
@@ -390,5 +386,6 @@ Continue with next files? (yes/no)
 ---
 
 **Task Owner:** EA Document Sharder Agent
-**Version:** 1.0
+**Version:** 1.1
 **Last Updated:** 2025-10-29
+**Changelog:** v1.1 - Removed backup functionality, original files are deleted (Git preserves history)

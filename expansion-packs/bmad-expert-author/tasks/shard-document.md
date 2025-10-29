@@ -27,7 +27,8 @@ agent: ea-shard
 
 **Optional:**
 - `target_lines_per_module`: Target lines per module (default: 150-250)
-- `preserve_original`: Keep original file after splitting (default: true, move to backup/)
+
+**Note:** Original file will be deleted after successful sharding (Git preserves history).
 
 ---
 
@@ -244,16 +245,13 @@ cat docs/{subdir}/*.md > {original-name}-full.md
 
 1. **Create subdirectory:** `docs/{document-name}/`
 
-2. **Move/copy files:**
+2. **Write files:**
    - Write README.md to subdirectory
    - Write all module files to subdirectory
 
-3. **Handle original file:**
-   - If `preserve_original=true`: Move to `docs/{document-name}-backup.md`
-   - If `preserve_original=false`: Delete original
-
-4. **Create .gitignore entry if needed:**
-   - Add `*-backup.md` to `docs/.gitignore` if not already present
+3. **Delete original file:**
+   - Remove original file (Git preserves history)
+   - Commit message should mention original filename for easy recovery
 
 ### STEP 7: Verify & Report
 
@@ -266,7 +264,7 @@ cat docs/{subdir}/*.md > {original-name}-full.md
 2. **All files created:**
    - README.md exists
    - All module files exist
-   - Original backed up (if requested)
+   - Original file deleted
 
 3. **File sizes reasonable:**
    - Most modules 150-250 lines
@@ -290,13 +288,14 @@ cat docs/{subdir}/*.md > {original-name}-full.md
 
 **Total modules:** 7 files
 **Total lines:** 1302 lines (original: 1242, includes headers/README)
-**Original file:** Backed up to docs/learning-framework-backup.md
+**Original file:** Deleted (recoverable via Git: `git checkout HEAD~1 -- docs/learning-framework.md`)
 
 **Navigation:** Start with docs/learning-framework/README.md
 
 ✅ All content verified and preserved
 ✅ All cross-references updated
 ✅ Master index created
+✅ Original file deleted (Git history preserved)
 ```
 
 ---
@@ -311,7 +310,7 @@ cat docs/{subdir}/*.md > {original-name}-full.md
 - [ ] All module files created with semantic names
 - [ ] Module headers added
 - [ ] Internal cross-references updated
-- [ ] Original file preserved (if requested)
+- [ ] Original file deleted (Git preserves history)
 - [ ] All content verified (no loss)
 - [ ] File sizes within target range (mostly 150-250 lines)
 
@@ -335,9 +334,10 @@ Skip sharding? (yes/no)
 **Subdirectory already exists:**
 ```
 ⚠️ Warning: Directory docs/{subdir}/ already exists.
+This file may have been sharded previously.
 Options:
-1. Overwrite existing files
-2. Create backup of existing directory
+1. Overwrite existing files (old modules will be deleted)
+2. Merge/update existing modules
 3. Cancel operation
 ```
 
@@ -354,5 +354,6 @@ Options:
 ---
 
 **Task Owner:** EA Document Sharder Agent
-**Version:** 1.0
+**Version:** 1.1
 **Last Updated:** 2025-10-29
+**Changelog:** v1.1 - Removed backup functionality, original files are deleted (Git preserves history)
