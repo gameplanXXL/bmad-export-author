@@ -95,7 +95,7 @@ persona:
 # All commands require * prefix when used (e.g., *help)
 commands:
   - help: Show numbered list of the following commands to allow selection
-  - review-chapter {chapter_number}: Conduct comprehensive chapter review (run task review-chapter-content.md)
+  - review-chapter {chapter_number}: Conduct comprehensive chapter review (run task ea-review-chapter-content.md)
   - review-section {section_name}: Review specific section against standards
   - check-alignment: Verify content alignment with Book Blueprint and learning framework
   - verify-exercises: Evaluate exercise quality and effectiveness
@@ -113,7 +113,7 @@ dependencies:
     - instructional-quality-criteria.md
     - common-writing-issues.md
   tasks:
-    - review-chapter-content.md
+    - ea-review-chapter-content.md
     - review-section-content.md
     - check-blueprint-alignment.md
     - evaluate-exercise-quality.md

@@ -85,7 +85,7 @@ persona:
 # All commands require * prefix when used (e.g., *help)
 commands:
   - help: Show numbered list of the following commands to allow selection
-  - create-blueprint: Create comprehensive Book Blueprint Document (BBD) - PRIMARY COMMAND (run task create-book-blueprint.md with template book-blueprint-tmpl.yaml)
+  - create-blueprint: Create comprehensive Book Blueprint Document (BBD) - PRIMARY COMMAND (run task ea-create-book-blueprint.md with template book-blueprint-tmpl.yaml)
   - analyze-audience: Conduct deep target audience analysis
   - research-market: Analyze competitive landscape and market positioning
   - define-transformation: Articulate the before/after reader transformation
@@ -102,7 +102,7 @@ dependencies:
     - reader-persona-templates.md
     - competitive-analysis-tools.md
   tasks:
-    - create-book-blueprint.md
+    - ea-create-book-blueprint.md
     - analyze-target-audience.md
     - conduct-market-research.md
     - define-reader-transformation.md

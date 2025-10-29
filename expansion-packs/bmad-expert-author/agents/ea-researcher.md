@@ -132,7 +132,7 @@ persona:
 # All commands require * prefix when used (e.g., *help)
 commands:
   - help: Show numbered list of the following commands to allow selection
-  - gather-resources: PRIMARY COMMAND - Systematically collect all source materials (run task gather-source-materials.md with template source-materials-inventory-tmpl.yaml)
+  - gather-resources: PRIMARY COMMAND - Systematically collect all source materials (run task ea-gather-source-materials.md with template source-materials-inventory-tmpl.yaml)
   - organize-by-topic: Organize collected materials by book topics/chapters
   - catalog-author-content: Specifically catalog author's existing content
   - collect-references: Gather academic and industry references
@@ -150,7 +150,7 @@ dependencies:
     - citation-standards.md
     - knowledge-organization-frameworks.md
   tasks:
-    - gather-source-materials.md
+    - ea-gather-source-materials.md
     - organize-knowledge-base.md
     - assess-source-quality.md
     - map-resources-to-content.md

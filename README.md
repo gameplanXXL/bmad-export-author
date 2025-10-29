@@ -18,64 +18,18 @@ This expansion pack is built on proven instructional design principles:
 
 ## Installation
 
-This expansion pack is not part of the official BMAD distribution. To install it, use the provided Makefile:
+**For complete installation instructions**, including prerequisites (Git, Make, Node.js, Claude Code), please see **[SETUP.md](../../SETUP.md)** in the project root.
 
-### Quick Installation
+### Quick Start
+
+If you already have all prerequisites installed:
 
 ```bash
 # From your project root
 make install
 ```
 
-This will:
-- Install all necessary tools
-- Run the expansion pack installation script automatically
-
-The installation script:
-- Works on Linux, macOS, and Windows (Git Bash/WSL)
-- Is idempotent (safe to run multiple times)
-- Creates `.bmad-expert-author/` directory in your project root
-- Copies all agents, tasks, templates, checklists, and data files
-- Creates Claude Code slash commands in `.claude/commands/BMad/agents/`
-- Updates `.bmad-core/install-manifest.yaml` to track the installation
-- Automatically updates existing installations when run again
-
-### Requirements
-
-- BMAD-METHOD™ core framework must be installed (`.bmad-core/` directory exists)
-- For Claude Code users: `.claude/commands/` directory structure
-- Bash-compatible shell (Linux, macOS, Git Bash on Windows, or WSL)
-
-### What Gets Installed
-
-After installation, you'll see the following in your project:
-
-```
-your-project/
-├── .bmad-core/                    # Core BMAD framework
-│   ├── install-manifest.yaml      # Updated with expansion pack info
-│   └── ...
-├── .bmad-expert-author/           # Expansion pack files (NEW)
-│   ├── agents/                    # Specialized agents
-│   ├── tasks/                     # Task workflows
-│   ├── templates/                 # Document templates
-│   ├── checklists/                # Quality checklists
-│   ├── data/                      # Reference data (ADDIE framework, etc.)
-│   ├── workflows/                 # Complete workflow guides
-│   └── README.md                  # Expansion pack documentation
-├── .claude/                       # Claude Code integration (if using Claude Code)
-│   └── commands/
-│       └── BMad/
-│           └── agents/
-│               ├── book-author.md
-│               ├── book-strategist.md
-│               ├── lector.md
-│               └── ...            # All expansion pack agents
-└── expansion-packs/               # Source expansion packs
-    └── bmad-expert-author/        # This directory (source)
-```
-
-The `.bmad-expert-author/` directory is the working installation, while `expansion-packs/bmad-expert-author/` is the source that can be version-controlled and shared.
+This installs the expansion pack and makes all agents available in Claude Code.
 
 ## Usage
 
@@ -149,18 +103,23 @@ The BMAD Expert Author workflow follows a structured process similar to software
 ## Primary Use Cases
 
 ### 1. **Skill-Building Non-Fiction**
+
 Write books that teach practical skills (financial literacy, productivity, communication, health, etc.) with clear learning outcomes and practice exercises.
 
 ### 2. **Professional Development Books**
+
 Create career-focused books with actionable strategies, templates, and frameworks for workplace success.
 
 ### 3. **Self-Improvement Guides**
+
 Develop transformation-focused books that combine personal stories, research, and practical exercises.
 
 ### 4. **Educational Workbooks**
+
 Build companion workbooks with exercises, worksheets, and assessment tools.
 
 ### 5. **Online Course Adaptation**
+
 Transform book content into structured online courses with modules, lessons, and interactive elements.
 
 ## Key Features
@@ -190,10 +149,13 @@ This expansion pack can help you create books like:
 ## Key Success Principles
 
 ### 1. Don't Skip the Foundation
+
 Invest time in Book Blueprint and Learning Framework first. The strategic foundation prevents major rework later.
 
 ### 2. Follow the Workflow
+
 Each phase builds on the previous:
+
 - BBD defines WHAT and WHY
 - Learning Framework defines HOW
 - Chapter outlines define SPECIFICALLY
@@ -201,13 +163,17 @@ Each phase builds on the previous:
 - Lector ensures quality
 
 ### 3. Use the Lector Extensively
+
 Quality reviews prevent publishing content that doesn't work:
+
 - Review early and often
 - Address feedback thoroughly
 - Iterate until excellent
 
 ### 4. Work Chapter-by-Chapter
+
 Don't write the entire book then review:
+
 - Write one chapter
 - Review and revise that chapter
 - Get approval
@@ -216,7 +182,9 @@ Don't write the entire book then review:
 This prevents cascading issues.
 
 ### 5. Think Like a Teacher, Not Just a Writer
+
 Your job isn't just to share information—it's to enable transformation:
+
 - Every chapter must have clear learning outcomes
 - Exercises aren't optional—they're where learning happens
 - Examples make abstract concepts concrete
