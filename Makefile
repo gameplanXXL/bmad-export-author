@@ -1,7 +1,16 @@
 # Makefile für KI-Agent Projekt
 # ================================
 
-.PHONY: help install install-tools install-expansion-pack clean
+OUTPUT_DIR = output
+SRC_DIR = chapters
+BOOK_NAME = book
+PDF_FILE = $(OUTPUT_DIR)/$(BOOK_NAME).pdf
+CHAPTERS = $(sort $(wildcard $(SRC_DIR)/chapter-*.md $(SRC_DIR)/kapitel-*.md))
+
+# Kombinierte Markdown-Datei
+COMBINED_MD = $(OUTPUT_DIR)/$(BOOK_NAME).md
+
+.PHONY: help install install-tools install-expansion-pack clean md pdf
 
 # Default target: Zeige Hilfe
 help:
@@ -11,6 +20,8 @@ help:
 	@echo ""
 	@echo "  make          - Zeigt diese Hilfe"
 	@echo "  make install  - Installiert Tools und Expansion Pack"
+	@echo "  make md       - Kombiniert Kapitel zu einer Markdown-Datei"
+	@echo "  make pdf      - Erstellt PDF aus kombinierten Kapiteln"
 	@echo "  make clean    - Aufräumen (falls benötigt)"
 	@echo ""
 	@echo "=========================================="
@@ -29,12 +40,8 @@ install: install-tools install-expansion-pack
 # Tools lokal installieren
 install-tools:
 	@echo "📦 Installiere benötigte Tools..."
-	@echo ""
-	@echo "ℹ  Hinweis: Aktuell sind keine zusätzlichen Tools erforderlich."
-	@echo "   Fügen Sie hier npm/pip/andere Installationen hinzu, falls benötigt."
-	@echo ""
-	@echo "Beispiel:"
-	@echo "  @npm install mdpdf"
+	@npm install mdpdf
+	@echo "✅ mdpdf wurde lokal installiert!"
 	@echo ""
 
 # Expansion Pack installieren
@@ -43,8 +50,30 @@ install-expansion-pack:
 	@echo "📚 Installiere BMAD Expert Author Expansion Pack..."
 	@./scripts/install-expansion-pack.sh
 
+# Output-Verzeichnis erstellen
+$(OUTPUT_DIR):
+	@mkdir -p $(OUTPUT_DIR)
+
+# Alle Kapitel zu einer Datei kombinieren
+md: | $(OUTPUT_DIR)
+	@if [ -z "$(CHAPTERS)" ]; then \
+		echo "⚠️  Keine Kapitel gefunden in $(SRC_DIR)/"; \
+		echo "   Erwartet: chapter-*.md oder kapitel-*.md"; \
+		exit 1; \
+	fi
+	@echo "📝 Kombiniere $(words $(CHAPTERS)) Kapitel..."
+	@cat $(CHAPTERS) > $(COMBINED_MD)
+	@echo "✅ Kombinierte Datei erstellt: $(COMBINED_MD)"
+
+# PDF mit mdpdf generieren
+pdf: md
+	@echo "📚 Generiere PDF mit mdpdf..."
+	@./node_modules/.bin/mdpdf $(COMBINED_MD) -o $(PDF_FILE)
+	@echo "✅ PDF erstellt: $(PDF_FILE)"
+	@echo "📊 Dateigröße: $$(du -h $(PDF_FILE) | cut -f1)"
+
 # Aufräumen
 clean:
-	@echo "🧹 Aufräumen..."
-	@echo "ℹ  Nichts zu tun."
-	@echo ""
+	@echo "🧹 Lösche generierte Dateien..."
+	@rm -f $(PDF_FILE) $(COMBINED_MD)
+	@echo "✅ Aufgeräumt!"
