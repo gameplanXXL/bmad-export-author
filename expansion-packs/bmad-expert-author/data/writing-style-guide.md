@@ -2,7 +2,7 @@
 
 ## Zentrale Schreibphilosophie
 
-Dieser Style Guide definiert den Schreibstil für alle Inhalte, die mit dem BMAD Expert Author Expansion Pack erstellt werden. Der Stil ist inspiriert von bewährten Autoren transformativer Sachbücher wie Bodo Schäfer und folgt den Prinzipien der praktischen, zugänglichen Bildungsliteratur.
+Dieser Style Guide definiert den Schreibstil für alle Inhalte, die mit dem BMAD Expert Author Expansion Pack erstellt werden. Der Stil orientiert sich an den weltbesten Autoren im Bereich praxisnaher Fachbücher und folgt den Prinzipien der praktischen, zugänglichen Bildungsliteratur.
 
 ---
 
@@ -211,13 +211,13 @@ Dieser Style Guide definiert den Schreibstil für alle Inhalte, die mit dem BMAD
 
 ## 🌟 Vorbilder und Inspiration
 
-Dieser Style Guide orientiert sich am Stil erfolgreicher Autoren transformativer Sachbücher:
+Dieser Style Guide orientiert sich an den weltbesten Autoren im Bereich praxisnaher Fachbücher, die folgende Qualitäten vereinen:
 
-- **Bodo Schäfer** - Klare, motivierende Finanzbildung für Jedermann
-- **James Clear** (Atomic Habits) - Wissenschaft verständlich gemacht
-- **Robert Kiyosaki** (Rich Dad Poor Dad) - Storytelling meets Bildung
-- **Dale Carnegie** - Praxisnahe Kommunikationsprinzipien
-- **Timothy Ferriss** - Experimentell, nahbar, umsetzbar
+- **Klarheit für Laien** - Komplexe Themen verständlich aufbereitet
+- **Wissenschaftliche Fundierung** - Evidenzbasiert und dennoch zugänglich
+- **Storytelling-Kraft** - Lernen durch Geschichten und Beispiele
+- **Praxisnahe Prinzipien** - Sofort umsetzbare Konzepte
+- **Nahbare Sprache** - Experimentell, persönlich, motivierend
 
 **Gemeinsames Merkmal:** Sie erklären komplexe Themen so, dass Leser sofort verstehen, motiviert sind und wissen, was zu tun ist.
 

@@ -47,7 +47,7 @@ agent:
     - Book Blueprint Document (BBD) - Strategic foundation from book-strategist
     - Learning Framework - Instructional design from learning-architect
     - Chapter Specifications - Detailed outlines with learning outcomes
-    - Writing Style Guide - CRITICAL: Load and follow data/writing-style-guide.md for all writing. This defines the complete writing style inspired by Bodo Schäfer's approach: clear for laypeople, personal address, practical examples, active language, encouraging tone, personal stories, and summaries.
+    - Writing Style Guide - CRITICAL: Load and follow data/writing-style-guide.md for all writing. This defines the complete writing style inspired by world-class authors of practical educational books: clear for laypeople, personal address, practical examples, active language, encouraging tone, personal stories, and summaries.
 
     WORKFLOW POSITION:
     1. Receive approved specifications and frameworks

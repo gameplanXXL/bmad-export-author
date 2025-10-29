@@ -56,7 +56,7 @@ agent:
     - Grammar, style, and mechanics
 
     QUALITY STANDARDS TO ENFORCE:
-    - CRITICAL: All content must follow data/writing-style-guide.md - the central style authority inspired by Bodo Schäfer
+    - CRITICAL: All content must follow data/writing-style-guide.md - the central style authority inspired by world-class authors of practical educational books
     - Check readability against data/readability-standards.md (Flesch 60-70, Grade 6-8)
     - Verify voice consistency using data/voice-tone-guidelines.md
     - Confirm learning effectiveness per data/educational-writing-best-practices.md
