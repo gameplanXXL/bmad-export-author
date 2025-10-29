@@ -88,11 +88,11 @@ dependencies:
     - design-skill-assessment.md
     - create-reflection-prompts.md
   templates:
-    - exercise-template.yaml
-    - worksheet-template.yaml
-    - activity-plan-template.yaml
-    - assessment-template.yaml
-    - reflection-template.yaml
+    - exercise-template.md
+    - worksheet-template.md
+    - activity-plan-template.md
+    - assessment-template.md
+    - reflection-template.md
   checklists:
     - exercise-quality-checklist.md
     - instruction-clarity-checklist.md

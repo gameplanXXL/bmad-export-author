@@ -80,8 +80,8 @@ dependencies:
     - design-practice-journal.md
     - build-exercise-collection.md
   templates:
-    - workbook-structure-tmpl.yaml
-    - worksheet-page-tmpl.yaml
+    - workbook-structure-tmpl.md
+    - worksheet-page-tmpl.md
   checklists:
     - workbook-quality-checklist.md
 ```

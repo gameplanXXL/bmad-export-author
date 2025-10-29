@@ -127,10 +127,10 @@ dependencies:
     - check-readability-level.md
     - align-voice-tone.md
   templates:
-    - chapter-writing-tmpl.yaml
-    - section-template.yaml
-    - introduction-template.yaml
-    - exercise-instruction-template.yaml
+    - chapter-writing-tmpl.md
+    - section-template.md
+    - introduction-template.md
+    - exercise-instruction-template.md
   checklists:
     - content-quality-checklist.md
     - readability-checklist.md

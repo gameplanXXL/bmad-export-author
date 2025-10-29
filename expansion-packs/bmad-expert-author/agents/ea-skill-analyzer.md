@@ -85,10 +85,10 @@ dependencies:
     - identify-learning-gaps.md
     - analyze-error-patterns.md
   templates:
-    - skill-decomposition-tmpl.yaml
-    - prerequisite-map-tmpl.yaml
-    - learning-sequence-tmpl.yaml
-    - milestone-definition-tmpl.yaml
+    - skill-decomposition-tmpl.md
+    - prerequisite-map-tmpl.md
+    - learning-sequence-tmpl.md
+    - milestone-definition-tmpl.md
   checklists:
     - skill-breakdown-completeness.md
     - prerequisite-coverage.md

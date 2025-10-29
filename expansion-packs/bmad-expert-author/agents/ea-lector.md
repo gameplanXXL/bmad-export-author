@@ -127,9 +127,9 @@ dependencies:
     - validate-examples-cases.md
     - verify-revision-completeness.md
   templates:
-    - review-report-tmpl.yaml
-    - feedback-template.yaml
-    - quality-assessment-tmpl.yaml
+    - review-report-tmpl.md
+    - feedback-template.md
+    - quality-assessment-tmpl.md
   checklists:
     - chapter-review-checklist.md
     - learning-effectiveness-checklist.md

@@ -81,8 +81,8 @@ dependencies:
     - analyze-pricing-strategy.md
     - plan-distribution-channels.md
   templates:
-    - launch-plan-tmpl.yaml
-    - marketing-plan-tmpl.yaml
+    - launch-plan-tmpl.md
+    - marketing-plan-tmpl.md
   checklists:
     - launch-readiness-checklist.md
 ```

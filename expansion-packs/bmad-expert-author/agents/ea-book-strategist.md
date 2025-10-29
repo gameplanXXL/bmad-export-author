@@ -116,9 +116,9 @@ dependencies:
     - validate-book-concept.md
   templates:
     - book-blueprint-tmpl.md
-    - audience-analysis-tmpl.yaml
-    - market-research-tmpl.yaml
-    - transformation-definition-tmpl.yaml
+    - audience-analysis-tmpl.md
+    - market-research-tmpl.md
+    - transformation-definition-tmpl.md
   checklists:
     - blueprint-completeness-checklist.md
     - audience-understanding-checklist.md

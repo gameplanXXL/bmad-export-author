@@ -83,9 +83,9 @@ dependencies:
     - sequence-topics-optimally.md
     - place-exercises-strategically.md
   templates:
-    - book-structure-tmpl.yaml
-    - chapter-outline-tmpl.yaml
-    - section-outline-tmpl.yaml
+    - book-structure-tmpl.md
+    - chapter-outline-tmpl.md
+    - section-outline-tmpl.md
   checklists:
     - structure-quality-checklist.md
     - learning-flow-checklist.md

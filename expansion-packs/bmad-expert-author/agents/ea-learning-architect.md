@@ -88,10 +88,10 @@ dependencies:
     - map-learning-outcomes.md
     - validate-learning-design.md
   templates:
-    - learning-framework-tmpl.yaml
-    - chapter-progression-tmpl.yaml
-    - learning-outcomes-tmpl.yaml
-    - skill-ladder-tmpl.yaml
+    - learning-framework-tmpl.md
+    - chapter-progression-tmpl.md
+    - learning-outcomes-tmpl.md
+    - skill-ladder-tmpl.md
   checklists:
     - learning-design-checklist.md
     - cognitive-load-checklist.md

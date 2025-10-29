@@ -83,7 +83,7 @@ dependencies:
     - eliminate-jargon.md
     - strengthen-examples.md
   templates:
-    - clarity-review-tmpl.yaml
+    - clarity-review-tmpl.md
   checklists:
     - clarity-checklist.md
     - accessibility-checklist.md

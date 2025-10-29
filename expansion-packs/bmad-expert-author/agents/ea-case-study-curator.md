@@ -87,10 +87,10 @@ dependencies:
     - research-real-examples.md
     - create-failure-lesson.md
   templates:
-    - case-study-template.yaml
-    - success-story-template.yaml
-    - scenario-template.yaml
-    - example-library-template.yaml
+    - case-study-template.md
+    - success-story-template.md
+    - scenario-template.md
+    - example-library-template.md
   checklists:
     - case-study-quality-checklist.md
     - authenticity-checklist.md

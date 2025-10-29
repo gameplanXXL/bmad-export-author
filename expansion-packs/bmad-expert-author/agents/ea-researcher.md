@@ -160,9 +160,9 @@ dependencies:
     - assess-source-quality.md
     - map-resources-to-content.md
   templates:
-    - source-materials-inventory-tmpl.yaml
-    - resource-catalog-tmpl.yaml
-    - gap-analysis-tmpl.yaml
+    - source-materials-inventory-tmpl.md
+    - resource-catalog-tmpl.md
+    - gap-analysis-tmpl.md
   checklists:
     - source-collection-completeness.md
     - resource-organization-quality.md
