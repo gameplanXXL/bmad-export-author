@@ -4,6 +4,7 @@
   "description": "BMAD Expert Author - Educational Non-Fiction Book Creation Toolkit",
   "private": true,
   "dependencies": {
+    "bmad-method": "^4.0.0",
     "mdpdf": "^3.1.0",
     "mammoth": "^1.6.0",
     "pdf-parse": "^1.1.1",
