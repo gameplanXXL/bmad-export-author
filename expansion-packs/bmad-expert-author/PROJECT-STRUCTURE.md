@@ -478,7 +478,93 @@ git push
    - `expansion-packs/bmad-expert-author/` = Source Code des Expansion Packs
    - Projekt-Root (diese Struktur) = Ihr Buch-Inhalt
 
+6. **Große Dateien aufteilen:**
+   - Nutzen Sie `/BMad:agents:ea-shard` für Dokumente >500 Zeilen
+   - Erstellt Unterverzeichnisse mit modularen Dateien (z.B. `docs/learning-framework/`)
+   - Siehe Abschnitt "Document Sharding" unten
+
+---
+
+## Document Sharding mit EA-Shard Agent
+
+### Wann verwenden?
+
+Verwenden Sie den **ea-shard** Agent, wenn:
+- Dokumente >500 Zeilen werden
+- Claude Code Performance leidet
+- Dokumente schwer wartbar werden
+- Modulare Organisation gewünscht ist
+
+### Typische Kandidaten
+
+```
+docs/
+├── learning-framework.md     (1242 Zeilen) → Sharden!
+├── content-structure.md      (1045 Zeilen) → Sharden!
+├── book-blueprint.md         (638 Zeilen)  → Sharden!
+└── summary.md                (491 Zeilen)  → OK (unter Schwelle)
+```
+
+### Verwendung
+
+**Einzelne Datei sharden:**
+```bash
+/BMad:agents:ea-shard
+*shard docs/learning-framework.md
+```
+
+**Alle großen Dateien in docs/ sharden:**
+```bash
+/BMad:agents:ea-shard
+*shard-all
+```
+
+**Struktur analysieren (Vorschau):**
+```bash
+/BMad:agents:ea-shard
+*analyze docs/learning-framework.md
+```
+
+### Ergebnis-Struktur
+
+Nach dem Sharding:
+
+```
+docs/
+├── learning-framework/          # Modular aufgeteilt
+│   ├── README.md               # Master Index mit Navigation
+│   ├── instructional-approach.md
+│   ├── learning-progression.md
+│   ├── outcomes-by-chapter.md
+│   ├── exercise-design.md
+│   ├── assessments.md
+│   └── resources.md
+│
+├── content-structure/           # Modular aufgeteilt
+│   ├── README.md
+│   ├── architecture-overview.md
+│   ├── chapter-01-introduction.md
+│   ├── chapter-02-history.md
+│   └── ...
+│
+└── learning-framework-backup.md # Original gesichert
+```
+
+### Vorteile
+
+- **Performance:** Kleinere Dateien = schnelleres Laden
+- **Navigation:** README.md bietet Übersicht und Quick-Links
+- **Wartbarkeit:** Logische Module einfacher zu bearbeiten
+- **Skalierbarkeit:** Wächst mit Projekt ohne Performance-Einbußen
+
+### Wichtig
+
+- **Semantische Namen:** Dateien haben sprechende Namen (nicht `module-01.md`)
+- **Erhalt:** Alle Inhalte bleiben erhalten (nichts geht verloren)
+- **Original-Backup:** Original wird als `*-backup.md` gesichert
+- **Master Index:** Jedes Verzeichnis hat `README.md` mit Navigation
+
 ---
 
 **Letzte Aktualisierung:** 2025-10-29
-**Version:** 1.0
+**Version:** 1.1
