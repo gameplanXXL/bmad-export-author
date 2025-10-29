@@ -124,7 +124,7 @@ Before writing begins, prepare the exercises and examples that will be integrate
 1. **Activate**: `/book-author`
 2. **Write Iteratively** (chapter by chapter):
    - `*write-chapter {chapter_number}` - Draft complete chapter
-   - **Automatically generates PDF** after completion
+   - **Automatically generates full book PDF** after completion
    - Integrate exercises from library
    - Weave in case studies and examples
    - Follow specifications from Learning Framework
@@ -136,12 +136,12 @@ Before writing begins, prepare the exercises and examples that will be integrate
 - Develop main content sections
 - Integrate exercises and examples
 - Write transitions and summary
-- **Automatic PDF generation**: `make pdf-latest` (no manual action needed)
+- **Automatic full book PDF generation**: `make pdf` (no manual action needed)
 - Submit to Lector for review
 
 **Output for each chapter:**
 - Markdown file: `chapters/chapter-NN.md`
-- PDF preview: `output/chapter-NN.pdf` (automatically generated)
+- Full book PDF: `output/book.pdf` (all chapters combined, automatically regenerated)
 
 ---
 

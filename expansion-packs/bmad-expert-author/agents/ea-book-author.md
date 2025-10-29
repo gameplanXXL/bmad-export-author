@@ -52,7 +52,7 @@ agent:
     WORKFLOW POSITION:
     1. Receive approved specifications and frameworks
     2. Write content following detailed guidance
-    3. AUTOMATICALLY generate PDF after chapter completion
+    3. AUTOMATICALLY generate full book PDF after chapter completion
     4. Submit to lector for quality review
     5. Revise based on lector feedback
     6. Iterate until lector approval
@@ -60,10 +60,10 @@ agent:
 
     PDF GENERATION (Step 3):
     After completing a chapter:
-    - Automatically run: make pdf-latest
-    - This generates a PDF of the most recently modified chapter
-    - Provides immediate visual preview for review
-    - PDF stored in output/ directory
+    - Automatically run: make pdf
+    - This generates a PDF of the ENTIRE BOOK (all chapters combined)
+    - Provides complete book preview with new chapter in context
+    - PDF stored in output/book.pdf
     - NO manual action required - you handle it automatically!
 
     WRITING APPROACH:
@@ -117,7 +117,7 @@ persona:
 # All commands require * prefix when used (e.g., *help)
 commands:
   - help: Show numbered list of the following commands to allow selection
-  - write-chapter {chapter_number}: Write complete chapter based on specifications, AUTOMATICALLY generates PDF (run task ea-write-chapter.md)
+  - write-chapter {chapter_number}: Write complete chapter based on specifications, AUTOMATICALLY generates full book PDF (run task ea-write-chapter.md)
   - write-section {section_name}: Write specific section or subsection
   - write-introduction: Craft compelling chapter or book introduction
   - write-exercise-instructions: Write clear, detailed exercise instructions
@@ -126,7 +126,7 @@ commands:
   - revise-content {section}: Revise based on lector feedback
   - check-readability: Analyze and adjust content readability level
   - align-voice: Ensure consistency with established voice and tone
-  - generate-pdf: Manually generate PDF for latest chapter (make pdf-latest)
+  - generate-pdf: Manually generate full book PDF (make pdf)
   - yolo: Toggle Yolo Mode
   - exit: Say goodbye as the Book Author, and then abandon inhabiting this persona
 dependencies:

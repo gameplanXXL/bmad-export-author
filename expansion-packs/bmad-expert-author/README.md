@@ -147,23 +147,28 @@ ls -la .claude/commands/BMad/agents/
 #### ✍️ Book Author (`/BMad:agents:book-author`)
 **Purpose**: Writes chapter content based on specifications
 
-**✨ Automatic PDF Generation**: After completing each chapter, automatically generates PDF for review!
+**✨ Automatic PDF Generation**: After completing each chapter, automatically generates **full book PDF** for review!
 
 **Key outputs**:
 - Chapter drafts (Markdown)
-- Chapter PDFs (automatically generated)
+- Full book PDF (automatically generated after each chapter)
 - Integrated exercises
 - Woven case studies and examples
 
 **Key commands**:
-- `*write-chapter {N}` - Write chapter N, auto-generates PDF
-- `*generate-pdf` - Manually generate PDF for latest chapter
+- `*write-chapter {N}` - Write chapter N, auto-generates full book PDF
+- `*generate-pdf` - Manually generate full book PDF
 
 **How PDF generation works**:
 1. Book Author completes chapter → saves to `chapters/chapter-NN.md`
-2. Automatically runs: `make pdf-latest`
-3. PDF generated: `output/chapter-NN.pdf`
-4. User receives both Markdown and formatted PDF preview
+2. Automatically runs: `make pdf`
+3. Combines ALL chapters → generates `output/book.pdf`
+4. User sees complete book with new chapter in context
+
+**Why full book PDF?**
+- See new chapter in context of entire book
+- Review flow and transitions between chapters
+- Check narrative consistency across all chapters
 
 **When to use**: After chapter outlines are complete
 

@@ -130,28 +130,35 @@ Write complete chapter to file:
 - Encoding: UTF-8
 - Format: Markdown
 
-### Step 6: Automatically Generate PDF
+### Step 6: Automatically Generate Full Book PDF
 
-**CRITICAL:** After writing chapter, generate PDF automatically:
+**CRITICAL:** After writing chapter, generate PDF of ENTIRE BOOK automatically:
 
 ```bash
-make pdf-latest
+make pdf
 ```
 
 This will:
-- Detect the most recently modified chapter file
-- Generate PDF using mdpdf
-- Store in: `output/chapter-{NN}.pdf`
+- Combine ALL chapters in chapters/ directory
+- Generate complete book PDF using mdpdf
+- Store in: `output/book.pdf`
 - Display file size and location
+
+**Why full book PDF?**
+- See new chapter in context of entire book
+- Check flow and transitions between chapters
+- Review complete narrative arc
+- Identify consistency issues across chapters
 
 **Output to user:**
 ```
 ✅ Chapter {N} written: chapters/chapter-{NN}.md
-📚 Generating PDF preview...
-✅ PDF created: output/chapter-{NN}.pdf
+📚 Generating full book PDF (all chapters)...
+✅ PDF created: output/book.pdf
 📊 File size: {size}
+📖 Chapters included: {count}
 
-Your chapter is ready for review! The PDF provides a formatted preview.
+Your chapter is complete! The PDF shows the entire book with your new chapter in context.
 ```
 
 ### Step 7: Handoff to Lector
@@ -161,14 +168,14 @@ Inform user that chapter is ready for quality review:
 ```
 Your chapter is complete and ready for review!
 
-📄 Markdown: chapters/chapter-{NN}.md
-📚 PDF: output/chapter-{NN}.pdf
+📄 Chapter Markdown: chapters/chapter-{NN}.md
+📚 Full Book PDF: output/book.pdf (all chapters combined)
 
 Next steps:
-1. Review the chapter yourself
+1. Review the chapter in context (see book.pdf)
 2. Activate lector for quality review: /BMad:agents:lector
 3. Run: *review-chapter {chapter_number}
-4. I'll revise based on feedback and regenerate PDF
+4. I'll revise based on feedback and regenerate full book PDF
 ```
 
 ## Success Criteria
@@ -178,7 +185,7 @@ Next steps:
 - [ ] Writing follows style guide (data/writing-style-guide.md)
 - [ ] Readability level appropriate (Flesch 60-70)
 - [ ] Correct Markdown formatting (lists, headings)
-- [ ] PDF automatically generated in output/ directory
+- [ ] Full book PDF automatically generated in output/ directory
 - [ ] User informed of completion and next steps
 
 ## Output Deliverables
@@ -188,18 +195,19 @@ Next steps:
    - Properly formatted Markdown
    - Follows style guide
 
-2. **Chapter PDF**: `output/chapter-{NN}.pdf`
+2. **Full Book PDF**: `output/book.pdf`
    - Automatically generated
-   - Formatted preview
+   - Contains ALL chapters (entire book)
+   - New chapter visible in context
    - Ready for review
 
 ## Error Handling
 
 **If PDF generation fails:**
 1. Ensure mdpdf is installed: `npm install`
-2. Check chapter file exists
+2. Check that chapters/ directory contains Markdown files
 3. Verify output/ directory is writable
-4. Re-run: `make pdf-latest`
+4. Re-run: `make pdf`
 
 **If chapter specifications unclear:**
 - Ask user for clarification before writing
