@@ -26,22 +26,62 @@ Authors writing educational books about:
 
 ## Quick Start
 
+### Prerequisites
+
+- Git
+- Make
+- Node.js (for document processing tools)
+- Claude Code (or compatible IDE)
+
 ### Installation
 
 ```bash
+# Clone or navigate to your project
+cd your-project
+
 # Install the expansion pack
 make install
-
-# Verify installation
-ls -la .bmad-expert-author/
-ls -la .claude/commands/BMad/agents/
 ```
 
-### First Steps
+This will:
+1. Install document processing tools (mammoth, pdf-parse, turndown, mdpdf)
+2. Copy expansion pack files to `.bmad-expert-author/`
+3. Create 17 Claude Code slash commands in `.claude/commands/BMad/agents/`
+4. Update installation manifest
 
-1. **Start with strategy**: `/BMad:agents:book-strategist`
-2. **Create Book Blueprint**: `*create-blueprint`
-3. **Follow the workflow**: See `workflows/README.md`
+**Verification:**
+```bash
+# Check installation
+ls -la .bmad-expert-author/
+ls -la .claude/commands/BMad/agents/
+
+# You should see 17 agent files
+```
+
+### Getting Started
+
+#### 1. Activate Your First Agent
+
+In Claude Code, start with the Book Strategist:
+
+```bash
+/BMad:agents:ea-book-strategist
+```
+
+#### 2. Create Your Book Blueprint
+
+Once activated, run:
+
+```bash
+*help                      # See all available commands
+*create-blueprint          # Start your book planning
+```
+
+#### 3. Follow the Workflow
+
+The expansion pack guides you through a proven process (see [Core Workflow](#core-workflow) below).
+
+**📖 For complete workflow details**, see `workflows/README.md`
 
 ---
 
@@ -502,6 +542,33 @@ docs/
 
 ---
 
+## Key Features
+
+✅ **17 Specialized Agents** - Complete toolkit for book authoring
+✅ **Proven Workflow** - Based on ADDIE instructional design model
+✅ **Auto PDF Generation** - Book Author generates full book PDF after each chapter
+✅ **Document Processing** - Converts existing materials (DOCX, PDF, HTML)
+✅ **Fact Checking** - Verifies claims and adds authoritative citations
+✅ **Visual Design** - Plans and embeds images, diagrams, charts
+✅ **Narrative Techniques** - Optional crisis arcs and frame stories
+✅ **Quality Assurance** - Comprehensive review and feedback system
+✅ **Document Sharding** - Manages large documents efficiently
+
+---
+
+## Example Use Cases
+
+This expansion pack helps you create books like:
+
+- 💰 Financial literacy guides ("Der Weg zur finanziellen Freiheit", "Rich Dad Poor Dad")
+- ⚡ Productivity systems ("Getting Things Done", "Atomic Habits")
+- 💬 Communication skills ("Crucial Conversations", "How to Win Friends")
+- 🏃 Health transformation ("The 4-Hour Body")
+- 🎨 Creative skills ("The Artist's Way")
+- 💼 Business skills ("The E-Myth Revisited", "Zero to One")
+
+---
+
 ## Project Structure
 
 When working with this expansion pack, your book project will have this structure:
@@ -605,6 +672,25 @@ The expansion pack is installed via `make install`, which:
 5. **Specialized Expertise**: Each agent focuses on their domain
 6. **Document-Centric**: Book Blueprint is single source of truth
 7. **Modular Organization**: Large documents can be sharded for better maintainability
+
+---
+
+## Key Success Principles
+
+### 1. Don't Skip the Foundation
+Invest time in Book Blueprint and Learning Framework first. The strategic foundation prevents major rework later.
+
+### 2. Follow the Workflow
+Each phase builds on the previous - don't skip steps.
+
+### 3. Use the Lector Extensively
+Review early and often. Iterate until excellent.
+
+### 4. Work Chapter-by-Chapter
+Write one chapter → Review → Approve → Next chapter. This prevents cascading issues.
+
+### 5. Think Like a Teacher
+Your job is to enable transformation through clear learning outcomes, practical exercises, and concrete examples.
 
 ---
 
