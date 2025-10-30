@@ -1,262 +1,279 @@
 # BMAD Expert Author Expansion Pack
 
-## Overview
+**Transform Your Expertise into Transformative Educational Books**
 
-The **BMAD Expert Author Expansion Pack** extends the BMAD-METHOD™ framework with specialized AI agents designed to help authors create high-quality, transformative non-fiction books that enable readers to master practical skills.
+This is a specialized expansion pack for the BMAD-METHOD™ framework that provides AI agents for creating high-quality educational non-fiction books.
 
-This expansion pack provides a complete toolkit for creating educational books that combine compelling narratives, practical exercises, and proven learning methodologies.
+---
 
-## Core Philosophy
+## Quick Links
 
-This expansion pack is built on proven instructional design principles:
+- **📖 [Complete Documentation](expansion-packs/bmad-expert-author/README.md)** - Full agent list, workflows, and features
+- **🚀 [Installation Guide](#installation)** - Get started quickly
+- **🛠️ [Developer Guide](CLAUDE.md)** - For development and maintenance
+- **📋 [Project Structure](expansion-packs/bmad-expert-author/PROJECT-STRUCTURE.md)** - File organization details
+- **🔄 [Workflows](expansion-packs/bmad-expert-author/workflows/README.md)** - Step-by-step process guides
 
-- **ADDIE Model** - Analysis, Design, Development, Implementation, Evaluation for systematic learning design
-- **Practice-Based Learning** - Hands-on exercises, worksheets, and real-world applications
-- **Transformation-Focused** - Clear before/after outcomes with measurable skill progression
-- **Accessibility** - Making complex skills learnable for complete beginners
-- **Motivation & Engagement** - Storytelling, case studies, and inspirational elements
+---
+
+## What Is This?
+
+The **BMAD Expert Author Expansion Pack** extends the BMAD-METHOD™ framework with **17 specialized AI agents** designed to help you create transformative non-fiction books that teach practical skills.
+
+### Target Audience
+
+Authors writing educational books about:
+- Financial literacy
+- Productivity and time management
+- Communication skills
+- Health and personal transformation
+- Creative skills
+- Business skills
+
+### Core Philosophy
+
+Built on proven instructional design principles:
+- **ADDIE Model** - Systematic learning design
+- **Practice-Based Learning** - Hands-on exercises and real-world applications
+- **Transformation-Focused** - Clear before/after outcomes
+- **Accessibility** - Making complex skills learnable for beginners
+
+---
 
 ## Installation
 
-**For complete installation instructions**, including prerequisites (Git, Make, Node.js, Claude Code), please see **[SETUP.md](../../SETUP.md)** in the project root.
+### Prerequisites
 
-### Quick Start
+- Git
+- Make
+- Node.js (for document processing tools)
+- Claude Code (or compatible IDE)
 
-If you already have all prerequisites installed:
+### Quick Install
 
 ```bash
-# From your project root
+# Clone or navigate to your project
+cd your-project
+
+# Install the expansion pack
 make install
 ```
 
-This installs the expansion pack and makes all agents available in Claude Code.
+This will:
+1. Install document processing tools (mammoth, pdf-parse, turndown, mdpdf)
+2. Copy expansion pack files to `.bmad-expert-author/`
+3. Create 17 Claude Code slash commands in `.claude/commands/BMad/agents/`
+4. Update installation manifest
 
-## Usage
+**Verification:**
+```bash
+# Check installation
+ls -la .bmad-expert-author/
+ls -la .claude/commands/BMad/agents/
 
-### Activating Agents (Claude Code)
+# You should see 17 agent files
+```
 
-After installation, activate agents using slash commands with the configured prefix:
+---
+
+## Getting Started
+
+### 1. Activate Your First Agent
+
+In Claude Code, start with the Book Strategist:
 
 ```bash
-/BMad:agents:ea-book-strategist       # Create book strategy and planning
-/BMad:agents:ea-researcher            # Gather and organize source materials
-/BMad:agents:ea-learning-architect    # Design your book's learning framework
-/BMad:agents:ea-book-author           # Write book content following specifications
-/BMad:agents:ea-lector                # Review and provide quality feedback
-/BMad:agents:ea-skill-analyzer        # Break down skills into teachable steps
-/BMad:agents:ea-exercise-designer     # Create practical exercises
-/BMad:agents:ea-case-study-curator    # Develop examples and stories
-/BMad:agents:ea-content-structurer    # Organize your material
-/BMad:agents:ea-clarity-editor        # Ensure beginner-friendly explanations
-/BMad:agents:ea-workbook-developer    # Create companion materials
-/BMad:agents:ea-publishing-strategist # Plan your launch
+/BMad:agents:ea-book-strategist
 ```
 
-**Note**: The command prefix (e.g., `BMad:agents:`) is determined by your BMAD installation configuration. Check your `.claude/commands/` directory structure for the exact commands available in your environment.
+### 2. Create Your Book Blueprint
 
-### Using Agent Commands
-
-Once an agent is activated, use their internal commands (prefixed with `*`):
+Once activated, run:
 
 ```bash
-*help                    # Show all available commands for the active agent
-*ea-create-book-blueprint   # Create a comprehensive book plan (book-strategist)
-*ea-write-chapter 1         # Write chapter 1 (book-author)
-*ea-review-chapter          # Review chapter content (lector)
-*exit                    # Exit agent mode
+*help                      # See all available commands
+*create-blueprint          # Start your book planning
 ```
 
-## Core Workflow
+### 3. Follow the Workflow
 
-The BMAD Expert Author workflow follows a structured process similar to software development:
+The expansion pack guides you through a proven process:
 
 ```
-1. Book Strategist → Book Blueprint Document (BBD)
-   Define target reader, transformation, unique approach, market positioning
-
-2. Researcher → Source Materials Inventory
-   Gather and organize all author materials, references, stories, and resources
-
-3. Learning Architect → Learning Framework
-   Design progressive skill building, learning outcomes, exercise strategy
-
-4. Content Structurer → Chapter Outlines
-   Create detailed structure and chapter specifications
-
-5. Book Author → Content Writing
-   Write chapters based on specifications
-
-6. Lector → Quality Review
-   Comprehensive review and feedback cycle
+1. Book Strategist → Book Blueprint (strategic foundation)
+2. Researcher → Source Materials (gather existing content) [OPTIONAL]
+3. Learning Architect → Learning Framework (instructional design)
+4. Content Structurer → Chapter Outlines (detailed structure)
+5. Book Author → Content Writing (execute the plan)
+6. Fact Checker → Citations & Verification [NEW]
+7. Visual Designer → Images & Diagrams [NEW]
+8. Lector → Quality Review (iterative feedback)
+9. Publishing Strategist → Launch Planning
 ```
 
-### Supporting Agents
+**📖 For complete workflow details**, see [workflows/README.md](expansion-packs/bmad-expert-author/workflows/README.md)
 
-- **Researcher** - Gather and organize all source materials (NEW - runs after Book Strategist)
-- **Exercise Designer** - Create practical exercises and worksheets
-- **Case Study Curator** - Develop compelling examples and success stories
-- **Skill Analyzer** - Break down complex skills into teachable components
-- **Clarity Editor** - Optimize text clarity for target audience
-- **Workbook Developer** - Create companion workbooks
-- **Publishing Strategist** - Plan publication and launch strategy
+---
 
-## Primary Use Cases
+## Available Agents (17 Total)
 
-### 1. **Skill-Building Non-Fiction**
+### Strategic Planning (2)
+- 📊 **Book Strategist** - Creates Book Blueprint Document
+- 🚀 **Publishing Strategist** - Plans publication and launch
 
-Write books that teach practical skills (financial literacy, productivity, communication, health, etc.) with clear learning outcomes and practice exercises.
+### Instructional Design (3)
+- 🎓 **Learning Architect** - Designs learning framework
+- 🔬 **Skill Analyzer** - Decomposes complex skills
+- 📐 **Content Structurer** - Organizes content structure
 
-### 2. **Professional Development Books**
+### Content Creation (4)
+- ✍️ **Book Author** - Writes chapter content (with auto PDF generation)
+- ✍️ **Exercise Designer** - Creates practice exercises
+- 📖 **Case Study Curator** - Develops examples and stories
+- 🔬 **Researcher** - Gathers and organizes source materials
 
-Create career-focused books with actionable strategies, templates, and frameworks for workplace success.
+### Utility (2)
+- 📄 **Document Processor** - Converts DOCX, PDF, HTML to Markdown
+- 🔪 **EA Sharder** - Splits large documents intelligently
 
-### 3. **Self-Improvement Guides**
+### Quality & Enhancement (6)
+- 🔍 **Fact Checker** - Verifies claims and adds citations
+- 🎨 **Visual Designer** - Plans and embeds images
+- 🔍 **Lector** - Comprehensive quality review
+- 💡 **Clarity Editor** - Optimizes readability
+- 🔥 **Reader Motivation** - Weaves narrative techniques (optional)
+- 📝 **Workbook Developer** - Creates companion workbooks
 
-Develop transformation-focused books that combine personal stories, research, and practical exercises.
+**📖 For detailed agent documentation**, see [expansion-packs/bmad-expert-author/README.md](expansion-packs/bmad-expert-author/README.md)
 
-### 4. **Educational Workbooks**
-
-Build companion workbooks with exercises, worksheets, and assessment tools.
-
-### 5. **Online Course Adaptation**
-
-Transform book content into structured online courses with modules, lessons, and interactive elements.
+---
 
 ## Key Features
 
-- **Comprehensive Writing Style Guide** - Central style authority inspired by Bodo Schäfer's clear, practical, and motivating approach for laypeople
-- **Learning Outcome Mapping** - Every chapter linked to specific, measurable skills
-- **Exercise Database** - Library of proven exercise formats and activity types
-- **Case Study Templates** - Structured frameworks for compelling examples
-- **Clarity Standards** - Readability analysis (Flesch 60-70, Grade 6-8) and beginner-friendly language checking
-- **Voice & Tone Guidelines** - "The Encouraging Mentor" voice with context-adaptive tone
-- **Educational Writing Best Practices** - Cognitive Load Theory, Scaffolding, Active Learning, and more
-- **Plain Language Guidelines** - Techniques for making complex topics accessible
-- **Progress Tracking** - Tools for creating skill assessments and progress measures
-- **Market Research** - Competitive analysis for educational non-fiction categories
+✅ **17 Specialized Agents** - Complete toolkit for book authoring
+✅ **Proven Workflow** - Based on ADDIE instructional design model
+✅ **Auto PDF Generation** - Book Author generates full book PDF after each chapter
+✅ **Document Processing** - Converts existing materials (DOCX, PDF, HTML)
+✅ **Fact Checking** - Verifies claims and adds authoritative citations
+✅ **Visual Design** - Plans and embeds images, diagrams, charts
+✅ **Narrative Techniques** - Optional crisis arcs and frame stories
+✅ **Quality Assurance** - Comprehensive review and feedback system
+✅ **Document Sharding** - Manages large documents efficiently
 
-## Example Projects
+---
 
-This expansion pack can help you create books like:
+## Example Use Cases
 
-- Financial literacy guides (à la "Der Weg zur finanziellen Freiheit", "Rich Dad Poor Dad")
-- Productivity systems (à la "Getting Things Done", "Atomic Habits")
-- Communication skills (à la "Crucial Conversations", "How to Win Friends")
-- Health transformation (à la "The 4-Hour Body")
-- Creative skills (à la "The Artist's Way")
-- Business skills (à la "The E-Myth Revisited", "Zero to One")
+This expansion pack helps you create books like:
+
+- 💰 Financial literacy guides ("Der Weg zur finanziellen Freiheit", "Rich Dad Poor Dad")
+- ⚡ Productivity systems ("Getting Things Done", "Atomic Habits")
+- 💬 Communication skills ("Crucial Conversations", "How to Win Friends")
+- 🏃 Health transformation ("The 4-Hour Body")
+- 🎨 Creative skills ("The Artist's Way")
+- 💼 Business skills ("The E-Myth Revisited", "Zero to One")
+
+---
+
+## Project Structure
+
+Your book project will look like this:
+
+```
+your-book-project/
+├── book-blueprint.yaml              # Strategic foundation
+├── learning-framework.yaml          # Instructional design
+├── book-structure.yaml              # Overall structure
+├── chapters/                        # Chapter markdown files
+├── outlines/                        # Chapter specifications
+├── reviews/                         # Quality reviews
+├── resources/                       # Exercises, case studies
+├── source-materials/                # Input files (DOCX, PDF, etc.)
+├── processed-materials/             # Converted markdown
+├── output/                          # Generated PDFs
+└── publishing/                      # Launch planning
+```
+
+**📖 For complete structure details**, see [PROJECT-STRUCTURE.md](expansion-packs/bmad-expert-author/PROJECT-STRUCTURE.md)
+
+---
+
+## Documentation
+
+### For Users
+- **[Complete Agent Documentation](expansion-packs/bmad-expert-author/README.md)** - All agents, features, and usage
+- **[Workflow Guide](expansion-packs/bmad-expert-author/workflows/README.md)** - Step-by-step process
+- **[Project Structure](expansion-packs/bmad-expert-author/PROJECT-STRUCTURE.md)** - File organization
+
+### For Developers
+- **[Development Guide](CLAUDE.md)** - Development vs. User mode, Git workflow
+- **[Expansion Pack Source](expansion-packs/bmad-expert-author/)** - Source code and templates
+
+---
 
 ## Key Success Principles
 
 ### 1. Don't Skip the Foundation
-
 Invest time in Book Blueprint and Learning Framework first. The strategic foundation prevents major rework later.
 
 ### 2. Follow the Workflow
-
-Each phase builds on the previous:
-
-- BBD defines WHAT and WHY
-- Learning Framework defines HOW
-- Chapter outlines define SPECIFICALLY
-- Writing executes the plan
-- Lector ensures quality
+Each phase builds on the previous - don't skip steps.
 
 ### 3. Use the Lector Extensively
-
-Quality reviews prevent publishing content that doesn't work:
-
-- Review early and often
-- Address feedback thoroughly
-- Iterate until excellent
+Review early and often. Iterate until excellent.
 
 ### 4. Work Chapter-by-Chapter
+Write one chapter → Review → Approve → Next chapter. This prevents cascading issues.
 
-Don't write the entire book then review:
-
-- Write one chapter
-- Review and revise that chapter
-- Get approval
-- Move to next
-
-This prevents cascading issues.
-
-### 5. Think Like a Teacher, Not Just a Writer
-
-Your job isn't just to share information—it's to enable transformation:
-
-- Every chapter must have clear learning outcomes
-- Exercises aren't optional—they're where learning happens
-- Examples make abstract concepts concrete
-- Assessments help readers measure progress
-
-## Writing Style Resources
-
-The expansion pack includes comprehensive style guides in the `data/` directory:
-
-### Core Style Documents
-
-- **`writing-style-guide.md`** - 🔴 **PRIMARY REFERENCE** - Central style authority with 7 core principles inspired by Bodo Schäfer:
-  1. Klarheit für Laien (Clarity for laypeople)
-  2. Persönliche Ansprache (Personal address)
-  3. Praxisnahe Veranschaulichung (Practical examples)
-  4. Aktive und lebendige Sprache (Active, lively language)
-  5. Ermutigende Tonalität (Encouraging tone)
-  6. Persönliche Geschichten (Personal stories)
-  7. Zusammenfassungen & Merksätze (Summaries & key takeaways)
-
-### Supporting Documents
-
-- **`readability-standards.md`** - Flesch Reading Ease (60-70), Grade Level (6-8), sentence/word length guidelines
-- **`voice-tone-guidelines.md`** - "The Encouraging Mentor" voice definition and tone adaptation strategies
-- **`educational-writing-best-practices.md`** - Cognitive Load Theory, Scaffolding, Active Learning, ADDIE structure
-- **`plain-language-guidelines.md`** - 10 Plain Language rules for making complex topics accessible
-- **`transition-phrases.md`** - Comprehensive library of transition words and phrases for smooth flow
-- **`README.md`** - Overview and usage guide for all style resources
-
-**📌 Quick Start:** Begin with `data/writing-style-guide.md` - it's your compass for all writing tasks.
+### 5. Think Like a Teacher
+Your job is to enable transformation through clear learning outcomes, practical exercises, and concrete examples.
 
 ---
-
-## File Organization
-
-Your project will generate these key documents:
-
-```
-project-folder/
-├── book-blueprint.yaml          # Strategic foundation (from book-strategist)
-├── learning-framework.yaml      # Instructional design (from learning-architect)
-├── book-structure.yaml          # Overall structure (from content-structurer)
-├── outlines/
-│   ├── chapter-01-outline.yaml
-│   ├── chapter-02-outline.yaml
-│   └── ...
-├── drafts/
-│   ├── chapter-01-draft.md
-│   ├── chapter-02-draft.md
-│   └── ...
-├── reviews/
-│   ├── review-chapter-01.yaml
-│   ├── review-chapter-02.yaml
-│   └── ...
-└── resources/
-    ├── exercises/
-    ├── case-studies/
-    └── templates/
-```
 
 ## Contributing
 
 We welcome contributions! Please see the main BMAD-METHOD contributing guidelines.
 
-## License
+---
 
-This expansion pack is part of the BMAD-METHOD™ framework. See LICENSE file for details.
+## Version
 
-## Credits
+**Current Version:** 1.2
+**Last Updated:** 2025-10-31
+**Framework:** BMAD-METHOD™
 
-Created for the BMAD community by integrating instructional design best practices, adult learning theory, and proven educational publishing methodologies.
+### Recent Updates (v1.2)
+- Added Fact Checker agent for citation verification
+- Added Visual Designer agent for image planning
+- Added Reader Motivation agent for narrative engagement
+- Updated to 17 total agents
+- Added Researcher agent documentation
+- Updated workflows with all agents
+
+**📖 For complete version history**, see [expansion-packs/bmad-expert-author/README.md](expansion-packs/bmad-expert-author/README.md)
 
 ---
 
-**Ready to create transformative books?** Install the expansion pack using `make install` and activate your first agent!
+## License
+
+Part of the BMAD-METHOD™ Framework
+
+---
+
+## Support
+
+- **Issues:** GitHub Issues for bug reports and feature requests
+- **Community:** BMAD Community for discussions
+- **Documentation:** See links above
+
+---
+
+**Ready to create your transformative educational book?**
+
+```bash
+make install
+/BMad:agents:ea-book-strategist
+*create-blueprint
+```
+
+Let's get started! 📚
