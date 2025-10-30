@@ -45,7 +45,7 @@ ki-agent/
 │   └── commands/BMad/agents/      # Slash Commands für Agenten
 ├── expansion-packs/               # SOURCE CODE (im Git versioniert)
 │   └── bmad-expert-author/        # Expansion Pack Source (HIER entwickeln!)
-│       ├── agents/                # 11 spezialisierte Agenten
+│       ├── agents/                # 17 spezialisierte Agenten
 │       ├── tasks/                 # Task-Workflows
 │       ├── templates/             # Dokumentvorlagen
 │       ├── checklists/            # Qualitätschecklisten
@@ -67,7 +67,7 @@ ki-agent/
 
 ## Verfügbare Agenten
 
-Das Expansion Pack stellt folgende Agenten bereit:
+Das Expansion Pack stellt folgende Agenten bereit (17 total):
 
 ### Strategische Planung
 - **book-strategist** - Erstellt Book Blueprint Document (BBD)
@@ -82,10 +82,18 @@ Das Expansion Pack stellt folgende Agenten bereit:
 - **book-author** - Schreibt Kapitel
 - **exercise-designer** - Erstellt Übungen
 - **case-study-curator** - Entwickelt Beispiele und Fallstudien
+- **researcher** - Sammelt und organisiert Quellmaterialien
+
+### Utility Agenten
+- **document-processor** - Konvertiert bestehende Materialien (DOCX, PDF, HTML)
+- **ea-shard** - Teilt große Dokumente intelligent auf
 
 ### Qualität & Verbesserung
+- **fact-checker** - Verifiziert Fakten und fügt Zitate hinzu
+- **visual-designer** - Plant und integriert Bilder und Diagramme
 - **lector** - Führt umfassende Qualitätsprüfungen durch
 - **clarity-editor** - Optimiert Klarheit
+- **reader-motivation** - Webt narrative Techniken ein (optional)
 - **workbook-developer** - Erstellt Workbooks
 
 ## Core Workflow

@@ -2,8 +2,8 @@
 
 **Transform Your Expertise into Transformative Educational Books**
 
-Version: 1.1
-Last Updated: 2025-10-29
+Version: 1.2
+Last Updated: 2025-10-31
 Framework: BMAD-METHOD™
 
 ---
@@ -53,34 +53,40 @@ ls -la .claude/commands/BMad/agents/
    └─ AUTOMATICALLY converts files in source-materials/
    └─ Reads converted content and incorporates into BBD
    ↓
-2. Learning Architect → Learning Framework
+2. Researcher → Source Materials Inventory (Optional but Recommended)
+   └─ Systematically collects all source materials
+   └─ Catalogs author's existing content
+   └─ Organizes references, stories, examples
+   └─ Maps resources to book sections
    ↓
-3. Content Structurer → Chapter Outlines
+3. Learning Architect → Learning Framework
    ↓
-4. Book Author → Content Writing
+4. Content Structurer → Chapter Outlines
    ↓
-5. Fact Checker → Verify Claims & Add Citations (NEW!)
+5. Book Author → Content Writing
+   ↓
+6. Fact Checker → Verify Claims & Add Citations (NEW!)
    └─ Identifies factual claims (numbers, statistics, research)
    └─ Finds primary sources (studies, official data)
    └─ Creates fact-check report with verified sources
    ↓
-6. Visual Designer → Plan & Embed Images (NEW!)
+7. Visual Designer → Plan & Embed Images (NEW!)
    └─ Identifies opportunities for visuals
    └─ Creates AI prompts or suggests stock images
    └─ Embeds diagrams, charts, photos in chapter
    ↓
-7. Lector → Quality Review & Feedback Loop
+8. Lector → Quality Review & Feedback Loop
    ↓
-8. (Optional) Reader Motivation → Narrative Engagement (NEW!)
+9. (Optional) Reader Motivation → Narrative Engagement (NEW!)
    └─ Crisis Arc: Personal transformation journey
    └─ Frame Story: Opening question resolved at end
    └─ Spans multiple chapters with tracked continuity
    ↓
-9. (Optional) EA Sharder → Modular Document Organization
+10. (Optional) EA Sharder → Modular Document Organization
    ↓
-10. (Optional) Enhancement → Clarity/Workbook
+11. (Optional) Enhancement → Clarity/Workbook
    ↓
-11. Publishing Strategist → Launch Planning
+12. Publishing Strategist → Launch Planning
 ```
 
 **Full workflow details**: See `workflows/README.md`
@@ -210,6 +216,41 @@ ls -la .claude/commands/BMad/agents/
 - Diverse examples library
 
 **When to use**: Before or during content writing (Phase 3/4)
+
+---
+
+#### 🔬 Researcher (`/BMad:agents:ea-researcher`)
+**Purpose**: Systematically collects, organizes, and curates all source materials
+
+**Key outputs**:
+- Source Materials Inventory (docs/source-materials.md)
+- Organized repository of author's existing content
+- Academic and industry references
+- Personal stories and case examples
+- Gap analysis of missing materials
+
+**Key capabilities**:
+- Catalogs author's existing materials (articles, presentations, courses)
+- Collects reference materials (studies, books, reports)
+- Organizes practical resources (examples, exercises, templates)
+- Maps resources to book chapters
+- Assesses source quality and credibility
+- Identifies content gaps
+
+**When to use**: AFTER Book Blueprint is created, BEFORE Learning Architect
+
+**Workflow position**:
+1. Book Strategist creates Book Blueprint →
+2. **Researcher gathers & organizes source materials** →
+3. Learning Architect designs learning framework →
+4. Content development begins with rich resource base
+
+**Why use it**:
+- Ensures no valuable existing content is overlooked
+- Saves time by reusing/adapting existing materials
+- Grounds book in solid research and evidence
+- Provides rich source material for case studies
+- Establishes credibility through proper attribution
 
 ---
 
@@ -485,7 +526,7 @@ your-book-project/
 
 ## Expansion Pack Contents
 
-### Agents (11 total)
+### Agents (17 total)
 Located in: `agents/`
 
 All agents follow BMAD Core patterns with specialized personas for book authoring.
@@ -601,6 +642,14 @@ See `CLAUDE.md` in project root for:
 ---
 
 ## Version History
+
+### v1.2 (2025-10-31)
+- Added Fact Checker agent for citation and source verification
+- Added Visual Designer agent for image planning and embedding
+- Added Reader Motivation agent for narrative engagement techniques
+- Updated agent count to 17 total agents
+- Added Researcher agent documentation
+- Updated core workflow to include all agents
 
 ### v1.1 (2025-10-29)
 - Added EA Document Sharder agent
