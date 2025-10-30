@@ -442,23 +442,30 @@ publishing-strategist → publishing/*
 - Editor-spezifische Dateien
 
 ### Commit-Strategie
+
+**WICHTIG:** Agenten committen automatisch nach jeder Änderung, ABER pushen NICHT automatisch.
+Der User entscheidet selbst, wann zum Remote-Repository gepusht wird.
+
 ```bash
-# Nach Completion eines Chapter Drafts
+# Nach Completion eines Chapter Drafts (automatisch durch Agent)
 git add book-blueprint.yaml learning-framework.yaml
 git add outlines/chapter-01-outline.yaml
 git add drafts/chapter-01-draft.md
 git add resources/exercises/exercise-*.md
 git commit -m "Add chapter 1 draft with exercises"
-git push
+# Kein automatischer Push - User pusht manuell wann gewünscht
 
-# Nach Lector Review
+# Nach Lector Review (automatisch durch Agent)
 git add reviews/review-chapter-01.yaml
 git commit -m "Add lector review for chapter 1"
-git push
+# Kein automatischer Push
 
-# Nach Revision
+# Nach Revision (automatisch durch Agent)
 git add drafts/chapter-01-draft-v2.md
 git commit -m "Revise chapter 1 based on lector feedback"
+# Kein automatischer Push
+
+# User kann jederzeit manuell pushen:
 git push
 ```
 
@@ -468,7 +475,10 @@ git push
 
 2. **Versionierung:** Nutzen Sie Git für Versionskontrolle statt `-v2`, `-v3` Suffixe, wenn Sie möchten.
 
-3. **Backup:** Committen und pushen Sie regelmäßig - Ihr Buch-Projekt ist wertvoll!
+3. **Backup:**
+   - **Auto-Commit:** Agenten committen automatisch nach jeder Änderung
+   - **Manueller Push:** Sie entscheiden selbst, wann Sie zum Remote pushen
+   - Pushen Sie regelmäßig - Ihr Buch-Projekt ist wertvoll!
 
 4. **Markdown vs. YAML:**
    - YAML für strukturierte Daten (Blueprints, Outlines, Reviews)

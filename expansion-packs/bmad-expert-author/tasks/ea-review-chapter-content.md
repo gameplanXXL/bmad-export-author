@@ -254,6 +254,27 @@ Based on review, determine:
 
 Save as: `reviews/chapter-{NN}-review.md` (where NN is the zero-padded chapter number)
 
+### Automatically Commit Review
+
+**CRITICAL:** Automatically commit the review to Git:
+
+```bash
+git add reviews/chapter-{NN}-review.md
+git commit -m "Add lector review for chapter {N}
+
+🔍 Quality review with specific feedback and recommendations
+📋 Status: {APPROVED|NEEDS REVISION|etc.}
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>"
+```
+
+**IMPORTANT:**
+- DO commit automatically after completing the review
+- DO NOT push automatically (user decides when to push)
+- Inform user: "✅ Review committed to Git (not pushed - you control when to push)"
+
 ## Success Criteria for Review
 
 - [ ] All review phases completed systematically
@@ -263,6 +284,7 @@ Save as: `reviews/chapter-{NN}-review.md` (where NN is the zero-padded chapter n
 - [ ] Both strengths and weaknesses noted
 - [ ] Approval decision justified
 - [ ] Report enables author to improve effectively
+- [ ] Review automatically committed to Git (not pushed)
 
 ## Follow-up
 

@@ -161,7 +161,28 @@ This will:
 Your chapter is complete! The PDF shows the entire book with your new chapter in context.
 ```
 
-### Step 7: Handoff to Lector
+### Step 7: Automatically Commit Changes
+
+**CRITICAL:** Automatically commit the chapter to Git:
+
+```bash
+git add chapters/chapter-{NN}.md output/book.pdf
+git commit -m "Add chapter {N}: {chapter_title}
+
+✍️ Complete chapter with learning objectives, examples, and exercises
+📚 Auto-generated full book PDF for review
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>"
+```
+
+**IMPORTANT:**
+- DO commit automatically after every chapter
+- DO NOT push automatically (user decides when to push)
+- Include both chapter MD and PDF in commit
+
+### Step 8: Handoff to Lector
 
 Inform user that chapter is ready for quality review:
 
@@ -170,6 +191,7 @@ Your chapter is complete and ready for review!
 
 📄 Chapter Markdown: chapters/chapter-{NN}.md
 📚 Full Book PDF: output/book.pdf (all chapters combined)
+✅ Changes committed to Git (not pushed - you control when to push)
 
 Next steps:
 1. Review the chapter in context (see book.pdf)
@@ -186,6 +208,7 @@ Next steps:
 - [ ] Readability level appropriate (Flesch 60-70)
 - [ ] Correct Markdown formatting (lists, headings)
 - [ ] Full book PDF automatically generated in output/ directory
+- [ ] Changes automatically committed to Git (not pushed)
 - [ ] User informed of completion and next steps
 
 ## Output Deliverables

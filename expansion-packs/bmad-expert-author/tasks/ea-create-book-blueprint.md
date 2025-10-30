@@ -269,6 +269,27 @@ Present the completed Book Blueprint Document to the user with:
 
 5. **Next Steps**: Clear path forward to next phase (Learning Framework design)
 
+### Step 9: Automatically Commit Blueprint
+
+**CRITICAL:** Automatically commit the Book Blueprint to Git:
+
+```bash
+git add docs/book-blueprint.md
+git commit -m "Create Book Blueprint Document
+
+📊 Strategic foundation with target audience, transformation journey, and market positioning
+✨ Ready for Learning Framework design phase
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>"
+```
+
+**IMPORTANT:**
+- DO commit automatically after creating the blueprint
+- DO NOT push automatically (user decides when to push)
+- Inform user: "✅ Book Blueprint committed to Git (not pushed - you control when to push)"
+
 ## Output Deliverable
 
 A comprehensive Book Blueprint Document (BBD) saved as `docs/book-blueprint.md` containing:
@@ -293,6 +314,7 @@ A comprehensive Book Blueprint Document (BBD) saved as `docs/book-blueprint.md` 
 - [ ] Content scope is well-defined with clear boundaries
 - [ ] Success metrics are measurable
 - [ ] Document provides clear foundation for Learning Architect to design instructional framework
+- [ ] Blueprint automatically committed to Git (not pushed)
 
 ## Handoff
 

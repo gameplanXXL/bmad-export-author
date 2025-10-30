@@ -174,17 +174,18 @@ git push
 - Arbeite mit den installierten Agenten
 - Erstelle/bearbeite Book-Dateien im Projekt-Root
 - KEINE Änderungen an `expansion-packs/bmad-expert-author/`
-- Committe nur die Buch-Inhalte, NICHT das Expansion Pack
+- Committe automatisch nach jeder Änderung (aber NICHT pushen)
+- Nur die Buch-Inhalte committen, NICHT das Expansion Pack
 
 ### 1. Git-Workflow (KRITISCH)
 
-**IMMER nach Änderungen:**
-1. Alle Änderungen committen
-2. Commit zum Remote-Repository pushen
+**Unterschiedliches Verhalten je nach Modus:**
 
+#### Entwicklungsmodus (Expansion Pack Development):
+**IMMER nach Änderungen committen UND pushen:**
 ```bash
-# Nach jeder bedeutenden Änderung
-git add .
+# Nach jeder bedeutenden Änderung am Expansion Pack
+git add expansion-packs/ scripts/ Makefile CLAUDE.md
 git commit -m "Beschreibung der Änderung
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
@@ -193,10 +194,24 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 git push
 ```
 
+#### User-Modus (Book Writing):
+**IMMER nach Änderungen committen, ABER NICHT pushen:**
+```bash
+# Nach jeder Änderung an Buch-Inhalten (automatisch)
+git add book-blueprint.yaml chapters/ drafts/ outlines/ reviews/ resources/
+git commit -m "Beschreibung der Änderung
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>"
+# KEIN git push - User entscheidet selbst wann gepusht wird
+```
+
 **Wichtig:**
 - Niemals Änderungen uncommitted lassen
 - Immer aussagekräftige Commit-Messages verwenden
-- Push IMMER nach Commit durchführen
+- **Entwicklungsmodus:** Push IMMER nach Commit durchführen
+- **User-Modus:** NIEMALS automatisch pushen (User steuert Push-Zeitpunkt)
 - Bei Pre-Commit-Hook-Änderungen: Commit mit --amend nur wenn sicher
 
 ### 2. Dateioperationen
@@ -279,11 +294,20 @@ git push
 
 ### 5. Workflow bei größeren Änderungen
 
+**Entwicklungsmodus (Expansion Pack):**
 1. **Plane mit TodoWrite**
 2. **Implementiere schrittweise**
 3. **Teste nach jedem Schritt**
 4. **Committe nach erfolgreicher Implementierung**
 5. **Pushe sofort**
+6. **Markiere Todo als abgeschlossen**
+
+**User-Modus (Book Writing):**
+1. **Plane mit TodoWrite (optional)**
+2. **Implementiere schrittweise**
+3. **Teste/Review nach jedem Schritt**
+4. **Committe automatisch nach jeder Änderung**
+5. **KEIN automatischer Push** (User entscheidet)
 6. **Markiere Todo als abgeschlossen**
 
 ## Häufige Aufgaben
@@ -353,13 +377,14 @@ git push
 1. Aktiviere Agenten via `/BMad:agents:book-strategist`
 2. Erstelle Book Blueprint, Chapters, etc.
 3. Speichere im Projekt-Root oder Unterverzeichnissen
-4. Commit + Push (nur Buch-Inhalte)
+4. Auto-Commit nach jeder Änderung (KEIN Auto-Push)
 
 ```bash
-# User arbeitet mit Agenten und erstellt Inhalte
+# Agenten committen automatisch nach jeder Änderung
 git add book-blueprint.yaml chapters/ drafts/
 git commit -m "Add chapter 1 draft"
-git push
+# KEIN automatischer Push - User entscheidet wann gepusht wird
+# User kann manuell pushen: git push
 ```
 
 ## Wichtige Dateien
