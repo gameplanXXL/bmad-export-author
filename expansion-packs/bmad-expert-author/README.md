@@ -71,11 +71,16 @@ ls -la .claude/commands/BMad/agents/
    ↓
 7. Lector → Quality Review & Feedback Loop
    ↓
-8. (Optional) EA Sharder → Modular Document Organization
+8. (Optional) Reader Motivation → Narrative Engagement (NEW!)
+   └─ Crisis Arc: Personal transformation journey
+   └─ Frame Story: Opening question resolved at end
+   └─ Spans multiple chapters with tracked continuity
    ↓
-9. (Optional) Enhancement → Clarity/Workbook
+9. (Optional) EA Sharder → Modular Document Organization
    ↓
-10. Publishing Strategist → Launch Planning
+10. (Optional) Enhancement → Clarity/Workbook
+   ↓
+11. Publishing Strategist → Launch Planning
 ```
 
 **Full workflow details**: See `workflows/README.md`
@@ -347,6 +352,66 @@ photorealistic, high detail, 8k"
 - Tracking tools
 
 **When to use**: After main book is complete (optional)
+
+---
+
+#### 🔥 Reader Motivation (`/BMad:agents:reader-motivation`) **NEW!** *(Optional)*
+**Purpose**: Weaves narrative techniques to boost reader engagement and motivation
+
+**Key outputs**:
+- Narrative motivation plan with cross-chapter tracking
+- Crisis arc progression (Asprey-style personal journey)
+- Frame story outline (opening question + callbacks + resolution)
+- Chapter-by-chapter narrative guidance
+
+**Key commands**:
+- `*plan-motivation` - Create comprehensive narrative plan (ELICITS user preferences)
+- `*apply-crisis-arc` - Apply personal transformation journey
+- `*create-frame-story` - Create frame story with callbacks
+- `*verify-continuity` - Check narrative consistency across chapters
+
+**When to use**: After content structuring, before or during writing (OPTIONAL)
+
+**Techniques Available**:
+
+**A) Crisis Arc (Asprey-Style)** - Personal journey spanning 5-8 chapters:
+1. Personal Low Point (honest vulnerability)
+2. Search & Experiments (multiple failures)
+3. Escalation (situation worsens)
+4. Turning Point (breakthrough/aha moment)
+5. Transformation (concrete results)
+6. Learning Effect (lesson for readers)
+
+**B) Frame Story (Rahmengeschichte)** - Narrative frame with callbacks:
+1. Opening Frame (compelling question/situation)
+2. Periodic Callbacks (every 2-3 chapters)
+3. Frame Resolution (satisfying answer at end)
+
+**How it works**:
+1. Agent asks which technique(s) to use (A, B, both, or none)
+2. Elicits detailed story/frame from author
+3. Creates master plan tracking narrative across ALL chapters
+4. Provides chapter-specific guidance for book-author
+5. Verifies continuity as chapters are written
+
+**Example Crisis Arc**:
+- Ch 1-2: "I was 40 lbs overweight, exhausted, tried everything..."
+- Ch 3-5: Multiple failed attempts (diets, supplements, etc.)
+- Ch 6: Turning point - discovered mitochondrial health
+- Ch 7-8: Transformation - lost weight, energy restored
+
+**Example Frame Story**:
+- Opening: "Sarah, $50k in debt, wondered: Can I achieve financial freedom?"
+- Callbacks: Brief updates showing Sarah applying chapter teachings
+- Resolution: "Two years later, Sarah was debt-free. Here's how..."
+
+**Why this works**:
+- Emotional connection through vulnerability
+- Hope through personal transformation
+- Suspense and narrative structure
+- Readers stay engaged across all chapters
+
+**CRITICAL**: Cross-chapter continuity tracking ensures narrative threads connect properly throughout book.
 
 ---
 
