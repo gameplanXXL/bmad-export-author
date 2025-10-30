@@ -42,12 +42,12 @@ your-book-project/
 │   ├── chapter-03-outline.yaml
 │   └── ...
 │
-├── drafts/                          # Geschriebene Inhalte
-│   ├── chapter-01-draft.md
-│   ├── chapter-02-draft.md
-│   ├── chapter-03-draft.md
-│   ├── introduction-draft.md
-│   ├── conclusion-draft.md
+├── chapters/                        # Geschriebene Inhalte
+│   ├── chapter-01.md
+│   ├── chapter-02.md
+│   ├── chapter-03.md
+│   ├── introduction.md
+│   ├── conclusion.md
 │   └── ...
 │
 ├── reviews/                         # Qualitätsprüfungen
@@ -249,10 +249,10 @@ outlines/
 └── ...
 ```
 
-### `/drafts/` - Geschriebene Inhalte
+### `/chapters/` - Geschriebene Inhalte
 
 **Erstellt von:** book-author
-**Dateien:** `chapter-{number}-draft.md` oder `{section-name}-draft.md`
+**Dateien:** `chapter-{number}.md` oder `{section-name}.md`
 
 **Inhalt:**
 - Vollständig ausformulierte Kapitel
@@ -262,18 +262,18 @@ outlines/
 
 **Workflow:**
 1. book-author schreibt basierend auf Outline
-2. Speichert als Draft
-3. lector reviewed den Draft
+2. Speichert als Chapter
+3. lector reviewed das Chapter
 4. book-author überarbeitet
 5. Iterative Verbesserung bis Approval
 
 **Beispiel:**
 ```
-drafts/
-├── introduction-draft.md
-├── chapter-01-draft.md         # Version nach lector Review
-├── chapter-01-draft-v2.md      # Überarbeitete Version
-├── chapter-02-draft.md
+chapters/
+├── introduction.md
+├── chapter-01.md               # Version nach lector Review
+├── chapter-01-v2.md            # Überarbeitete Version
+├── chapter-02.md
 └── ...
 ```
 
@@ -597,8 +597,8 @@ publishing-strategist → publishing/*
 
 ### Dateien
 - **Kapitel Outlines:** `chapter-{number}-outline.yaml` (z.B. `chapter-01-outline.yaml`)
-- **Kapitel Drafts:** `chapter-{number}-draft.md` (z.B. `chapter-03-draft.md`)
-- **Revisionen:** `chapter-{number}-draft-v{version}.md` (z.B. `chapter-03-draft-v2.md`)
+- **Kapitel:** `chapter-{number}.md` (z.B. `chapter-03.md`)
+- **Revisionen:** `chapter-{number}-v{version}.md` (z.B. `chapter-03-v2.md`)
 - **Reviews:** `review-chapter-{number}.yaml` oder `review-chapter-{number}-v{version}.yaml`
 - **Übungen:** `exercise-{descriptive-name}.md` (z.B. `exercise-budget-planning.md`)
 - **Case Studies:** `case-study-{descriptive-name}.md` (z.B. `case-study-debt-freedom.md`)
@@ -614,7 +614,7 @@ publishing-strategist → publishing/*
 ### Was committen?
 ✅ **Committen:**
 - Alle YAML-Dateien (Blueprints, Frameworks, Outlines, Reviews)
-- Alle Markdown-Drafts
+- Alle Chapter-Markdown-Dateien (chapters/)
 - Alle Resources (Exercises, Case Studies, Examples, Templates)
 - Workbooks
 - Publishing Materialien
@@ -631,12 +631,12 @@ publishing-strategist → publishing/*
 Der User entscheidet selbst, wann zum Remote-Repository gepusht wird.
 
 ```bash
-# Nach Completion eines Chapter Drafts (automatisch durch Agent)
+# Nach Completion eines Chapters (automatisch durch Agent)
 git add book-blueprint.yaml learning-framework.yaml
 git add outlines/chapter-01-outline.yaml
-git add drafts/chapter-01-draft.md
+git add chapters/chapter-01.md
 git add resources/exercises/exercise-*.md
-git commit -m "Add chapter 1 draft with exercises"
+git commit -m "Add chapter 1 with exercises"
 # Kein automatischer Push - User pusht manuell wann gewünscht
 
 # Nach Lector Review (automatisch durch Agent)
@@ -645,7 +645,7 @@ git commit -m "Add lector review for chapter 1"
 # Kein automatischer Push
 
 # Nach Revision (automatisch durch Agent)
-git add drafts/chapter-01-draft-v2.md
+git add chapters/chapter-01-v2.md
 git commit -m "Revise chapter 1 based on lector feedback"
 # Kein automatischer Push
 

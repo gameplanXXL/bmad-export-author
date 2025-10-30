@@ -76,14 +76,29 @@ For each claim, find authoritative sources:
 
 **Search Strategy:**
 
-1. **Use WebSearch** for recent studies:
+1. **Search Local Source Materials First**:
+   ```bash
+   # Check if author has existing sources in source-materials/
+   find source-materials/ -type f -name "*.md" -o -name "*.pdf" -o -name "*.txt" | xargs grep -il "[claim topic]"
+
+   # Or use Grep tool
+   Grep pattern="[claim topic]" path="source-materials/" -i=true output_mode="files_with_matches"
+   ```
+
+   **Check these directories:**
+   - `source-materials/references/studies/` - Research papers
+   - `source-materials/references/books/` - Books & publications
+   - `source-materials/references/articles/` - Articles & expert content
+   - `source-materials/author-content/` - Author's existing materials with sources
+
+2. **Use WebSearch** for recent studies (if not found locally):
    ```
    WebSearch: "[claim topic] peer reviewed study 2023 2024"
    WebSearch: "[claim] original research pubmed"
    WebSearch: "[statistic] official statistics government"
    ```
 
-2. **Prioritize Source Types** (in order):
+3. **Prioritize Source Types** (in order):
    - Peer-reviewed journal articles (PubMed, Google Scholar)
    - Government/official statistics (census, health departments)
    - Reports from authoritative organizations (WHO, World Bank, UN)
