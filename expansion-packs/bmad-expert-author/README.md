@@ -59,13 +59,23 @@ ls -la .claude/commands/BMad/agents/
    ↓
 4. Book Author → Content Writing
    ↓
-5. Lector → Quality Review & Feedback Loop
+5. Fact Checker → Verify Claims & Add Citations (NEW!)
+   └─ Identifies factual claims (numbers, statistics, research)
+   └─ Finds primary sources (studies, official data)
+   └─ Creates fact-check report with verified sources
    ↓
-6. (Optional) EA Sharder → Modular Document Organization
+6. Visual Designer → Plan & Embed Images (NEW!)
+   └─ Identifies opportunities for visuals
+   └─ Creates AI prompts or suggests stock images
+   └─ Embeds diagrams, charts, photos in chapter
    ↓
-7. (Optional) Enhancement → Clarity/Workbook
+7. Lector → Quality Review & Feedback Loop
    ↓
-8. Publishing Strategist → Launch Planning
+8. (Optional) EA Sharder → Modular Document Organization
+   ↓
+9. (Optional) Enhancement → Clarity/Workbook
+   ↓
+10. Publishing Strategist → Launch Planning
 ```
 
 **Full workflow details**: See `workflows/README.md`
@@ -229,6 +239,79 @@ ls -la .claude/commands/BMad/agents/
 
 ### Quality & Enhancement
 
+#### 🔍 Fact Checker (`/BMad:agents:fact-checker`) **NEW!**
+**Purpose**: Verifies factual claims and adds authoritative citations
+
+**Key outputs**:
+- Fact-check reports with verified sources
+- Bibliography with primary sources
+- Citation recommendations
+- Accuracy verification for statistics and claims
+
+**Key commands**:
+- `*check-chapter {N}` - Comprehensive fact-check of chapter
+- `*find-claims {N}` - Identify all factual claims
+- `*add-citations {N}` - Add inline citations to chapter
+
+**When to use**: After chapter draft, BEFORE lector review
+
+**How it works**:
+1. Scans chapter for factual claims (percentages, statistics, research claims)
+2. Uses WebSearch to find primary sources (peer-reviewed studies, official data)
+3. Verifies accuracy of each claim against sources
+4. Creates detailed fact-check report
+5. Optionally adds inline citations to chapter text
+
+**Example**:
+- Finds claim: "50% der Bevölkerung leidet unter Stress"
+- Searches for primary source
+- Verifies with: Schmidt et al. (2023) European stress meta-analysis
+- Recommends: Add citation [^1] and adjust scope to "European adults"
+
+---
+
+#### 🎨 Visual Designer (`/BMad:agents:visual-designer`) **NEW!**
+**Purpose**: Plans and embeds images, diagrams, and visual elements
+
+**Key outputs**:
+- Visual plan with placement recommendations
+- AI image generation prompts (DALL-E, Midjourney)
+- Mermaid diagrams and charts
+- Image organization system
+- Embedded visuals with captions and alt text
+
+**Key commands**:
+- `*plan-visuals {N}` - Create comprehensive visual plan for chapter
+- `*create-prompt {description}` - Generate AI image prompt
+- `*organize-author-images` - Process author-provided images
+- `*embed-visuals {N}` - Add visual embeds to chapter
+
+**When to use**: After fact-checking, BEFORE lector review
+
+**How it works**:
+1. Analyzes chapter for visualization opportunities
+2. Categorizes needs (photos, diagrams, charts, illustrations)
+3. Creates detailed image prompts for AI generation OR suggests stock keywords
+4. Organizes images in structured folder system
+5. Embeds visuals in chapter with proper captions and alt text
+
+**Visual Types**:
+- 📸 Photos/Stock Images (real-world context, examples)
+- 📊 Charts/Graphs (data visualization, comparisons)
+- 🔀 Diagrams (processes, workflows, relationships)
+- 🎨 Illustrations (conceptual ideas, metaphors)
+- 📱 Screenshots (software tutorials, UI demos)
+
+**Example Prompt** (AI-generated image):
+```
+"Professional woman reviewing budget spreadsheet at desk,
+modern minimalist photography, warm natural lighting,
+over-shoulder view showing laptop with charts,
+photorealistic, high detail, 8k"
+```
+
+---
+
 #### 🔍 Lector (`/BMad:agents:lector`)
 **Purpose**: Comprehensive quality review and feedback
 
@@ -239,7 +322,7 @@ ls -la .claude/commands/BMad/agents/
 - Clarity assessment
 - Actionable feedback
 
-**When to use**: After each chapter draft, iteratively until approval
+**When to use**: After fact-checking and visual design, iteratively until approval
 
 ---
 

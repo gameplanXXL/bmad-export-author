@@ -68,8 +68,33 @@ your-book-project/
 │   ├── examples/
 │   │   ├── example-budget-template.md
 │   │   └── ...
-│   └── templates/
-│       ├── worksheet-monthly-budget.md
+│   ├── templates/
+│   │   ├── worksheet-monthly-budget.md
+│   │   └── ...
+│   ├── fact-checks/                 # Fact-Check Reports (NEW!)
+│   │   ├── chapter-01-facts.md
+│   │   ├── chapter-02-facts.md
+│   │   └── ...
+│   ├── sources/                     # Source Bibliographies (NEW!)
+│   │   ├── chapter-01-sources.md
+│   │   ├── chapter-02-sources.md
+│   │   └── ...
+│   ├── visuals/                     # Visual Plans (NEW!)
+│   │   ├── chapter-01-visual-plan.md
+│   │   ├── chapter-02-visual-plan.md
+│   │   └── ...
+│   └── images/                      # Images & Visuals (NEW!)
+│       ├── author-provided/         # Images from author
+│       │   ├── chapter-01/
+│       │   ├── chapter-02/
+│       │   └── shared/             # Reusable images (headshot, etc.)
+│       ├── chapter-01/             # Chapter 1 visuals
+│       │   ├── fig-01-budget-flowchart.png
+│       │   ├── fig-02-savings-chart.png
+│       │   └── metadata.yaml
+│       ├── chapter-02/             # Chapter 2 visuals
+│       │   ├── fig-01-debt-comparison.png
+│       │   └── metadata.yaml
 │       └── ...
 │
 ├── workbooks/                       # Begleitende Workbooks (optional)
@@ -343,6 +368,154 @@ resources/case-studies/
 - Progress Tracking Sheets
 - Decision Frameworks
 
+#### `/resources/fact-checks/` - Fact-Check Reports **NEW!**
+**Erstellt von:** fact-checker (Viktor)
+**Dateien:** `chapter-{NN}-facts.md`
+
+**Inhalt:**
+- Identifizierte faktische Claims (Zahlen, Statistiken, Forschungsbehauptungen)
+- Verifikationsstatus (✅ Verified, ⚠️ Needs Adjustment, ❌ Unverified)
+- Primärquellen mit vollständigen Zitaten
+- Genauigkeitsbewertung (Claim vs. Quelle)
+- Empfohlene Revisionen
+- Quellenqualitätsbewertung
+
+**Beispiel:**
+```
+resources/fact-checks/
+├── chapter-01-facts.md    # "50% der Bevölkerung..." → Verified mit Quelle
+├── chapter-02-facts.md    # "Studien zeigen..." → Source: Schmidt 2023
+└── chapter-03-facts.md
+```
+
+**Workflow:**
+1. fact-checker scannt Kapitel nach Claims
+2. WebSearch findet Primärquellen (Peer-reviewed, Government data)
+3. Erstellt Fact-Check Report
+4. Autor reviewed und revidiert basierend auf Feedback
+
+#### `/resources/sources/` - Source Bibliographies **NEW!**
+**Erstellt von:** fact-checker (Viktor)
+**Dateien:** `chapter-{NN}-sources.md`
+
+**Inhalt:**
+- Vollständige formatierte Bibliographie aller Quellen
+- Strukturiert nach Quellentyp (Academic Journals, Government Data, Books)
+- DOI/URL-Links zu Originalquellen
+- Zugriffsdaten
+- Lizenz-/Verfügbarkeitsnotizen
+
+**Beispiel:**
+```
+resources/sources/
+├── chapter-01-sources.md
+│   [^1]: Schmidt, M., et al. (2023). "Stress Prevalence..."
+│   [^2]: WHO. (2023). Mental Health Statistics...
+└── chapter-02-sources.md
+```
+
+#### `/resources/visuals/` - Visual Plans **NEW!**
+**Erstellt von:** visual-designer (Vera)
+**Dateien:** `chapter-{NN}-visual-plan.md`
+
+**Inhalt:**
+- Umfassende Analyse von Visualisierungsmöglichkeiten
+- Platzierungsempfehlungen für Bilder
+- Kategorisierung (Photo, Diagram, Chart, Illustration, Screenshot)
+- Priorität (🔴 Critical, 🟡 Important, 🟢 Nice-to-have)
+- AI Image Generation Prompts (DALL-E, Midjourney)
+- Stock Image Keywords
+- Mermaid Diagramm-Code
+- Chart-Spezifikationen
+- Accessibility Requirements (Alt text, Captions)
+
+**Beispiel:**
+```
+resources/visuals/
+├── chapter-01-visual-plan.md
+│   - Visual 1.1: Debt repayment flowchart (Mermaid)
+│   - Visual 1.2: Person celebrating debt-free (AI prompt)
+│   - Visual 1.3: Repayment comparison chart (QuickChart)
+└── chapter-02-visual-plan.md
+```
+
+#### `/resources/images/` - Images & Visuals **NEW!**
+**Erstellt von:** visual-designer (Vera) + author
+**Struktur:** Organisiert nach Kapiteln mit metadata
+
+**Unterverzeichnisse:**
+
+**`author-provided/`** - Vom Autor bereitgestellte Bilder
+- `chapter-{NN}/` - Kapitel-spezifische Bilder
+- `shared/` - Wiederverwendbare Bilder (Headshot, Brand-Elemente)
+
+**`chapter-{NN}/`** - Finale Visuals pro Kapitel
+- Naming: `fig-{NN}-{descriptive-name}.{ext}`
+- Beispiel: `fig-01-budget-flowchart.png`
+- Inkludiert: Fotos, Diagramme, Charts, Illustrationen, Screenshots
+- `metadata.yaml` - Bild-Metadaten (Quelle, Lizenz, Alt text, Erstellungsdatum)
+
+**Image Types:**
+- 📸 Photos/Stock Images (`.jpg`, `.png`)
+- 📊 Charts/Graphs (`.png`, `.svg`)
+- 🔀 Diagrams (`.png`, `.svg`)
+- 🎨 Illustrations (`.png`, `.svg`)
+- 📱 Screenshots (`.png`)
+
+**Metadata File Example** (`chapter-01/metadata.yaml`):
+```yaml
+images:
+  - filename: fig-01-budget-flowchart.png
+    type: diagram
+    source: Generated via Mermaid
+    alt_text: "Flowchart showing 5-step budget creation process"
+    caption: "Figure 1.1: Budget creation workflow"
+    created: 2024-01-15
+    license: Author-created
+
+  - filename: fig-02-celebration.jpg
+    type: photo
+    source: AI-generated (DALL-E 3)
+    prompt: "Professional woman celebrating..."
+    alt_text: "Smiling woman at desk celebrating financial goal"
+    caption: "Figure 1.2: Joy of achieving financial freedom"
+    created: 2024-01-16
+    license: AI-generated (owned by author)
+```
+
+**Organization System:**
+```
+resources/images/
+├── author-provided/
+│   ├── chapter-01/
+│   │   └── personal-budget-photo.jpg
+│   ├── chapter-02/
+│   │   └── author-debt-journey.jpg
+│   └── shared/
+│       ├── author-headshot.jpg
+│       └── logo.png
+├── chapter-01/
+│   ├── fig-01-budget-flowchart.png
+│   ├── fig-02-celebration.jpg
+│   ├── fig-03-comparison-chart.png
+│   └── metadata.yaml
+└── chapter-02/
+    ├── fig-01-debt-snowball.png
+    ├── fig-02-interest-graph.png
+    └── metadata.yaml
+```
+
+**Workflow:**
+1. visual-designer erstellt Visual Plan
+2. Autor stellt eigene Bilder in `author-provided/` bereit (optional)
+3. Fehlende Bilder werden generiert/beschafft:
+   - AI-generated (via Prompts)
+   - Stock-Images (via Keywords)
+   - Programmatically (Mermaid, Charts)
+4. visual-designer optimiert und organisiert alle Bilder
+5. visual-designer erstellt metadata.yaml
+6. visual-designer embedded Visuals in Kapitel Markdown
+
 ### `/workbooks/` - Begleitende Workbooks (Optional)
 
 **Erstellt von:** workbook-developer
@@ -387,24 +560,35 @@ content-structurer → outlines/chapter-*.yaml
 ```
 exercise-designer → resources/exercises/exercise-*.md
 case-study-curator → resources/case-studies/case-study-*.md
-book-author → drafts/chapter-*-draft.md
+book-author → chapters/chapter-*.md
 ```
 
-### Phase 3: Quality Assurance (Pro Kapitel)
+### Phase 3: Fact-Checking & Visual Design (Pro Kapitel) **NEW!**
+```
+fact-checker → resources/fact-checks/chapter-*-facts.md
+fact-checker → resources/sources/chapter-*-sources.md
+book-author → Revises chapter based on fact-check feedback (optional)
+visual-designer → resources/visuals/chapter-*-visual-plan.md
+author → Provides images to resources/images/author-provided/ (optional)
+visual-designer → resources/images/chapter-*/fig-*.{png|jpg}
+visual-designer → Embeds visuals in chapter Markdown
+```
+
+### Phase 4: Quality Assurance (Pro Kapitel)
 ```
 lector → reviews/review-chapter-*.yaml
-book-author → drafts/chapter-*-draft-v2.md (Revision)
+book-author → chapters/chapter-*-draft-v2.md (Revision)
 lector → reviews/review-chapter-*-v2.yaml (Re-review)
 ... (Iterativ bis Approval)
 ```
 
-### Phase 4: Enhancement (Optional)
+### Phase 5: Enhancement (Optional)
 ```
-clarity-editor → Verbesserte Versionen in drafts/
+clarity-editor → Verbesserte Versionen in chapters/
 workbook-developer → workbooks/*
 ```
 
-### Phase 5: Publikation
+### Phase 6: Publikation
 ```
 publishing-strategist → publishing/*
 ```
