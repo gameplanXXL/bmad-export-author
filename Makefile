@@ -29,14 +29,14 @@ help:
 	@echo "  make pdf-chapter CH=N   - Erstellt PDF für Kapitel N (z.B. make pdf-chapter CH=1)"
 	@echo "  make pdf-latest         - Erstellt PDF für das neueste Kapitel"
 	@echo "  make zip                - Erstellt Zip-Archiv des Projekts (ohne .git, .claude, etc.)"
-	@echo "  make demobook ORDNER=X  - Kopiert buchspezifische Dateien nach demobuch/X/"
+	@echo "  make demobook FOLDER=X  - Kopiert buchspezifische Dateien nach demobuch/X/"
 	@echo "  make clean              - Aufräumen (falls benötigt)"
 	@echo ""
 	@echo "Beispiele:"
 	@echo "  make pdf-chapter CH=3   - Erstellt chapters/chapter-03.pdf"
 	@echo "  make pdf-latest         - Erstellt PDF für das zuletzt geänderte Kapitel"
 	@echo "  make zip                - Erstellt $(PROJECT_NAME).zip"
-	@echo "  make demobook ORDNER=bio-hacking - Kopiert nach demobuch/bio-hacking/"
+	@echo "  make demobook FOLDER=bio-hacking - Kopiert nach demobuch/bio-hacking/"
 	@echo ""
 	@echo "=========================================="
 
@@ -180,15 +180,15 @@ zip:
 	@echo ""
 
 # Demobook erstellen - kopiert buchspezifische Dateien
-# Usage: make demobook ORDNER=bio-hacking
+# Usage: make demobook FOLDER=bio-hacking
 demobook:
-	@if [ -z "$(ORDNER)" ]; then \
-		echo "❌ Fehler: ORDNER-Parameter fehlt!"; \
-		echo "   Verwendung: make demobook ORDNER=mein-buch"; \
-		echo "   Beispiel:   make demobook ORDNER=bio-hacking"; \
+	@if [ -z "$(FOLDER)" ]; then \
+		echo "❌ Fehler: FOLDER-Parameter fehlt!"; \
+		echo "   Verwendung: make demobook FOLDER=mein-buch"; \
+		echo "   Beispiel:   make demobook FOLDER=bio-hacking"; \
 		exit 1; \
 	fi
-	@TARGET_DIR="demobuch/$(ORDNER)"; \
+	@TARGET_DIR="demobuch/$(FOLDER)"; \
 	echo "📚 Kopiere buchspezifische Dateien nach $$TARGET_DIR/..."; \
 	echo ""; \
 	mkdir -p "$$TARGET_DIR"; \
