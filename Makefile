@@ -215,7 +215,7 @@ demobook:
 	echo "📊 Verzeichnisgröße: $$(du -sh $$TARGET_DIR | cut -f1)"; \
 	echo ""; \
 	echo "Kopierte Ordner:"; \
-	ls -la "$$TARGET_DIR/" | grep "^d" | awk '{print "  - " $$9}' | grep -v "^\.\."
+	ls -la "$$TARGET_DIR/" | grep "^d" | awk '{print "  - " $$9}' | grep -v "^  - \\.$$" | grep -v "^  - \\.\\.$$"
 
 # Aufräumen
 clean:
