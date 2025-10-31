@@ -15,6 +15,14 @@ your-book-project/
 │
 ├── source-materials/                # Gesammelte Quellen & Ressourcen
 │   ├── author-content/
+│   │   ├── author-bio/            # ⭐ NEU: Biografische Inhalte des Autors
+│   │   │   ├── about-author.md          # Kurz-Bio (50-150 Wörter)
+│   │   │   ├── extended-bio.md          # Erweiterte Bio (300-500 Wörter)
+│   │   │   ├── transformation-story.md  # 6-Phasen Transformationsgeschichte
+│   │   │   ├── professional-background.md  # Credentials & Expertise
+│   │   │   ├── why-i-wrote-this.md      # Motivation & Mission
+│   │   │   ├── client-story-*.md        # Kunden-Erfolgsgeschichten
+│   │   │   └── media-assets/            # Headshots, Fotos
 │   │   ├── articles/
 │   │   ├── books/
 │   │   ├── presentations/
@@ -178,6 +186,13 @@ your-book-project/
 ```
 source-materials/
 ├── author-content/          # Vom Autor bereits erstellte Inhalte
+│   ├── author-bio/         # ⭐ NEU: Biografische Inhalte (Researcher Agent)
+│   │   ├── about-author.md          # Kurz-Bio für Buchrücken/Amazon
+│   │   ├── extended-bio.md          # Erweiterte Bio für "Über den Autor"
+│   │   ├── transformation-story.md  # 6-Phasen Crisis Arc Geschichte
+│   │   ├── professional-background.md  # Credentials & Expertise
+│   │   ├── why-i-wrote-this.md      # Motivation & Mission
+│   │   └── client-story-*.md        # Kunden-Erfolgsgeschichten
 │   ├── articles/           # Artikel, Blogbeiträge, Fachartikel, Essays
 │   ├── books/              # Bisherige Bücher, E-Books, Publikationen
 │   ├── presentations/      # Präsentationen, Slide Decks
@@ -211,6 +226,13 @@ source-materials/
 ```
 source-materials/
 ├── author-content/
+│   ├── author-bio/                    # ⭐ NEU: Erstellt via *create-author-bio
+│   │   ├── about-author.md           # Kurz-Bio (50-150 Wörter)
+│   │   ├── extended-bio.md           # Erweiterte Bio
+│   │   ├── transformation-story.md   # Transformationsgeschichte
+│   │   ├── professional-background.md # Credentials
+│   │   ├── why-i-wrote-this.md       # Motivation
+│   │   └── client-story-sarah.md     # Beispiel-Erfolgsgeschichte
 │   ├── articles/
 │   │   ├── 2023-05-budgeting-basics.md
 │   │   └── 2023-08-investment-strategy.md

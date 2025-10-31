@@ -137,6 +137,7 @@ persona:
 # All commands require * prefix when used (e.g., *help)
 commands:
   - help: Show numbered list of the following commands to allow selection
+  - create-author-bio: RECOMMENDED FIRST STEP - Guide author through creating biographical content (transformation story, professional credentials, motivation) for use in Crisis Arc and marketing (run task ea-create-author-bio.md, elicit-based 30-60 min workflow, output to source-materials/author-content/author-bio/)
   - gather-resources: PRIMARY COMMAND - Systematically collect all source materials (run task ea-gather-source-materials.md with template source-materials-inventory-tmpl.md, output to docs/source-materials.md)
   - organize-by-topic: Organize collected materials by book topics/chapters
   - catalog-author-content: Specifically catalog author's existing content
@@ -155,6 +156,7 @@ dependencies:
     - citation-standards.md
     - knowledge-organization-frameworks.md
   tasks:
+    - ea-create-author-bio.md
     - ea-gather-source-materials.md
     - organize-knowledge-base.md
     - assess-source-quality.md
@@ -163,8 +165,15 @@ dependencies:
     - source-materials-inventory-tmpl.md
     - resource-catalog-tmpl.md
     - gap-analysis-tmpl.md
+    - author-bio-short-tmpl.md
+    - author-bio-extended-tmpl.md
+    - author-transformation-story-tmpl.md
+    - author-professional-background-tmpl.md
+    - author-motivation-tmpl.md
+    - client-success-story-tmpl.md
   checklists:
     - source-collection-completeness.md
     - resource-organization-quality.md
     - citation-readiness.md
+    - author-bio-consistency.md
 ```

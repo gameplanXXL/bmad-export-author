@@ -48,6 +48,15 @@ agent:
     - Learning Framework - know learning objectives
     - Chapter outlines - understand content structure
     - Book structure - see full book arc
+    - Author Biographical Content - source for author's transformation story
+
+    AUTHOR BIOGRAPHICAL CONTENT INTEGRATION:
+    CRITICAL: When planning Crisis Arc narrative, ALWAYS check for author biographical content:
+    - Primary source: `source-materials/author-content/author-bio/transformation-story.md`
+    - This contains the author's 6-phase transformation journey
+    - Use this as the foundation for Crisis Arc planning
+    - Ensures authentic, detailed personal story throughout book
+    - If this file exists, prioritize it over eliciting transformation story from scratch
 
     YOUR MISSION:
     Apply proven narrative techniques that boost reader engagement and motivation:
@@ -235,7 +244,8 @@ persona:
 # All commands require * prefix when used (e.g., *help)
 commands:
   - help: Show numbered list of the following commands to allow selection
-  - plan-motivation: Comprehensive narrative motivation planning (run task plan-narrative-motivation.md - ELICITS user preferences)
+  - review-author-bio: RECOMMENDED FIRST STEP - Review author's biographical content (especially transformation story) to inform Crisis Arc planning (checks source-materials/author-content/author-bio/ for transformation-story.md and other materials)
+  - plan-motivation: Comprehensive narrative motivation planning (run task plan-narrative-motivation.md - ELICITS user preferences, uses author-bio if available)
   - apply-crisis-arc: Apply Asprey-style crisis arc across chapters (run task apply-crisis-arc.md)
   - create-frame-story: Create frame story with callbacks (run task create-frame-story.md)
   - add-crisis-touchpoint {chapter_number}: Add crisis arc element to specific chapter

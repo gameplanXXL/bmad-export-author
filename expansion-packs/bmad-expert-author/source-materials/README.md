@@ -29,12 +29,91 @@ Alle Materialien, die **du selbst erstellt** hast:
 
 ```
 author-content/
+├── author-bio/         # ⭐ NEU: Deine biografischen Inhalte (siehe unten)
 ├── articles/            # Artikel, Blogposts, Fachartikel, Essays
 ├── books/              # Bisherige Bücher, E-Books, Publikationen
 ├── presentations/      # Präsentationen, Slide Decks, Vorträge
 ├── courses/            # Kursmaterialien, Lernprogramme, Curricula
 └── videos/             # Video/Audio Content, Webinar-Aufnahmen, Transcripts
 ```
+
+#### **⭐ NEU: `/author-content/author-bio/` - Deine biografischen Inhalte**
+
+**Zweck:** Zentrale Sammlung DEINER Geschichte, Credentials und persönlichen Inhalte für das Buch und Marketing.
+
+**Wann erstellen:** ZUERST, bevor du andere Materialien sammelst. Der Researcher Agent führt dich durch einen geführten 30-60 Minuten Workflow.
+
+**Wie erstellen:**
+```bash
+/BMad-ea:agents:researcher
+*create-author-bio
+```
+
+**Was erstellt wird:**
+
+```
+author-bio/
+├── about-author.md             # Kurz-Bio (50-150 Wörter)
+├── extended-bio.md             # Erweiterte Bio (300-500 Wörter)
+├── transformation-story.md     # 6-Phasen Transformationsgeschichte
+├── professional-background.md  # Credentials & Expertise
+├── why-i-wrote-this.md         # Motivation & Mission
+├── client-story-*.md           # Kunden-Erfolgsgeschichten
+└── media-assets/               # Headshots, Fotos
+```
+
+**1. `about-author.md` - Kurz-Bio (50-150 Wörter)**
+- Verwendung: Buchrücken, Amazon Autorenseite, Social Media
+- Perspektive: Dritte Person ("Er/Sie ist...")
+- Inhalt: Name, Titel, Expertise, Top-Credentials, persönliche Note
+
+**2. `extended-bio.md` - Erweiterte Bio (300-500 Wörter)**
+- Verwendung: "Über den Autor" Sektion im Buch, Media Kit
+- Perspektive: Dritte Person
+- Inhalt: Ausführliche berufliche Geschichte, Credentials, Achievements, Mission
+
+**3. `transformation-story.md` - Transformationsgeschichte (Crisis Arc)**
+- Verwendung: Wird durch das Buch gewebt (Reader Motivation Agent)
+- Perspektive: Erste Person
+- Inhalt: 6 Phasen (Krise → Fehlversuche → Eskalation → Wendepunkt → Transformation → Lessons)
+- **WICHTIG:** Dies ist das Herzstück für die Crisis Arc Narrative-Technik!
+
+**4. `professional-background.md` - Credentials & Expertise**
+- Verwendung: Referenz für Glaubwürdigkeit im Buch
+- Inhalt: Ausbildung, Zertifikate, Berufserfahrung, Achievements, Expertise-Bereiche
+
+**5. `why-i-wrote-this.md` - Motivation & Mission**
+- Verwendung: Buch-Einleitung, Marketing-Messaging
+- Inhalt: Problem das du löst, wen du helfen willst, deine Mission, Impact-Ziele
+
+**6. `client-story-*.md` - Kunden-Erfolgsgeschichten**
+- Verwendung: Case Studies in Kapiteln
+- Inhalt: Transformations-Stories deiner Kunden (anonymisiert)
+
+**Integration mit anderen Agenten:**
+
+→ **Reader Motivation Agent** (Maya)
+   - Nutzt `transformation-story.md` für Crisis Arc Planung
+   - Webt deine Geschichte durch alle Kapitel
+   - Kommando: `*review-author-bio` liest deine Bio-Inhalte
+
+→ **Book Author Agent** (Aurora)
+   - Nutzt `about-author.md` und `extended-bio.md` für "Über den Autor" Sektion
+   - Referenziert `professional-background.md` für Glaubwürdigkeit
+
+→ **Marketing & Veröffentlichung**
+   - Kurz-Bio → Buchrücken, Amazon, Speaker-Profile
+   - Erweiterte Bio → Media Kit, Interviews
+   - Transformation Story → Marketing-Narrative
+
+**Warum zuerst?**
+- ✅ Transformationsgeschichte ist Fundament für Crisis Arc
+- ✅ Bio-Material sofort bereit für Marketing
+- ✅ Strukturierte Templates verhindern leere Seiten
+- ✅ 30-60 Minuten Investment spart Stunden später
+- ✅ Credentials etablieren Autorität im gesamten Buch
+
+---
 
 **Beispiele:**
 - `articles/2023-budgeting-guide.docx` - Dein Blogartikel über Budget

@@ -270,12 +270,44 @@ The expansion pack guides you through a proven process (see [Core Workflow](#cor
 - Gap analysis of missing materials
 
 **Key capabilities**:
+- Creates author biographical content package (bio, transformation story, credentials, motivation)
 - Catalogs author's existing materials (articles, presentations, courses)
 - Collects reference materials (studies, books, reports)
 - Organizes practical resources (examples, exercises, templates)
 - Maps resources to book chapters
 - Assesses source quality and credibility
 - Identifies content gaps
+
+**Creating Author Biographical Content (Recommended First Step)**:
+
+Before gathering all your articles and materials, start by documenting YOUR story:
+
+```bash
+/BMad-ea:agents:researcher
+*create-author-bio
+```
+
+This guided 30-60 minute workflow helps you create:
+- **Short bio** (50-150 words) for book cover and Amazon
+- **Extended bio** (300-500 words) for "About the Author" section
+- **Transformation story** (6-phase Crisis Arc) for narrative throughout book
+- **Professional credentials** & background
+- **Your motivation** for writing the book
+- **Client success stories** for case studies
+
+**Output location**: `source-materials/author-content/author-bio/`
+
+**Why start here**:
+- Your transformation story becomes the foundation for Crisis Arc narrative (Reader Motivation Agent)
+- Professional background establishes credibility throughout book
+- Bio materials ready for marketing immediately
+- Prevents blank-page syndrome by using structured templates
+- 30-60 minute investment saves hours of writing later
+
+**Integration**:
+- Reader Motivation Agent uses `transformation-story.md` for Crisis Arc planning
+- Book Author Agent uses bio materials for "About the Author" section
+- Marketing uses short bio for book cover, Amazon, speaking engagements
 
 **When to use**: AFTER Book Blueprint is created, BEFORE Learning Architect
 
