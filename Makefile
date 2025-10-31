@@ -14,7 +14,7 @@ COMBINED_MD = $(OUTPUT_DIR)/$(BOOK_NAME).md
 PROJECT_NAME = $(shell basename $(CURDIR))
 ZIP_FILE = $(PROJECT_NAME).zip
 
-.PHONY: help install install-tools install-expansion-pack clean md pdf pdf-chapter zip demobook
+.PHONY: help install install-tools install-expansion-pack clean md pdf pdf-chapter zip demobook reset
 
 # Default target: Zeige Hilfe
 help:
@@ -30,6 +30,7 @@ help:
 	@echo "  make pdf-latest         - Erstellt PDF für das neueste Kapitel"
 	@echo "  make zip                - Erstellt Zip-Archiv des Projekts (ohne .git, .claude, etc.)"
 	@echo "  make demobook FOLDER=X  - Kopiert buchspezifische Dateien nach demobuch/X/"
+	@echo "  make reset              - Löscht alle Buch-Artefakte (mit Sicherheitsabfrage)"
 	@echo "  make clean              - Aufräumen (falls benötigt)"
 	@echo ""
 	@echo "Beispiele:"
@@ -216,6 +217,38 @@ demobook:
 	echo ""; \
 	echo "Kopierte Ordner:"; \
 	ls -la "$$TARGET_DIR/" | grep "^d" | awk '{print "  - " $$9}' | grep -v "^  - \\.$$" | grep -v "^  - \\.\\.$$"
+
+# Reset - Löscht alle Buch-Artefakte mit Sicherheitsabfrage
+reset:
+	@echo "⚠️  WARNUNG: Dieser Befehl löscht alle buchspezifischen Dateien!"
+	@echo ""
+	@echo "Folgende Verzeichnisse und Dateien werden gelöscht:"
+	@echo "  - source-materials/"
+	@echo "  - resources/"
+	@echo "  - output/"
+	@echo "  - chapters/"
+	@echo "  - outlines/"
+	@echo "  - reviews/"
+	@echo "  - publishing/"
+	@echo "  - workbooks/"
+	@echo "  - docs/"
+	@echo "  - *.yaml und *.yml Dateien im Root"
+	@echo "  - *.md Dateien im Root (außer README.md, CLAUDE.md, LICENSE.md, SETUP.md, WORKFLOW-STATUS.md)"
+	@echo ""
+	@bash -c 'read -p "Möchten Sie wirklich fortfahren? [y/N] " -n 1 -r; \
+	echo; \
+	if [[ ! $$REPLY =~ ^[Yy]$$ ]]; then \
+		echo "❌ Abgebrochen."; \
+		exit 1; \
+	fi; \
+	echo ""; \
+	echo "🗑️  Lösche Buch-Artefakte..."; \
+	rm -rf source-materials resources output chapters outlines reviews publishing workbooks docs; \
+	find . -maxdepth 1 -type f \( -name "*.yaml" -o -name "*.yml" \) -delete; \
+	find . -maxdepth 1 -type f -name "*.md" ! -name "README.md" ! -name "CLAUDE.md" ! -name "LICENSE.md" ! -name "SETUP.md" ! -name "WORKFLOW-STATUS.md" -delete; \
+	echo "✅ Reset abgeschlossen!"; \
+	echo ""; \
+	echo "ℹ️  Tipp: Verwenden Sie '\''make install'\'' um das Expansion Pack neu zu installieren."'
 
 # Aufräumen
 clean:
