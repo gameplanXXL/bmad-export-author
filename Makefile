@@ -14,7 +14,7 @@ COMBINED_MD = $(OUTPUT_DIR)/$(BOOK_NAME).md
 PROJECT_NAME = $(shell basename $(CURDIR))
 ZIP_FILE = $(PROJECT_NAME).zip
 
-.PHONY: help install install-tools install-expansion-pack clean md pdf pdf-chapter zip
+.PHONY: help install install-tools install-expansion-pack clean md pdf pdf-chapter zip demobook
 
 # Default target: Zeige Hilfe
 help:
@@ -29,12 +29,14 @@ help:
 	@echo "  make pdf-chapter CH=N   - Erstellt PDF für Kapitel N (z.B. make pdf-chapter CH=1)"
 	@echo "  make pdf-latest         - Erstellt PDF für das neueste Kapitel"
 	@echo "  make zip                - Erstellt Zip-Archiv des Projekts (ohne .git, .claude, etc.)"
+	@echo "  make demobook ORDNER=X  - Kopiert buchspezifische Dateien nach demobuch/X/"
 	@echo "  make clean              - Aufräumen (falls benötigt)"
 	@echo ""
 	@echo "Beispiele:"
 	@echo "  make pdf-chapter CH=3   - Erstellt chapters/chapter-03.pdf"
 	@echo "  make pdf-latest         - Erstellt PDF für das zuletzt geänderte Kapitel"
 	@echo "  make zip                - Erstellt $(PROJECT_NAME).zip"
+	@echo "  make demobook ORDNER=bio-hacking - Kopiert nach demobuch/bio-hacking/"
 	@echo ""
 	@echo "=========================================="
 
@@ -176,6 +178,44 @@ zip:
 	@echo "  - .bmad-core/"
 	@echo "  - .bmad-expert-author/"
 	@echo ""
+
+# Demobook erstellen - kopiert buchspezifische Dateien
+# Usage: make demobook ORDNER=bio-hacking
+demobook:
+	@if [ -z "$(ORDNER)" ]; then \
+		echo "❌ Fehler: ORDNER-Parameter fehlt!"; \
+		echo "   Verwendung: make demobook ORDNER=mein-buch"; \
+		echo "   Beispiel:   make demobook ORDNER=bio-hacking"; \
+		exit 1; \
+	fi
+	@TARGET_DIR="demobuch/$(ORDNER)"; \
+	echo "📚 Kopiere buchspezifische Dateien nach $$TARGET_DIR/..."; \
+	echo ""; \
+	mkdir -p "$$TARGET_DIR"; \
+	if [ -d "source-materials" ]; then \
+		echo "📁 Kopiere source-materials/..."; \
+		cp -r source-materials "$$TARGET_DIR/"; \
+	else \
+		echo "⚠️  source-materials/ nicht gefunden, überspringe..."; \
+	fi; \
+	if [ -d "resources" ]; then \
+		echo "📁 Kopiere resources/..."; \
+		cp -r resources "$$TARGET_DIR/"; \
+	else \
+		echo "⚠️  resources/ nicht gefunden, überspringe..."; \
+	fi; \
+	if [ -d "output" ]; then \
+		echo "📁 Kopiere output/..."; \
+		cp -r output "$$TARGET_DIR/"; \
+	else \
+		echo "⚠️  output/ nicht gefunden, überspringe..."; \
+	fi; \
+	echo ""; \
+	echo "✅ Demobook erstellt: $$TARGET_DIR/"; \
+	echo "📊 Verzeichnisgröße: $$(du -sh $$TARGET_DIR | cut -f1)"; \
+	echo ""; \
+	echo "Kopierte Ordner:"; \
+	ls -la "$$TARGET_DIR/" | grep "^d" | awk '{print "  - " $$9}' | grep -v "^\.\."
 
 # Aufräumen
 clean:
