@@ -149,15 +149,17 @@ copy_expansion_files() {
 setup_claude_commands() {
     log_info "Setting up Claude Code integration..."
 
-    local claude_dir="$PROJECT_ROOT/.claude/commands/BMad-ea/agents"
+    local agents_dir="$PROJECT_ROOT/.claude/commands/BMad-ea/agents"
+    local tasks_dir="$PROJECT_ROOT/.claude/commands/BMad-ea/tasks"
 
     if [[ ! -d "$PROJECT_ROOT/.claude" ]]; then
         log_warning "Claude Code directory not found. Skipping Claude integration."
         return 0
     fi
 
-    # Create commands directory
-    mkdir -p "$claude_dir"
+    # Create commands directories
+    mkdir -p "$agents_dir"
+    mkdir -p "$tasks_dir"
 
     # Copy agent files to Claude commands, removing ea- prefix
     if [[ -d "$INSTALL_DIR/agents" ]]; then
@@ -167,11 +169,26 @@ setup_claude_commands() {
                 local agent_name=$(basename "$agent_file")
                 # Remove ea- prefix if present
                 local target_name="${agent_name#ea-}"
-                cp "$agent_file" "$claude_dir/$target_name"
+                cp "$agent_file" "$agents_dir/$target_name"
                 ((agent_count++))
             fi
         done
         log_success "Installed $agent_count agent slash commands"
+    fi
+
+    # Copy task files to Claude commands, removing ea- prefix
+    if [[ -d "$INSTALL_DIR/tasks" ]]; then
+        local task_count=0
+        for task_file in "$INSTALL_DIR/tasks"/*.md; do
+            if [[ -f "$task_file" ]]; then
+                local task_name=$(basename "$task_file")
+                # Remove ea- prefix if present
+                local target_name="${task_name#ea-}"
+                cp "$task_file" "$tasks_dir/$target_name"
+                ((task_count++))
+            fi
+        done
+        log_success "Installed $task_count task slash commands"
     fi
 }
 
