@@ -24,7 +24,7 @@ I'm Regina, your Knowledge Curator and Research Specialist. My role is to help y
 
 Before we dive in, let me explain why this matters:
 
-Many authors have a wealth of existing content scattered across blog posts, presentations, course materials, and personal experiences. By systematically collecting and organizing these resources now, we:
+Many authors have a wealth of existing content scattered across articles, presentations, course materials, and personal experiences. By systematically collecting and organizing these resources now, we:
 - Avoid reinventing content you've already created
 - Ensure no valuable insights are overlooked
 - Build a searchable knowledge base for content creation
@@ -48,7 +48,7 @@ Let's start with content you've already created.
 
 **Published Content:**
 
-1. **Blog Posts/Articles**: Do you have blog posts or articles on this topic?
+1. **Articles**: Do you have articles, blog posts, or essays on this topic?
    - Where are they published? (URLs, blog platforms)
    - Approximately how many?
    - Are there specific posts that are particularly relevant?
@@ -230,7 +230,7 @@ I'll create a source-materials/ directory structure:
 
 source-materials/
 ├── author-content/
-│   ├── blog-posts/
+│   ├── articles/
 │   ├── presentations/
 │   ├── courses/
 │   └── videos/

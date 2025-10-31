@@ -15,7 +15,8 @@ your-book-project/
 │
 ├── source-materials/                # Gesammelte Quellen & Ressourcen
 │   ├── author-content/
-│   │   ├── blog-posts/
+│   │   ├── articles/
+│   │   ├── books/
 │   │   ├── presentations/
 │   │   ├── courses/
 │   │   └── videos/
@@ -177,7 +178,8 @@ your-book-project/
 ```
 source-materials/
 ├── author-content/          # Vom Autor bereits erstellte Inhalte
-│   ├── blog-posts/         # Artikel, Blogbeiträge
+│   ├── articles/           # Artikel, Blogbeiträge, Fachartikel, Essays
+│   ├── books/              # Bisherige Bücher, E-Books, Publikationen
 │   ├── presentations/      # Präsentationen, Slide Decks
 │   ├── courses/            # Kursmaterialien, Curricula
 │   └── videos/             # Video/Audio Content, Transcripts
@@ -209,9 +211,11 @@ source-materials/
 ```
 source-materials/
 ├── author-content/
-│   ├── blog-posts/
+│   ├── articles/
 │   │   ├── 2023-05-budgeting-basics.md
 │   │   └── 2023-08-investment-strategy.md
+│   ├── books/
+│   │   └── previous-ebook-financial-freedom.pdf
 │   └── presentations/
 │       └── financial-freedom-workshop-2023.pdf
 ├── references/
