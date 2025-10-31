@@ -261,7 +261,7 @@ Display summary:
 
 ✨ Next Steps:
    1. Review converted files in processed-materials/
-   2. Return to book-strategist to complete blueprint: /BMad:agents:ea-book-strategist
+   2. Return to book-strategist to complete blueprint: /BMad-ea:agents:book-strategist
 ```
 
 ## Output Deliverable

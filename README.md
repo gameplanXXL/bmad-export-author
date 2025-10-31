@@ -24,7 +24,7 @@ make install
 
 ```bash
 # In Claude Code, activate the Book Strategist
-/BMad:agents:ea-book-strategist
+/BMad-ea:agents:book-strategist
 
 # Create your Book Blueprint
 *create-blueprint

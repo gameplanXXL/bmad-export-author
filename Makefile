@@ -45,7 +45,7 @@ install: install-tools install-expansion-pack
 	@echo ""
 	@echo "Nächste Schritte:"
 	@echo "  1. Starten Sie Claude Code bzw. Ihre IDE neu, um die neuen Agenten zu laden"
-	@echo "  2. In Claude Code tippen Sie: /BMad:agents:book-strategist"
+	@echo "  2. In Claude Code tippen Sie: /BMad-ea:agents:book-strategist"
 	@echo "  3. Nach Aktivierung tippen Sie: *help für verfügbare Befehle"
 	@echo ""
 

@@ -26,7 +26,7 @@ Steps:
    - Converts Word, PDF, HTML → Markdown automatically
    - Reads converted content from `processed-materials/`
    - Incorporates insights into Book Blueprint
-   - ℹ️ Manual processing: `/BMad:agents:ea-document-processor` (if needed)
+   - ℹ️ Manual processing: `/BMad-ea:agents:document-processor` (if needed)
 4. **Deep Dive Research**:
    - `*analyze-audience` - Understand target readers deeply
    - `*research-market` - Competitive landscape analysis

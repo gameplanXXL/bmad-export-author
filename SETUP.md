@@ -317,9 +317,9 @@ claude
 
 You should now have access to all BMAD Expert Author agents via slash commands like:
 
-- `/BMad:agents:ea-book-strategist`
-- `/BMad:agents:ea-book-author`
-- `/BMad:agents:ea-lector`
+- `/BMad-ea:agents:book-strategist`
+- `/BMad-ea:agents:book-author`
+- `/BMad-ea:agents:lector`
 - etc.
 
 ---
@@ -452,7 +452,7 @@ After completing this setup:
    
    ```bash
    # In Claude Code
-   /BMad:agents:ea-book-strategist
+   /BMad-ea:agents:book-strategist
    # Then run: *help
    ```
 

@@ -65,7 +65,7 @@ ls -la .claude/commands/BMad/agents/
 In Claude Code, start with the Book Strategist:
 
 ```bash
-/BMad:agents:ea-book-strategist
+/BMad-ea:agents:book-strategist
 ```
 
 #### 2. Create Your Book Blueprint
@@ -259,7 +259,7 @@ The expansion pack guides you through a proven process (see [Core Workflow](#cor
 
 ---
 
-#### 🔬 Researcher (`/BMad:agents:ea-researcher`)
+#### 🔬 Researcher (`/BMad-ea:agents:researcher`)
 **Purpose**: Systematically collects, organizes, and curates all source materials
 
 **Key outputs**:
@@ -498,7 +498,7 @@ photorealistic, high detail, 8k"
 
 ### Document Management
 
-#### 🔪 EA Document Sharder (`/BMad:agents:ea-shard`)
+#### 🔪 EA Document Sharder (`/BMad-ea:agents:shard`)
 **Purpose**: Intelligently splits large documents into modular files
 
 **Key commands**:

@@ -149,7 +149,7 @@ copy_expansion_files() {
 setup_claude_commands() {
     log_info "Setting up Claude Code integration..."
 
-    local claude_dir="$PROJECT_ROOT/.claude/commands/BMad/agents"
+    local claude_dir="$PROJECT_ROOT/.claude/commands/BMad-ea/agents"
 
     if [[ ! -d "$PROJECT_ROOT/.claude" ]]; then
         log_warning "Claude Code directory not found. Skipping Claude integration."
@@ -159,13 +159,15 @@ setup_claude_commands() {
     # Create commands directory
     mkdir -p "$claude_dir"
 
-    # Copy agent files to Claude commands
+    # Copy agent files to Claude commands, removing ea- prefix
     if [[ -d "$INSTALL_DIR/agents" ]]; then
         local agent_count=0
         for agent_file in "$INSTALL_DIR/agents"/*.md; do
             if [[ -f "$agent_file" ]]; then
                 local agent_name=$(basename "$agent_file")
-                cp "$agent_file" "$claude_dir/$agent_name"
+                # Remove ea- prefix if present
+                local target_name="${agent_name#ea-}"
+                cp "$agent_file" "$claude_dir/$target_name"
                 ((agent_count++))
             fi
         done
@@ -287,7 +289,7 @@ main() {
     # Show next steps
     log_info "Next steps:"
     echo "  1. Restart your IDE to load the new agents"
-    echo "  2. In Claude Code, type: /BMad:agents:ea-book-strategist"
+    echo "  2. In Claude Code, type: /BMad-ea:agents:book-strategist"
     echo "  3. Once activated, type: *help to see available commands"
     echo ""
     log_info "For documentation, see: README.md"

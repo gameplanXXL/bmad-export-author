@@ -187,7 +187,7 @@ cp -r ~/meine-fotos/workshops/ source-materials/media/images/
 
 ```bash
 # Aktiviere Book Strategist
-/BMad:agents:ea-book-strategist
+/BMad-ea:agents:book-strategist
 
 # Erstelle Book Blueprint (konvertiert automatisch DOCX/PDF)
 *create-blueprint

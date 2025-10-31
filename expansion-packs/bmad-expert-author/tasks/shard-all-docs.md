@@ -220,7 +220,7 @@ Glob: docs/**/*.md
 
 **Re-shard document:**
 ```bash
-/BMad:agents:ea-shard
+/BMad-ea:agents:shard
 *shard docs/{filename}.md
 ```
 
@@ -318,7 +318,7 @@ docs/
 
 ## 🔗 Related Commands
 
-- `/BMad:agents:ea-shard` - Shard individual document
+- `/BMad-ea:agents:shard` - Shard individual document
 - `*analyze {file}` - Analyze document without sharding
 - `*preview {file}` - Preview sharding strategy
 

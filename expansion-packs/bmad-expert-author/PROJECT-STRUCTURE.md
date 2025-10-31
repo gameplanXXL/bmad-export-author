@@ -677,7 +677,7 @@ git push
    - Projekt-Root (diese Struktur) = Ihr Buch-Inhalt
 
 6. **Große Dateien aufteilen:**
-   - Nutzen Sie `/BMad:agents:ea-shard` für Dokumente >500 Zeilen
+   - Nutzen Sie `/BMad-ea:agents:shard` für Dokumente >500 Zeilen
    - Erstellt Unterverzeichnisse mit modularen Dateien (z.B. `docs/learning-framework/`)
    - Siehe Abschnitt "Document Sharding" unten
 
@@ -707,19 +707,19 @@ docs/
 
 **Einzelne Datei sharden:**
 ```bash
-/BMad:agents:ea-shard
+/BMad-ea:agents:shard
 *shard docs/learning-framework.md
 ```
 
 **Alle großen Dateien in docs/ sharden:**
 ```bash
-/BMad:agents:ea-shard
+/BMad-ea:agents:shard
 *shard-all
 ```
 
 **Struktur analysieren (Vorschau):**
 ```bash
-/BMad:agents:ea-shard
+/BMad-ea:agents:shard
 *analyze docs/learning-framework.md
 ```
 

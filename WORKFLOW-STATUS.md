@@ -437,10 +437,10 @@ The book project has successfully completed the strategic planning and instructi
 cat /home/cneise/Project/ki-agent/WORKFLOW-STATUS.md
 
 # Then activate Book Author agent to start writing
-/BMad:agents:ea-book-author
+/BMad-ea:agents:book-author
 
 # Or activate Visual Designer for Visual Plan
-/BMad:agents:ea-visual-designer
+/BMad-ea:agents:visual-designer
 
 # Or continue with Orchestrator for coordination
 /BMad:agents:bmad-orchestrator
